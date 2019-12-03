@@ -10,3 +10,15 @@ Sexual harassment is pervasive, yet its economic costs are largely undocumented.
 - [Supplemental Material](https://github.com/worldbank/rio-safe-space/tree/master/Supplemental%Material)
 - [Replication Package](https://github.com/worldbank/rio-safe-space/tree/master/Replication%Package)
 - [Data Documentation](https://github.com/worldbank/rio-safe-space/tree/master/Data%Documentation)
+
+
+
+<div class = "row">
+  <div class = "column" style = "width:30%">
+    <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/wb.png" align = "left">
+  </div>
+  <div class = "column" style = "width:30%">
+    <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/i2i.png" align = "right">
+  </div>
+</div>
+ 
