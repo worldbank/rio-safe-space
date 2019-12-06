@@ -35,9 +35,9 @@ result in scores that are not properly interpretable. The activity will take abo
 category labels and the items that belong to each of those categories.
 
 | Category | Item |
-| -------- | ---- |
-| Reserved Space | |
-| Public Space | | 
+| ---- | ---- |
+| Reserved Space | <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_4.jpg" width="190" /> |
+| Public Space |<img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_4.jpg" width="190" /> |
 
 
 | Category | Item |
@@ -63,9 +63,9 @@ result in scores that are not properly interpretable. The activity will take abo
 category labels and the items that belong to each of those categories.
 
 | Category | Item |
-| -------- | ---- |
-| Reserved Space | |
-| Public Space | | 
+| ---- | ---- |
+| Reserved Space | <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_4.jpg" width="190" /> |
+| Public Space |<img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_4.jpg" width="190" /> |
 
 | Category | Item |
 | -------- | ---- |
@@ -118,8 +118,8 @@ Segue uma lista das categorias e dos itens que pertencem a cada uma delas.
 
 | Categoria | Item |
 | -------- | ---- |
-| Vagão Feminino |
-| Vagão Misto |
+| Vagão Feminino | <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_4.jpg" width="190" /> |
+| Vagão Misto |<img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_4.jpg" width="190" /> |
 
 
 | Categoria | Item |
@@ -147,8 +147,9 @@ Segue uma lista das categorias e dos itens que pertencem a cada uma delas.
 
 | Categoria | Item |
 | -------- | ---- |
-| Vagão Feminino| 
-| Vagão Misto |
+| Vagão Feminino | <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Pink_4.jpg" width="190" /> |
+| Vagão Misto |<img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_1.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_2.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_3.jpg" width="170" /> <img src= "https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey%20documentation/Survey%20instruments/IAT%20images/Mixed_4.jpg" width="190" /> |
+
 
 | Categoria | Item |
 | -------- | ---- |
