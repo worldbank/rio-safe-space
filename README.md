@@ -9,8 +9,6 @@ Sexual harassment is pervasive, yet its economic costs are largely undocumented.
 - [Full Paper](https://github.com/worldbank/rio-safe-space/blob/master/Demand%20for%20Safe%20Spaces%20-%20Avoiding%20Harassment%20and%20Stigma.pdf)
 - [Supplemental Material](https://github.com/worldbank/rio-safe-space/tree/master/Supplemental%20Material)
 - [Replication Package](https://github.com/worldbank/rio-safe-space/tree/master/Replication%20Package)
-- [Data Documentation](https://github.com/worldbank/rio-safe-space/tree/master/Data%20Documentation)
-
 
 
 <div class = "row">
