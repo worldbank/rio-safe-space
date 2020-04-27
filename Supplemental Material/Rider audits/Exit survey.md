@@ -35,47 +35,38 @@
     3. Make about the same choices as you would normally
     (if a or b) Why?____________________________________
 
-_Imagine that you were taking a ride during your usual rush hour commute.  
-Please imagine 1) you are offered to buy either a ticket for the public or reserved space and 
-2) you can only ride in the space you bought the ticket for and 
-3) the enforcement of the women’s-only rule is the same as normal._
+**Introduction to questions 7-11**: Imagine that you were taking a ride during your usual rush hour commute.  Please imagine 1) you are offered to buy either a ticket for the public or reserved space and 2) you can only ride in the space you bought the ticket for and 
+3) the enforcement of the women’s-only rule is the same as normal.
 
-_Options:_
-1. Always ride in public space
-2. Mostly ride in public space
-3. Sometimes ride in public space, sometimes ride in reserved space
-4. Mostly ride in reserved space
-5. Always ride in reserved space
+**Options for questions 7-11**
+ - Always ride in public space
+ - Mostly ride in public space
+ - Sometimes ride in public space, sometimes ride in reserved space
+ - Mostly ride in reserved space
+ - Always ride in reserved space
     
-7.  Which space would you prefer to ride given these options:
+7. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00 reais for a ticket on the public space
     - Option 2: You pay 5.00 reais for a ticket on the reserved space
 8. Which space would you prefer to ride given these options:
     - Option 1: You are paid 5.00 reais for a ticket on the public space
     - Option 2: You are paid 5.10 reais for a ticket on the reserved space
-9. 9. Which space would you prefer to ride given these options:
+9. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on the public space
     - Option 2: You pay 5.15 reais for a ticket on the reserved space
-10. 10. Which space would you prefer to ride given these options:
+10. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on the public space
     - Option 2: You pay 5.30 reais for a ticket on the reserved space
-11. 11. Which space would you prefer to ride given these options:
+11. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on the public space
     - Option 2: You pay 5.65 reais for a ticket on the reserved space
  
+**Introduction to questions 12-14**
 _Imagine that you were taking a ride during your usual rush hour commute.  
 Please imagine 1) you are paid to ride the Supervia and collect data on your experience on either the mixed or or reserved space and 
-2) you have to select which space to take prior to boarding and 
-3) the enforcement of the women’s-only rule is the same as normal. _
-
-    _Options:_
-    1. Always ride in public space
-    2. Mostly ride in public space
-    3. Sometimes ride in public space, sometimes ride in reserved space
-    4. Mostly ride in reserved space
-    5. Always ride in reserved space
-    
- 9. Which space would you prefer to ride given these options:
+2) you have to select which space to take prior to boarding and 3) the enforcement of the women’s-only rule is the same as normal._
+  
+9. Which space would you prefer to ride given these options:
     - Option 1: You are paid 5.00 reais to ride the public space
     - Option 2: You are paid 5.30 reais to ride the reserved space
 10. Which space would you prefer to ride given these options:
