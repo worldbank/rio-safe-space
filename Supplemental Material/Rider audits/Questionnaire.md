@@ -347,12 +347,12 @@ Please imagine 1) you are offered to buy either a ticket for the public or reser
 2) you can only ride in the space you bought the ticket for and 
 3) the enforcement of the women’s-only rule is the same as normal._
 
-    _Options:_
-    1. Always ride in public space
-    2. Mostly ride in public space
-    3. Sometimes ride in public space, sometimes ride in reserved space
-    4. Mostly ride in reserved space
-    5. Always ride in reserved space
+_Options:_
+1. Always ride in public space
+2. Mostly ride in public space
+3. Sometimes ride in public space, sometimes ride in reserved space
+4. Mostly ride in reserved space
+5. Always ride in reserved space
     
 7.  Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00 reais for a ticket on the public space
@@ -400,13 +400,13 @@ _Imagine that you were taking a ride during your usual rush hour commute.  Pleas
 2) You can only ride the car you bought the ticket for and 
 3) The authorities were able to enforce the women’s-only rule 100% of the time (no men in feminine cars)._
 
-    _Options:_
-    1. Always ride in public space
-    2. Mostly ride in public space
-    3. Sometimes ride in public space, sometimes ride in reserved space
-    4. Mostly ride in reserved space
-    5. Always ride in reserved space
-    
+_Options:_
+1. Always ride in public space
+2. Mostly ride in public space
+3. Sometimes ride in public space, sometimes ride in reserved space
+4. Mostly ride in reserved space
+5. Always ride in reserved space
+
 11. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00 reais for a ticket on the public space
     - Option 2: You pay 5.00 reais for a ticket on the reserved space
@@ -443,7 +443,7 @@ _Imagine that you were taking a ride during your usual rush hour commute.  Pleas
     ____ percent  
     ____I don’t feel comfortable answering this question
     
-20. How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the mixed car??
+20. How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the public space?
     1. Never
     2. Less than once a year
     3. Once a year
@@ -453,7 +453,7 @@ _Imagine that you were taking a ride during your usual rush hour commute.  Pleas
     7. Several times a week
     8. I don’t feel comfortable answering this question
     
-21. What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the mixed car?
+21. What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the public space?
     ___ percent   
     ____I don’t feel comfortable answering this question
     
@@ -469,7 +469,7 @@ _Imagine that you were taking a ride during your usual rush hour commute.  Pleas
  
 _Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the reserved space. _
 
-23. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the women’s-only car?  
+23. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the reserved space?  
     _____ percent  
      ____I don’t feel comfortable answering this question
 
