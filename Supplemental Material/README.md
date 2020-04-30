@@ -6,8 +6,8 @@
 
 ### Rider Audits
 
-- Rider reports:[Questionnaires and task descriptions per phase](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Rider%20audits/Questionnaire.md)
-- Platform observations
+- Rider reports: [Questionnaires and task descriptions per phase](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Rider%20audits/Questionnaire.md)
+- Platform observations: 
 
 ### Platform Survey & IAT
 
