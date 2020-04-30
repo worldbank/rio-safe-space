@@ -5,7 +5,7 @@
 ## Supplemental Material
 
 ### Rider Audits
-- [Questionnaire](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Rider%20audits/Questionnaire.md)
+- [Questionnaires and task descriptions per phase](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Rider%20audits/Questionnaire.md)
 
 ### Platform Survey & IAT
 
