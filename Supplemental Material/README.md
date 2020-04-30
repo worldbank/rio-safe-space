@@ -1,5 +1,7 @@
 # Demand for “Safe Spaces”: Avoiding Harassment and Stigma
 
+## Robustness Checks
+
 ## Supplemental Material
 
 ### Rider Audits
