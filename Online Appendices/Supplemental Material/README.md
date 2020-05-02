@@ -19,3 +19,15 @@
 - [IAT Instruments](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey/Survey%20instruments/IAT%20Instrument.md)
 
 
+<div class = "row">
+  <div class = "column" style = "width:30%">
+    <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/wb.png" align = "left">
+  </div>
+  <div class = "column" style = "width:30%">
+    <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/i2i.png" align = "right">
+  </div>
+</div>
+ 
+
+
+
