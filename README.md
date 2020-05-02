@@ -10,7 +10,7 @@ What are the costs to women of harassment on public transit? We randomize the pr
 - [Online appendix: Robustness Checks & Supplemental Material](https://github.com/worldbank/rio-safe-space/tree/master/Supplemental%20Material)
 - [Replication Package](https://github.com/worldbank/rio-safe-space/tree/master/Replication%20Package)
 
-
+## 
 <div class = "row">
   <div class = "column" style = "width:30%">
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/wb.png" align = "left">
