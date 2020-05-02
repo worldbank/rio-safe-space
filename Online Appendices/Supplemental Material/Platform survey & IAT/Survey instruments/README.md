@@ -2,12 +2,12 @@
 
 This repository contains the survey instruments used on platform survey and Implicit Association Test for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
-## Survey Instruments
+## Platform survey
 - [Platform survey]()
 - [Implicit Association Test]()
 
-## Survey protocols
-- [Platform survey and IAT]()
+## Implicit Association Test
+- [IAT instrument]()
 
 ## 
 <div class = "row">
