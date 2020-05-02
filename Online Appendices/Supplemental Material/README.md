@@ -1,5 +1,5 @@
 # Demand for “Safe Spaces”: Avoiding Harassment and Stigma
-This folder contains online appendices for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
+This folder contains supplemental material for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
 ## Supplemental Material
 
