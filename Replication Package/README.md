@@ -4,6 +4,7 @@ This folder contains the replication package for the Working Paper "Demand for '
 
 ## Replication package
 
+## 
 <div class = "row">
   <div class = "column" style = "width:30%">
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/wb.png" align = "left">
