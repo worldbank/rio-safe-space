@@ -5,19 +5,19 @@ This folder contains supplemental material for the Working Paper "Demand for 'Sa
 
 ### Rider Audits
 
-- Rider reports: [Questionnaires and task descriptions per phase](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Rider%20audits/Questionnaire.md)
-- Platform observations: 
+- Rider reports: [Questionnaires and task descriptions per phase]()
+- Platform observations: [Task description]()
 
 ### Platform Survey & IAT
 
 #### Survey Protocols
-- [Sampling Methodology](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey/Survey%20protocols/Sampling%20methodology.md)
+- [Sampling Methodology]()
 
 #### Survey Instruments
-- [Platform Survey Instruments](https://github.com/worldbank/rio-safe-space/tree/master/Supplemental%20Material/Platform%20survey/Survey%20instruments/Platform%20suvey%20questionnaire)
-- [IAT Instruments](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey/Survey%20instruments/IAT%20Instrument.md)
+- [Platform Survey Instruments]()
+- [IAT Instruments]()
 
-
+## 
 <div class = "row">
   <div class = "column" style = "width:30%">
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/wb.png" align = "left">
@@ -26,7 +26,3 @@ This folder contains supplemental material for the Working Paper "Demand for 'Sa
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/i2i.png" align = "right">
   </div>
 </div>
- 
-
-
-

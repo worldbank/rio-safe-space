@@ -20,4 +20,3 @@ This folder contains rider audits instruments for the Working Paper "Demand for 
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/i2i.png" align = "right">
   </div>
 </div>
- 

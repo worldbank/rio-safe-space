@@ -1,14 +1,26 @@
 # Demand for "Safe Spaces": Avoiding Harassment and Stigma
 
-This folder contains online appendices for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
+This folder contains the supplemental material and robustness checks appendices for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
-## Online appendices
+## Robustness checks
+- [Robustness checks appendix]()
 
-- **[Supplemental material]():** Questionnaires, ride tasks and survey protocols for rider audits and platform survey data.
-- **[Robustness checks]()**
+## Supplemental Material
+### Rider Audits
 
+- Rider reports: [Questionnaires and task descriptions per phase]()
+- Platform observations: [Task description]()
 
+### Platform Survey & IAT
 
+#### Survey Protocols
+- [Sampling Methodology]()
+
+#### Survey Instruments
+- [Platform Survey Instruments]()
+- [IAT Instruments]()
+
+## 
 <div class = "row">
   <div class = "column" style = "width:30%">
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/wb.png" align = "left">
@@ -17,4 +29,3 @@ This folder contains online appendices for the Working Paper "Demand for 'Safe S
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/i2i.png" align = "right">
   </div>
 </div>
- 

@@ -1,8 +1,13 @@
 # Demand for "Safe Spaces": Avoiding Harassment and Stigma
 
-This folder contains the replication package for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
+This repository contains supplemental material on platform survey and Implicit Association Test for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
-## Replication package
+## Survey Instruments
+- [Platform survey]()
+- [Implicit Association Test]()
+
+## Survey Protocols
+- [Platform survey & IAT protocol]()
 
 ## 
 <div class = "row">
