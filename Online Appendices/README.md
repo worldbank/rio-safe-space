@@ -2,10 +2,12 @@
 
 This folder contains online appendices for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
-## Folder content
+## Online appendices
 
-- **[Supplemental material]():** Questionnaires, ride tasks and survey protocols for rider audits and platform survey data.
-- **[Robustness checks]()**
+### [Supplemental material]():
+Questionnaires, ride tasks and survey protocols for rider audits and platform survey data.
+
+### [Robustness checks]()
 
 
 
