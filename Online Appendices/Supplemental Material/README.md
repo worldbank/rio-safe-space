@@ -1,4 +1,6 @@
-# Demand for “Safe Spaces”: Avoiding Harassment and Stigma
+# Demand for "Safe Spaces": Avoiding Harassment and Stigma
+
+This repository contains the supplemental material and robustness checks for the 2019 Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
 ## Robustness Checks
 
@@ -6,16 +8,16 @@
 
 ### Rider Audits
 
-- Rider reports: [Questionnaires and task descriptions per phase](https://github.com/worldbank/rio-safe-space/tree/replication-package-prep/Online%20Appendices/Supplemental%20Material/Rider%20audits/Rider%20reports)
-- Platform observations: 
+- Rider reports: [Questionnaires and task descriptions per phase]()
+- Platform observations: [Task description]()
 
 ### Platform Survey & IAT
 
 #### Survey Protocols
-- [Sampling Methodology](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey/Survey%20protocols/Sampling%20methodology.md)
+- [Sampling Methodology]()
 
 #### Survey Instruments
-- [Platform Survey Instruments](https://github.com/worldbank/rio-safe-space/tree/master/Supplemental%20Material/Platform%20survey/Survey%20instruments/Platform%20suvey%20questionnaire)
-- [IAT Instruments](https://github.com/worldbank/rio-safe-space/blob/master/Supplemental%20Material/Platform%20survey/Survey%20instruments/IAT%20Instrument.md)
+- [Platform Survey Instruments]()
+- [IAT Instruments]()
 
 
