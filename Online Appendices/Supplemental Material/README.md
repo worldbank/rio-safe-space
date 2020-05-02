@@ -2,8 +2,6 @@
 
 This repository contains the supplemental material and robustness checks for the 2019 Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
-## Robustness Checks
-
 ## Supplemental Material
 
 ### Rider Audits
