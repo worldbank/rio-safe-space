@@ -9,7 +9,7 @@ This folder contains rider audits instruments for the Working Paper "Demand for 
 - [Randomized car assignment rides]()
 - [Exit survey]()
 
-### Platform observations]
+### Platform observations
 - [Task description]()
 
 <div class = "row">
