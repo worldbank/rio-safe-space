@@ -1,6 +1,6 @@
 # Demand for "Safe Spaces": Avoiding Harassment and Stigma
 
-This repository contains the supplemental material and replication package for the 2019 Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
+This repository contains supplemental material for the 2020 Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
 ## Rider audits instruments
 
