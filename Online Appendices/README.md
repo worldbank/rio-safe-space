@@ -6,7 +6,6 @@ This folder contains the supplemental material and robustness checks appendices 
 - [Robustness checks appendix]()
 
 ## Supplemental Material
-
 ### Rider Audits
 
 - Rider reports: [Questionnaires and task descriptions per phase]()
@@ -30,4 +29,3 @@ This folder contains the supplemental material and robustness checks appendices 
     <img src="https://github.com/worldbank/rio-safe-space/blob/master/img/i2i.png" align = "right">
   </div>
 </div>
- 
