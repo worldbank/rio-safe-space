@@ -4,10 +4,8 @@ This folder contains online appendices for the Working Paper "Demand for 'Safe S
 
 ## Online appendices
 
-### [Supplemental material]():
-Questionnaires, ride tasks and survey protocols for rider audits and platform survey data.
-
-### [Robustness checks]()
+- **[Supplemental material]():** Questionnaires, ride tasks and survey protocols for rider audits and platform survey data.
+- **[Robustness checks]()**
 
 
 
