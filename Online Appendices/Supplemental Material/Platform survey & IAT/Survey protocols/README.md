@@ -1,4 +1,4 @@
-# Platform Survey Protocol
+# Platform Survey and IAT Protocol
 
 ## Settings
 - The survey will be administered every Monday, Tuesday and Thursday from 5 PM to 8 PM.
