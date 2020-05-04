@@ -15,92 +15,91 @@
     4. I prefer to ride in the public space
     5. I strongly prefer to ride in the public space
 
-4. How often do you take the mixed car while you had preferred to take the women-only car?
+3. How often do you take the mixed car while you had preferred to take the women-only car?
     1. Never
     2. Around 25% of my rides
     3. Around half of my rides
     4. Around 75% of my rides
     5. Always
     
-5. How often do you take the women’s-only car while you had preferred to take the mixed car?
+4. How often do you take the women’s-only car while you had preferred to take the mixed car?
     1. Never
     2. Around 25% of my rides
     3. Around half of my rides
     4. Around 75% of my rides
     5. Always
     
-6. When you were riding for Premise and the payment was the same between the two rides, did you:
+5. When you were riding for Premise and the payment was the same between the two rides, did you:
     1. Choose reserved space more often when riding for Premise than you would normally
     2. Choose public space more often when riding for Premise than you would normally
     3. Make about the same choices as you would normally
     (if a or b) Why?____________________________________
 
-**Introduction to questions 7-11**: Imagine that you were taking a ride during your usual rush hour commute.  Please imagine 1) you are offered to buy either a ticket for the public or reserved space and 2) you can only ride in the space you bought the ticket for and 
-3) the enforcement of the women’s-only rule is the same as normal.
+**Introduction to questions 6-10**: 
+Imagine that you were taking a ride during your usual rush hour commute. Please imagine:
+1) You are offered to buy either a ticket for the public or reserved space 
+2) You can only ride in the space you bought the ticket for  
+3) The enforcement of the women’s-only rule is the same as normal
 
-**Options for questions 7-11**
+**Answer options for questions 6-17**
  - Always ride in public space
  - Mostly ride in public space
  - Sometimes ride in public space, sometimes ride in reserved space
  - Mostly ride in reserved space
  - Always ride in reserved space
     
-7. Which space would you prefer to ride given these options:
+6. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00 reais for a ticket on the public space
     - Option 2: You pay 5.00 reais for a ticket on the reserved space
-8. Which space would you prefer to ride given these options:
+7. Which space would you prefer to ride given these options:
     - Option 1: You are paid 5.00 reais for a ticket on the public space
     - Option 2: You are paid 5.10 reais for a ticket on the reserved space
-9. Which space would you prefer to ride given these options:
+8. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on the public space
     - Option 2: You pay 5.15 reais for a ticket on the reserved space
-10. Which space would you prefer to ride given these options:
+9. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on the public space
     - Option 2: You pay 5.30 reais for a ticket on the reserved space
-11. Which space would you prefer to ride given these options:
+10. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on the public space
     - Option 2: You pay 5.65 reais for a ticket on the reserved space
  
-**Introduction to questions 12-14**
-_Imagine that you were taking a ride during your usual rush hour commute.  
-Please imagine 1) you are paid to ride the Supervia and collect data on your experience on either the mixed or or reserved space and 
-2) you have to select which space to take prior to boarding and 3) the enforcement of the women’s-only rule is the same as normal._
+**Introduction to questions 11-12**: 
+Imagine that you were taking a ride during your usual rush hour commute. Please imagine: 
+1) you are paid to ride the Supervia and collect data on your experience on either the mixed or or reserved space 
+2) you have to select which space to take prior to boarding  
+3) the enforcement of the women’s-only rule is the same as normal
   
-9. Which space would you prefer to ride given these options:
+11. Which space would you prefer to ride given these options:
     - Option 1: You are paid 5.00 reais to ride the public space
     - Option 2: You are paid 5.30 reais to ride the reserved space
-10. Which space would you prefer to ride given these options:
+12. Which space would you prefer to ride given these options:
     - Option 1: You are paid 15.00  reais to ride the public space
     - Option 2: You are paid 15.30 reais to ride the reserved space
-11. Now imagine that the authorities were able to enforced the women’s-only rule 100% of the time, meaning that they are able to make sure no men ride in the women’s-only car; in that case, which of the cars would you prefer to ride?
+ 
+13. Now imagine that the authorities were able to enforced the women’s-only rule 100% of the time, meaning that they are able to make sure no men ride in the women’s-only car; in that case, which of the cars would you prefer to ride?
     1. I would strongly prefer to ride the reserved space
     2. I would prefer to ride the reserved space
     3. I would have no preference between the two
     4. I would prefer to ride the public space
     5. I would strongly prefer to ride the reserved space
 
-_Imagine that you were taking a ride during your usual rush hour commute.  Please imagine 
-1) you are offered to buy either a ticket for the public space or reserved space, 
-2) You can only ride the car you bought the ticket for and 
-3) The authorities were able to enforce the women’s-only rule 100% of the time (no men in feminine cars)._
+**Introduction to questions 14-17**
+Imagine that you were taking a ride during your usual rush hour commute. Please imagine: 
+1) You are offered to buy either a ticket for the public space or reserved space
+2) You can only ride the car you bought the ticket for  
+3) The authorities were able to enforce the women’s-only rule 100% of the time (no men in feminine cars).
 
-_Options:_
-1. Always ride in public space
-2. Mostly ride in public space
-3. Sometimes ride in public space, sometimes ride in reserved space
-4. Mostly ride in reserved space
-5. Always ride in reserved space
-
-11. Which space would you prefer to ride given these options:
+14. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00 reais for a ticket on the public space
     - Option 2: You pay 5.00 reais for a ticket on the reserved space
-12. Which space would you prefer to ride given these options:
+15. Which space would you prefer to ride given these options:
     - Option 1: You are paid 5.00 reais for a ticket on the public space
     - Option 2: You are paid 5.10 reais for a ticket on the reserved space
-13. Which space would you prefer to ride given these options:
+16. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on thepublic space
     - Option 2: You pay 5.30 reais for a ticket on the reserved space
-14. Which space would you prefer to ride given these options:
+17. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00  reais for a ticket on thepublic space
     - Option 2: You pay 5.65 reais for a ticket on the reserved space
     
@@ -108,10 +107,11 @@ _Options:_
 
 16. What do you think are the disadvantages of the reserved space?  _(Open-ended)_
 
- _Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the public space._ 
+_Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the public space._ 
 
-17. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the mixed car??  ___ percent   
-    ____ I don’t feel comfortable answering this question
+17. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the mixed car??  
+____ percent   
+____ I don’t feel comfortable answering this question
 
 18. How often do you think a man would make unwanted sexual comments during a year of commuting, while traveling in the public space? 
     1. Never
@@ -125,7 +125,7 @@ _Options:_
     
 19. What do you think is the chance that inside the train a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the mixed car?? 
     ____ percent  
-    ____I don’t feel comfortable answering this question
+    ____ I don’t feel comfortable answering this question
     
 20. How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the public space?
     1. Never
@@ -138,8 +138,8 @@ _Options:_
     8. I don’t feel comfortable answering this question
     
 21. What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the public space?
-    ___ percent   
-    ____I don’t feel comfortable answering this question
+    ____ percent   
+    ____ I don’t feel comfortable answering this question
     
 22. How often do you think someone would rob her at some point during a year of commuting?
     1. Never
@@ -154,8 +154,8 @@ _Options:_
 _Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the reserved space. _
 
 23. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the reserved space?  
-    _____ percent  
-     ____I don’t feel comfortable answering this question
+    ____ percent   
+    ____ I don’t feel comfortable answering this question
 
 24.  How often do you think a man would make unwanted sexual comments during a year of commuting, while traveling in the reserved space? 
     1. Never
@@ -167,8 +167,9 @@ _Now Imagine a woman similar to you who rides the supervia every day to work on 
     7. Several times a week
     8. I don’t feel comfortable answering this question
     
-25.  What do you think is the chance that inside the train a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car? _____ percent 
-     ____I don’t feel comfortable answering this question
+25.  What do you think is the chance that inside the train a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car? 
+    ____ percent   
+    ____ I don’t feel comfortable answering this question
 
 26.  How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car?
     1. Never
@@ -181,8 +182,8 @@ _Now Imagine a woman similar to you who rides the supervia every day to work on 
     8. I don’t feel comfortable answering this question
 
 27.  What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the women’s-only car?
-    _____ percent  
-     ____I don’t feel comfortable answering this question
+    ____ percent   
+    ____ I don’t feel comfortable answering this question
 
 28.  How often do you think someone would rob her at some point during a year of commuting, while traveling in the reserved space?
     1. Never
