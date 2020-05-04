@@ -1,7 +1,9 @@
 
 # Demographic Survey
 
-Consent to taking GPS location
+Riders are requested to take the survey at their home location 
+
+At the start of the survey: request for consent to taking GPS location
 
 1. Take a photo of yourself, if you're comfortable
 
