@@ -38,12 +38,7 @@
 **Introduction to questions 6-10**: 
 Imagine that you were taking a ride during your usual rush hour commute. Please imagine: i) you are offered to buy either a ticket for the public or reserved space, ii) you can only ride in the space you bought the ticket for, and iii) the enforcement of the women’s-only rule is the same as normal.
 
-**Answer options for questions 6-17**
-    1. Always ride in public space
-    2. Mostly ride in public space
-    3. Sometimes ride in public space, sometimes ride in reserved space
-    4. Mostly ride in reserved space
-    5. Always ride in reserved space
+**Answer options for questions 6-17**: i) Always ride in public space; ii) Mostly ride in public space; iii) Sometimes ride in public space, sometimes ride in reserved space; iv) Mostly ride in reserved space; v) Always ride in reserved space.
     
 6. Which space would you prefer to ride given these options:
     - Option 1: You pay 5.00 reais for a ticket on the public space
