@@ -1,6 +1,8 @@
 
 # Demographic Survey
 
+Consent to taking GPS location
+
 1. Take a photo of yourself, if you're comfortable
 
 2. What is your gender?
