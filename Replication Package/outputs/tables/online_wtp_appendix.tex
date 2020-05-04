@@ -1,0 +1,35 @@
+\begin{tabular}{l*{2}{c}} \hline\hline \\[-1.8ex] & \multicolumn{2}{c}{\begin{tabular}{@{}c@{}}Dependent variable: \\ Chose reserved space \end{tabular}} \\ 
+                    &\multicolumn{1}{c}{(1)}         &\multicolumn{1}{c}{(2)}         \\
+ \hline \\[-1ex] \multicolumn{3}{c}{\textit{Panel A: Overall}} \\\\[-1ex]
+Positive opportunity cost&      -0.193\sym{***}&      -0.193\sym{***}\\
+                    &     (0.014)         &     (0.014)         \\
+[1em]
+Constant            &       0.279\sym{***}&       0.279\sym{***}\\
+                    &     (0.016)         &     (0.016)         \\
+\\[-1.8ex] \hline \\[-1.8ex] \multicolumn{3}{c}{\textit{Mean dependent variable}} \\ Zero opportunity cost & \multicolumn{2}{c}{0.279} \\ & \multicolumn{2}{c}{(0.016)} \\\\[-1ex] 
+
+\hline \\[-1ex] \multicolumn{3}{c}{\textit{Panel B: Heterogeneous effects by male presence in reserved space}} \\\\[-1ex]
+$\hat\beta_{M_1}$: Positive opportunity cost $\times$ Few men in reserved space&       0.096\sym{***}&       0.075\sym{***}\\
+                    &     (0.013)         &     (0.014)         \\
+[1em]
+$\hat\beta_{M_2}$: Zero opportunity cost $\times$ Few men in reserved space&       0.312\sym{***}&       0.289\sym{***}\\
+                    &     (0.021)         &     (0.022)         \\
+[1em]
+$\hat\beta_{M_3}$: Positive opportunity cost $\times$ Many men in reserved space&       0.074\sym{***}&       0.030\sym{*}  \\
+                    &     (0.011)         &     (0.017)         \\
+[1em]
+$\hat\beta_{M_4}$: Zero opportunity cost $\times$ Many men in reserved space&       0.242\sym{***}&       0.197\sym{***}\\
+                    &     (0.017)         &     (0.022)         \\
+\\[-1.8ex] \hline \\[-1.8ex] \multicolumn{3}{c}{\textit{Mean dependent variable}} \\ Zero opportunity cost $\times$ Few men in reserved space & \multicolumn{2}{c}{0.312} \\ & \multicolumn{2}{c}{(0.021)} \\ Zero opportunity cost $\times$ Many men in reserved space & \multicolumn{2}{c}{0.242} \\ & \multicolumn{2}{c}{(0.017)} \\\\[-1ex] 
+Observations        &       13622         &       13622         \\
+Riders              &         229         &         229         \\
+Line fixed effect   &          No         &         Yes         \\
+\hline \\[-1ex]  \multicolumn{3}{c}{\textit{Post-estimate tests for heterogeneous effects}} \\\\[-1ex] \multicolumn{3}{l}{By opportunity cost: zero opportunity cost - positive opportunity cost} \\ \quad Few men in reserved space: $\hat\beta_{M_2} - \hat\beta_{M_1}$&       0.216         &       0.214         \\
+\quad P-value       &       0.000         &       0.000         \\
+\quad Many men in rserved space: $\hat\beta_{M_4} - \hat\beta_{M_3}$ &       0.168         &       0.167         \\
+\quad P-value       &       0.000         &       0.000         \\
+\multicolumn{3}{l}{By male presence in reserved space: few men - many men in reserved space} \\ \quad Zero opportunity cost: $\hat\beta_{M_2} - \hat\beta_{M_4}$&       0.070         &       0.093         \\
+\quad P-value       &       0.001         &       0.000         \\
+\quad Positive oppotunity cost: $\hat\beta_{M_1} - \hat\beta_{M_3}$ &       0.022         &       0.045         \\
+\quad P-value       &       0.110         &       0.004         \\
+\hline\hline \end{tabular}
