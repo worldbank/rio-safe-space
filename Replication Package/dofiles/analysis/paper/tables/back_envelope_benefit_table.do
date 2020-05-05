@@ -173,7 +173,7 @@
 	PART 3.1: Average number of rides in a working year
 ------------------------------------------------------------------------------*/
 
-	use "${dt_final}\pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
 
 	keep user_id ride_frequency
 

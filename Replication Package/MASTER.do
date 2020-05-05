@@ -10,7 +10,7 @@
 					PART 4:  Analysis
 
 ********************************************************************************
-	PART 0: USER INPUTS															
+	PART 0: USER INPUTS
 ********************************************************************************/
 
 	ieboilstart, v(14.0)  matsize(10000)
@@ -20,13 +20,13 @@
 	Set folder paths
 ------------------------------------------------------------------------------*/
 
-	global github		"GitHub/rio-safe-space/Replication Package"		//	<----------------------------------------- ADD PATH TO YOUR CLONE HERE
+	global github		"/users/bbdaniels/GitHub/rio-safe-space/Replication Package"		//	<----------------------------------------- ADD PATH TO YOUR CLONE HERE
 
 /*------------------------------------------------------------------------------
 	Select sections to run
 ------------------------------------------------------------------------------*/
 
-	local packages			0 // Change to 1 to install user-written commands used in the project
+	local packages			1 // Change to 1 to install user-written commands used in the project
 	local mainresults		1
 
 /*------------------------------------------------------------------------------
@@ -38,7 +38,7 @@
 								pink_lowcompliance mixed_lowcompliance
 	global interactionvars_oc	pos_highcompliance zero_highcompliance ///
 								pos_lowcompliance  zero_lowcompliance
-	
+
 	* Balance variables (Table 1)
 	global balancevars1			d_employed age_year educ_year ride_frequency ///
 								home_rate_allcrime home_rate_violent home_rate_theft ///
@@ -64,7 +64,7 @@
 	global col_aux_light	gs12
 	global col_highlight	cranberry
 	global col_box			gs15
-	
+
 	global paper_plotops	graphregion(color(white)) ///
 							bgcolor(white) ///
 							ylab(, glcolor(${col_box})) ///
@@ -73,7 +73,7 @@
 							bgcolor(white) ///
 							ylab(, glcolor(${col_box}) labsize(${grlabsize})) ///
 							xlab(, labsize(${grlabsize}) noticks)
-							
+
 	global plot_options		${paper_plotops}
 	global lab_womencar		Reserved space
 	global lab_mixedcar		Public space
@@ -104,6 +104,7 @@
 		ssc install	ietoolkit,	replace
 		ssc install	geodist, 	replace
 		ssc install	reclink, 	replace
+		ssc install	unique, 	replace
 		ssc install estout, 	replace
 		ssc install ranktest,	replace
 		ssc install ivreg2, 	replace
@@ -135,8 +136,8 @@
 		*	CREATES: ${out_graphs}/Paper/eventstudy_bypremium.png			   *
 		************************************************************************
 
-		do "${do_graphs}/eventstudy_bypremium.do"	
-	
+		do "${do_graphs}/eventstudy_bypremium.do"
+
 		************************************************************************
 		* Figure 3: Take-up of reserved space by opportunity cost			   *
 		*----------------------------------------------------------------------*
@@ -146,14 +147,14 @@
 		************************************************************************
 
 		do "${do_graphs}/takeup.do"
-		
+
 	****************************************************************************
 	* Figure 4: Joint distribution of takeup and harassment by presence of men *
 	*--------------------------------------------------------------------------*
 	*	REQUIRES: 	${dt_final}/pooled_rider_audit_constructed.dta		 	   *
 	* 	CREATES:  	${out_graphs}/wtp_harass.png						 	   *
 	****************************************************************************
-		
+
 		do "${do_graphs}/wtp_harass.do"
 
 		************************************************************************
@@ -168,7 +169,7 @@
 
 		do "${do_graphs}/iatscores.do"
 
-		
+
 * Main tables ==================================================================
 
 		************************************************************************
@@ -178,7 +179,7 @@
 		*	  		  ${dt_final}/platform_survey_constructed.dta	 		   *
 		*	CREATES:  ${out_tables}/balance_table.tex						   *
 		************************************************************************
-		
+
 		do "${do_tables}/balance_table.do"
 
 		************************************************************************
@@ -190,7 +191,7 @@
 		*			  ${out_tables}/online_wtp_main.tex					   	   *
 		*			  ${out_tables}/online_wtp_appendix.tex					   *
 		************************************************************************
-		
+
 		do "${do_tables}/wtp.do"
 
 	****************************************************************************
@@ -202,7 +203,7 @@
 	*			  ${out_tables}/online_carimpactharassment_main.tex			   *
 	*			  ${out_tables}/online_carimpactharassment_appendix.tex		   *
 	****************************************************************************
-	
+
 		do "${do_tables}/carimpactharassment.do"
 
 		************************************************************************
@@ -212,18 +213,18 @@
 		*	CREATES:  ${out_tables}/paper_wtprisk.tex						   *
 		*			  ${out_tables}/online_wtprisk.tex						   *
 		************************************************************************
-		
+
 		do "${do_tables}/wtprisk.do"
-		
+
 		************************************************************************
 		* Table 5: Back-of-envelope estimates of cost of harassment			   *
 		*----------------------------------------------------------------------*
 		*	REQUIRES: ${dt_final}/pooled_rider_audit_constructed_full.dta 	   *
 		*	CREATES: ${out_tables}/back_envelope_costs_full.tex  			   *
 		************************************************************************
-		
+
 		do "${do_tables}/back_envelope_benefit_table.do"
-		
+
 * Appendix figures =============================================================
 
 		************************************************************************
@@ -233,7 +234,7 @@
 		*			  ${dt_rider_int}/congestion_station_level.dta			   *
 		*	CREATES:  ${out_graphs}/loadfactor.png							   *
 		************************************************************************
-		
+
 		do "${do_graphs}/loadfactor.do"
 
 		************************************************************************
@@ -272,9 +273,9 @@
 		*	CREATES:	${out_graphs}/Paper/eventstudy.png					   *
 		*				${out_graphs}/Paper/eventstudy_hist.png				   *
 		************************************************************************
-		
+
 		do "${do_graphs}/eventstudy.do"
-		
+
 		************************************************************************
 		* Figure A8: Advantages of reserved space: unprompted responses from   *
 		* participants of rider crowdsourcing								   *
@@ -316,7 +317,7 @@
 
 		do "${do_graphs}/beliefs.do"
 
-	
+
 * Appendix tables ==============================================================
 
 		************************************************************************
@@ -326,7 +327,7 @@
 		*				${dt_final}/platform_survey_constructed.dta   		   *
 		*	CREATES:	${out_tables}/sample_table.tex						   *
 		************************************************************************
-		
+
 		do "${do_tables}/sample_table.do"
 
 		************************************************************************
@@ -356,7 +357,7 @@
 		************************************************************************
 
 		do "${do_tables}/priming.do"
-		
+
 		************************************************************************
 		* Table A6: Test for order effects in on screen presentation of 	   *
 		* public / reserved space											   *
@@ -386,7 +387,7 @@
 	*			  ${out_tables}/online_wellbeing_main.tex					   *
 	*			  ${out_tables}/online_wellbeing_appendix.tex				   *
 	****************************************************************************
-		
+
 		do "${do_tables}/wellbeing.do"
 
 		************************************************************************
@@ -436,14 +437,13 @@
 		*	REQUIRES: ${dt_final}/pooled_rider_audit_phase3_offers.dta	   	   *
 		*	CREATES:  ${out_tables}/phase3participation.tex					   *
 		************************************************************************
-		
+
 		do "${do_tables}/phase3participation.do"
-		
+
 	}
-		
-		
+
+
 /*******************************************************************************
 	Congratulations, you've made it to the end of the do files!
 	(Actually, there are a lot more that didn't make the final cut)
 *******************************************************************************/
-	
