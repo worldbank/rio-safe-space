@@ -40,12 +40,10 @@
 	Create plot
 *******************************************************************************/
 
-	twoway 	(bar  pct_standing_public time_bin ///
-				  , ///
-				  barwidth(.5) lcolor(${col_mixedcar}) fcolor(none)) ///
-			(bar  pct_standing_reserved time_bin ///
-				  , ///
-				  barwidth(.5) lcolor(${col_womencar}) fcolor(none)) ///
+	twoway 	(bar  pct_standing_public time_bin, ///
+				barwidth(.5) color(${col_mixedcar}%30)) ///
+			(bar  pct_standing_reserved time_bin, ///
+				barwidth(.5) color(${col_womencar}%30)) ///
 			(line loadfact hora if hora <= 22, color(gs10) yaxis(2)) ///			Line plot: load factor
 		, ///				
 		xline(12, lcolor(${col_highlight}) lpattern(dot)) ///				    			Separate AM and PM
