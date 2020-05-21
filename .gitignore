@@ -1,0 +1,4 @@
+
+*.dta
+*.rds
+Replication Package/dofiles/ado/encode stations.do
