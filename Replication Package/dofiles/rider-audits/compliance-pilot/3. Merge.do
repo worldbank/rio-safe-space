@@ -1,22 +1,18 @@
 /*******************************************************************************
-*								Rio Pink Car								   *
+* 			Demand for "Safe Spaces": Avoiding Harassment and Stigma		   *
+* 						 Merge compliance pilot ride tasks				 	   *
 ********************************************************************************
 
-	** PURPOSE:  	Merge demo and ride data
-	
-	** OUTLINE:		PART 1:  Merge demo and check-in data	
-					PART 2:  Merge ride and check-out data
-					PART 3:  Order data
-					PART 4:  Create new variables
-					PART 5:  Label variables
-					PART 6:  Label values
-					PART 7:  Save data
-					
-	** IDS VAR: 	user_id
-	
-	** NOTES:		
+	REQUIES:	${dt_int}/compliance_pilot_ci.dta
+				${dt_int}/compliance_pilot_ride.dta
+				${dt_int}/compliance_pilot_co.dta
+				${dt_int}/compliance_pilot_demographic.dta
+				${dt_int}/compliance_pilot_clean_mapping_long.dta
+				${doc_rider}/compliance-pilot/codebooks/merged.xlsx
+				
+	CREATES:	${dt_int}/compliance_pilot_merged.dta
 				  
-	** WRITEN BY:   Luiza Andrade [lcardosodeandrad@worldbank.org]	
+	WRITEN BY:  Luiza Andrade 
 
 ********************************************************************************
 *	Merge ride tasks

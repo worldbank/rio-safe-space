@@ -4,7 +4,8 @@
 ********************************************************************************
 	
 	REQUIRES:	${dt_raw}/compliance_pilot_deidentified.dta
-	CREATES:	${dt_rider_int}/compliance_pilot_co.dta
+				${doc_rider}/compliance-pilot/codebooks/check_out.xlsx
+	CREATES:	${dt_int}/compliance_pilot_co.dta
 	
 	WRITEN BY:  Luiza Andrade [lcardoso@worldbank.org]
 	
