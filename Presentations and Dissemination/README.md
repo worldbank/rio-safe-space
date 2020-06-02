@@ -3,8 +3,8 @@
 This folder contains the dissemination outputs for the Working Paper "Demand for 'Safe Spaces': Avoiding Harassment and Stigma" by Florence Kondylis, Arianna Legovini, Kate Vyborny, Astrid Zwager, and Luiza Andrade.
 
 ## Presentations and Dissemination
-- [Most recent version of full paper](https://github.com/worldbank/rio-safe-space/blob/master/Presentations%20and%20Dissemination/Demand_for_Safe_Spaces_042320.pdf)
-- [Policy Brief]()
+- [Most recent version of full paper](WP-Safe_Space_Harassment_Stigma.pdf)
+- [Policy Brief](Policy\%20brief.pdf)
 
 ## 
 <div class = "row">
