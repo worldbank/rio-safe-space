@@ -1,0 +1,13 @@
+# Ethics
+
+The Duke University IRB reviewed and approved the protocol for all components of fieldwork (IRB number D0190).  We took several measures to avoid placing any undue burden or risk on participants.  
+
+First, we recruited a sample of women most of whom ride the SuperVia on a regular basis regardless of the study.  The total payment was roughly double the cost of a ticket on SuperVia.  Thus the payment after covering the cost of the ticket and the time taken to ride would be worth relatively little to a participant who had no other purpose in riding.  So participants were already familiar with the SuperVia system, its environment and the segregated space policy.  
+
+Second, before proceeding to rides offering positive opportunity cost for riding the reserved space, we reviewed the data and verified that majority of participants of zero cent opportunity cost rides had experience riding the public space.  In fact, all the participants who continued past the zero cent opportunity cost rides chose the public space on at least some of those rides in the study.  In addition, fewer than 2\% of participants responding to a question about usual ride space reported that they always choose the reserved space.  
+
+Third, participation in each ride opportunity was voluntary, and participants were paid for each ride they completed shortly after completion, regardless of the total number they completed. Thus participants could choose to discontinue participation at any time if they felt uncomfortable. In the revealed preference phase of the experiment, the order of the premia offered to ride in the public space was fixed for each rider, and the same task was offered until completed. In each of these rides, participants were always offered the possibility to ride in the women-reserved space for the same base pay-out as was offered in the initial stage of the experiment. In the randomized assignment phase, the task assignment was independent of previous assigned spaces and a rider's decision to take-up that task.
+
+Fourth, in the phase of the experiment during which riders were randomly assigned to ride in a particular space, participants were asked about whether they experienced any harassment. In case a respondent reported any harassment, the app directed her to the platform guards to whom she could report harassment incidences on SuperVia, who are trained to respond to these reports, as well as to other resources available in the Rio area. 
+
+Finally, for the development of all protocols and sensitive survey questions in the project we took feedback from gender experts at the World Bank and local researchers working on gender related issues to ensure that these were worded appropriately.  
