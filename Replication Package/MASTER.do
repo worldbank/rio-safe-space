@@ -53,6 +53,8 @@
 	* Other adjustment margins (Table A7)
 	global adjustind 			CI_wait_time_min d_against_traffic CO_switch ///
 								RI_spot CI_time_AM CI_time_PM
+								
+	global star					nostar
 
 /*------------------------------------------------------------------------------
 	Plot settings
