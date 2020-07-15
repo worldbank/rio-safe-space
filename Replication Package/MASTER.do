@@ -27,10 +27,10 @@
 	Select sections to run
 ------------------------------------------------------------------------------*/
 
-	local  cleaning			1 // Run data cleaning
-	global encrypted		1 // Start from identified data
+	local  cleaning			0 // Run data cleaning
+	global encrypted		0 // Start from identified data
 	local  packages			0 // Install user-written commands used in the project
-	local  mainresults		0
+	local  mainresults		1
 
 /*------------------------------------------------------------------------------
 	Set control variables
@@ -42,7 +42,7 @@
 	global interactionvars_oc	pos_highcompliance zero_highcompliance ///
 								pos_lowcompliance  zero_lowcompliance
 
-* Balance variables (Table 1)
+	* Balance variables (Table 1)
 	global balancevars1			d_employed age_year educ_year ride_frequency ///
 								home_rate_allcrime home_rate_violent home_rate_theft ///
 								grope_pink_cont grope_mixed_cont ///
@@ -54,12 +54,14 @@
 	global adjustind 			CI_wait_time_min d_against_traffic CO_switch ///
 								RI_spot CI_time_AM CI_time_PM
 
-  global star					nostar
+	global star					nostar
 
 /*------------------------------------------------------------------------------
 	Plot settings
 ------------------------------------------------------------------------------*/
 
+	set scheme s2color
+	
 	global grlabsize 		4
 	global col_womencar		purple
 	global col_mixedcar 	`" "18 148 144" "' // teal
@@ -124,7 +126,7 @@
 	do 		"${do}/ado/table_options.ado"
 	do 		"${do}/ado/iemetasave.ado"
 	do 		"${do}/ado/iecodebook.ado"
-
+	
 
 ********************************************************************************
 *						   PART 3: Data preparation     					   *
@@ -151,7 +153,7 @@
 
 		do "${do_graphs}/eventstudy_bypremium.do"	
 		
-    ************************************************************************
+		************************************************************************
 		* Figure 3: Take-up of reserved space by opportunity cost			   *
 		*----------------------------------------------------------------------*
 		*	REQUIRES: ${dt_final}/pooled_rider_audit_constructed.dta		   *
@@ -192,7 +194,7 @@
 		*	CREATES:  ${out_tables}/balance_table.tex						   *
 		************************************************************************
 		
-    do "${do_tables}/balance_table.do"
+		do "${do_tables}/balance_table.do"
 
 		************************************************************************
 		* Table 2: Revealed preferences, overall and by ride condition		   *
@@ -204,7 +206,7 @@
 		*			  ${out_tables}/online_wtp_appendix.tex					   *
 		************************************************************************
 		
-    do "${do_tables}/wtp.do"
+		do "${do_tables}/wtp.do"
 
 	****************************************************************************
 	* Table 3: Impact of randomized assignment of space on reported harassment *
@@ -216,7 +218,7 @@
 	*			  ${out_tables}/online_carimpactharassment_appendix.tex		   *
 	****************************************************************************
 		
-    do "${do_tables}/carimpactharassment.do"
+		do "${do_tables}/carimpactharassment.do"
 
 		************************************************************************
 		* Table 4: Revealed preferences by rider risk perception			   *
@@ -226,7 +228,7 @@
 		*			  ${out_tables}/online_wtprisk.tex						   *
 		************************************************************************
 
-    do "${do_tables}/wtprisk.do"
+		do "${do_tables}/wtprisk.do"
 		
 		************************************************************************
 		* Table 5: Back-of-envelope estimates of cost of harassment			   *
@@ -327,7 +329,7 @@
 	*	CREATES:  ${out_graphs}/beliefs.png									   *
 	****************************************************************************
 
-		do "${do_graphs}/beliefs.do"
+	do "${do_graphs}/beliefs.do"
 
 * Appendix tables ==============================================================
 
@@ -339,7 +341,7 @@
 		*	CREATES:	${out_tables}/sample_table.tex						   *
 		************************************************************************
 
-    do "${do_tables}/sample_table.do"
+		do "${do_tables}/sample_table.do"
 
 		************************************************************************
 		* Table A3: Correlation between platform observations data and rider   *
@@ -369,7 +371,7 @@
 
 		do "${do_tables}/priming.do"
 
-    ************************************************************************
+		************************************************************************
 		* Table A6: Test for order effects in on screen presentation of 	   *
 		* public / reserved space											   *
 		*----------------------------------------------------------------------*
@@ -399,7 +401,7 @@
 	*			  ${out_tables}/online_wellbeing_appendix.tex				   *
 	****************************************************************************
 
-  do "${do_tables}/wellbeing.do"
+	do "${do_tables}/wellbeing.do"
 
 		************************************************************************
 		* Table A9: Social norms survey										   *
