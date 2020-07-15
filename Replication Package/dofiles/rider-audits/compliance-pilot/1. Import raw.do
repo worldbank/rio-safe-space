@@ -71,6 +71,11 @@
 	foreach stationCode in 1 2 4 5 7 8  {
 		replace 	user_station = user_station`stationCode' 	if user_station`stationCode' != ""
 	}
+	
+	gen 	user_home_station = ""
+	foreach stationCode in 1 4 7 8 9 {
+		replace 	user_home_station = user_home_station`stationCode' 	if user_home_station`stationCode' != ""
+	}
 
 	foreach lineName in roxo deodoro japeri cruz saracuruna {
 		local typeVar : type user_line_phiii_`lineName'
@@ -84,7 +89,9 @@
 	replace user_line = "Ramal Santa Cruz" 	if user_station == "Campo Grande" & user_line == "Ramal Deodoro"
 	replace user_line = "Ramal Japeri" 		if user_station == "Japeri" & user_line == "Ramal Deodoro"
 	
-	foreach var in user {
+	rename user_line_home user_home_line 
+	
+	foreach var in user user_home {
 		rename 	`var'_line 		lineVar
 		rename 	`var'_station 	stationVar
 		do 		"${do}/ado/encode stations.do"
@@ -92,17 +99,25 @@
 		drop	lineVar stationVar
 	}
 
+	* There was a problem with the line option for one of the stations. This fixes it:
+	* --------------------------------------------------------------------------------
+	merge m:1 session_id spec_translated using "${doc_rider}/compliance-pilot/station_correctons.dta", ///
+			  update replace ///
+			  assert(1 4 5) ///
+			  nogen
+	
+	
 	* Fix start time variable
 	* -----------------------
 	replace started = substr(started, 1, `=strpos(started, ".") -1')
-	gen 	started_ = clock(started, "YMDhms")
-	drop 	started
-	rename 	started_ started
-	format  started %tc
 	
+		
 /*******************************************************************************
 	Save raw data
 *******************************************************************************/
+	
+	save				"${encrypt}/compliance_pilot_raw_corrected.dta", replace
+	iemetasave using	"${dt_raw}/compliance_pilot_raw_corrected.txt", short replace
 	
 	dropmiss, force	
 	

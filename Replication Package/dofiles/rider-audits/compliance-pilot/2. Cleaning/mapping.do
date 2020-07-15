@@ -63,8 +63,8 @@
 		replace station_bin = 9  if station >= 221 & station <= 224
 		replace station_bin = 10 if station >= 301 & station <= 306
 		replace station_bin = 11 if station >= 307 & station <= 311
-		replace station_bin = 12 if station >= 312 & station <= 316
-		replace station_bin = 13 if station >= 317 & station <= 320
+		replace station_bin = 12 if station >= 312 & station <= 315
+		replace station_bin = 13 if station >= 316 & station <= 320
 		replace station_bin = 14 if station >= 401 & station <= 405
 		replace station_bin = 15 if station >= 406 & station <= 410
 		replace station_bin = 16 if station >= 411 & station <= 415

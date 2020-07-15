@@ -64,10 +64,6 @@
 	replace RI_alone = 1  if known_rider == "Sim"
 	replace RI_alone = 0  if regexm(known_rider, "N")
 	
-	gen 	RI_started = clock(started, "YMDhms")
-	format  RI_started %tc
-
-	
 /*******************************************************************************
 	New variable
 *******************************************************************************/

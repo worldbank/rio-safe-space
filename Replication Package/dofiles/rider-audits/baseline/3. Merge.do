@@ -32,62 +32,168 @@
 	* ------------------
 	merge m:1 user_uuid using "${dt_int}/baseline_demographic.dta", gen(demo_merge)	// 551 riders completed demo survey
 	
-	* Merged users: 307
+	* Merged users
 	unique user_uuid if demo_merge == 3
-	assert r(unique) == 307
+	assert r(unique) == 309
 	
-	* No rides: 244	
+	* No rides	
 	unique user_uuid if demo_merge == 2
-	assert r(unique) == 244
+	assert r(unique) == 247
 	drop if demo_merge == 2														// drop users with no ride data
 
-	* No demo: 193
+	* No demo
 	unique user_uuid if demo_merge == 1
-	assert r(unique) == 193
+	assert r(unique) == 197
 	drop demo_merge
 	
 	gen 	flag_nodemovars = (user_age == .)
 	
-/*******************************************************************************
-	Merge to mapping
-*******************************************************************************/
+	* ----------------
+	* Make corrections
+	* ----------------
+	
+	preserve
+	
+		import delimited using "${doc_rider}/baseline-study/demo-data-corrections.csv", encoding(utf8) clear 
+		
+		tempfile demo_corr
+		save	`demo_corr'
 
+	restore
+	
+	merge m:1 user_uuid using `demo_corr', assert(1 3) nogen
+	
+	drop if drop_user == 1 														// drop users that are found to be fraudulent
+	
+	replace user_gender = user_gender_corr if !missing(user_gender_corr)
+
+	isid 	session
+	sort 	session
+	order 	user_uuid session
+	compress
+	
+	save 			 "${dt_int}/baseline_merged_rides.dta", replace
+	iemetasave using "${dt_int}/baseline_merged_rides.txt", replace
+
+/*******************************************************************************
+	Prepare mapping to merge with rides
+********************************************************************************/	
+		
+	use "${dt_int}/baseline_mapping.dta", clear
+
+*-------------------------------------------------------------------------------
+* 	Identifying variables
+*	(These are the variables that we need to merge with ride data)
+*-------------------------------------------------------------------------------
+
+	* Correct line
+	* ------------	
+	gen 	CI_line = .
+	replace CI_line = 1 if station_bin >= 1 & station_bin <= 4
+	replace CI_line = 2 if station_bin >= 5 & station_bin <= 9
+	replace CI_line = 3 if station_bin >= 10 & station_bin <= 13
+	replace CI_line = 4 if station_bin >= 14 & station_bin <= 17
+	replace CI_line = 5 if station_bin >= 18 & station_bin <= 22
+
+	* Create unique time and station bin identifier
+	* ---------------------------------------------
+	gen 	time_station_bin = station_bin * 1000 + time_bin
+	gen 	stage = 0
+		
+*-------------------------------------------------------------------------------
+* 	Collapse observations
+*	(Because we have multiple observations for each time and station bin,
+*	 we need to aggregate them)
+*-------------------------------------------------------------------------------
+	
+	* Continuous version of compliance variables -------------------------------
+	* (We need a granular version of this variable, so cannot just use the median.
+	*  We'll create a continuous version of it using the median value of the
+	*  interval, so we can aggregate using the average)
+	* --------------------------------------------------------------------------	
+	recode 	pink_car_compliance 	(1 = .05)  ///
+									(2 = .2)   ///
+									(3 = .4)   ///
+									(4 = .6)   ///
+									(5 = .8)   ///
+									(6 = .95), ///
+			gen(MA_men_present_pink)
+	
+	recode 	regular_car_compliance 	(1 = .05)  ///
+									(2 = .2)   ///
+									(3 = .4)   ///
+									(4 = .6)   ///
+									(5 = .8)   ///
+									(6 = .95), ///
+			gen(MA_men_present_mix)
+
+					
+	* Calculate mean compliance and median congestion
+	* -----------------------------------------------
+	collapse  	CI_line											    ///
+				(mean) 	 MA_men_present_pink MA_men_present_mix   	/// 
+				(median) MA_crowd_rate_mix = regular_car_congestion ///
+						 MA_crowd_rate_pink = pink_car_congestion,  ///
+				by		(station_bin time_bin)
+	
+	* Round median congestion so it's still a categorical variable
+	* ------------------------------------------------------------
+	foreach varAux in MA_crowd_rate_mix MA_crowd_rate_pink {
+		replace `varAux' = round(`varAux')
+	}
+	
+	isid station_bin time_bin
+	
+	iecodebook apply using "${doc_rider}/baseline-study/codebooks/mapping_long.xlsx"
+			
+	save 			 "${dt_int}/baseline_mapping_long.dta", replace
+	iemetasave using "${dt_int}/baseline_mapping_long.txt", replace
+
+	
+/*******************************************************************************
+	Merge mapping and rides
+********************************************************************************/	
+	
+	use "${dt_int}/baseline_merged_rides.dta", clear
+	
 	* Change time variable to Rio time
 	* --------------------------------
 	foreach task in CI RI {
 	
-		gen 	`task'_date = dofc(`task'_started)
+		split	`task'_started, p(" ")
+		gen 	`task'_date = clock(`task'_started1, "YMD")
+		replace `task'_date = dofc(`task'_date)
 		format 	`task'_date %td
 	
-		gen 	zulu_time = `task'_started
-		format 	zulu_time %tc_hh:mm:SS
+		gen		`task'_time = clock(`task'_started2, "hms")
 		
-		gen 	`task'_time = zulu_time - 10800000
-		format 	`task'_time %tc_hh:mm:SS
-		drop	zulu_time
+		gen 	`task'_hour = hh(`task'_time)				// zulu time
+		replace `task'_hour = `task'_hour - 3			    // rio time
+		replace `task'_hour = `task'_hour + 1 ///
+								if 	`task'_date > 20378 & ///
+									`task'_date < 20512	   // rio daylights saving time: 18 Oct - 21 Fev
 		
-/*	Sunday, October 18, 2015, 12:00:00 Midnight clocks were turned forward 1 hour to // rio
-	Sunday, October 25, 2015, 2:00:00 AM clocks were turned backward 1 hour to  	 // gmt
-	(clock was changed at GMT so already adjusted in time that was recorded)		 */
-		replace `task'_time = `task'_time + 3600000 if `task'_date > 20378
-	
-	}
+		gen 	`task'_min 	= mm(`task'_time)
+			
+}
 	
 	* Generate time bins that allow us to merge with mapping data
 	* -----------------------------------------------------------
-	gen 	RI_time_bin =.
-	replace RI_time_bin = 1	 if RI_time <= 23340000
-	replace RI_time_bin = 2	 if RI_time >= 23400000 & RI_time <= 25140000
-	replace RI_time_bin = 3	 if RI_time >= 25200000	& RI_time <= 26940000
-	replace RI_time_bin = 4	 if RI_time >= 27000000	& RI_time <= 28740000
-	replace RI_time_bin = 5	 if RI_time >= 28800000	& RI_time <= 30540000
-	replace RI_time_bin = 6	 if RI_time >= 30600000	& RI_time <= 32340000
-	replace RI_time_bin = 7	 if RI_time >= 61200000	& RI_time <= 62940000
-	replace RI_time_bin = 8	 if RI_time >= 63000000	& RI_time <= 64740000
-	replace RI_time_bin = 9	 if RI_time >= 64800000	& RI_time <= 66540000
-	replace RI_time_bin = 10 if RI_time >= 66600000	& RI_time <= 68340000
-	replace RI_time_bin = 11 if RI_time >= 68400000	& RI_time <= 70140000
-	replace RI_time_bin = 12 if RI_time >= 70200000
+	gen 	RI_time_bin = .
+	replace RI_time_bin = 1	 if RI_hour == 6	& RI_min <= 30
+	replace RI_time_bin = 2	 if RI_hour == 6	& RI_min >  30
+	replace RI_time_bin = 3	 if RI_hour == 7	& RI_min <=	30
+	replace RI_time_bin = 4	 if RI_hour == 7	& RI_min >  30
+	replace RI_time_bin = 5	 if RI_hour == 8	& RI_min <=	30
+	replace RI_time_bin = 6	 if RI_hour == 8	& RI_min >  30
+	replace RI_time_bin = 6  if RI_hour == 9	& RI_min == 00
+	replace RI_time_bin = 7	 if RI_hour == 17	& RI_min <=	30
+	replace RI_time_bin = 8	 if RI_hour == 17	& RI_min >  30
+	replace RI_time_bin = 9	 if RI_hour == 18	& RI_min <= 30
+	replace RI_time_bin = 10 if RI_hour == 18	& RI_min >  30
+	replace RI_time_bin = 11 if RI_hour == 19	& RI_min <=	30
+	replace RI_time_bin = 12 if RI_hour == 19	& RI_min >  30
+	replace RI_time_bin = 12 if RI_hour == 20	& RI_min == 00
 
 	* Generate station bins that allow us to merge with mapping data
 	* -----------------------------------------------------------
@@ -122,11 +228,11 @@
 				
 	* Two time-station bin combinations from ride not present in mapping
 	qui count if _merge == 1
-	assert r(N) == 463
+	assert r(N) == 875
 	
 	* Drop mapping data that is not present in rides
 	qui count if _merge == 2
-	assert r(N) == 200
+	assert r(N) == 7
 	drop if _merge == 2
 	drop	_merge
 	
@@ -148,9 +254,3 @@
 	iemetasave using "${dt_int}/baseline_merged.txt", replace
 	
 ***************************************************************** End of do-file
-
-	
-
-	
-	
-

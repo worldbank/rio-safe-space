@@ -6,7 +6,7 @@
 	* REQUIRES: 	${dt_int}/compliance_pilot_exit
 					${dt_int}/baseline_exit
 					${doc_rider}/pooled/pooled_exit.xlsx						  
-	* CREATES:		${dt_int}/pooled_rider_audit_exit.dta 	  
+	* CREATES:		${dt_final}/pooled_rider_audit_exit.dta 	  
 				  
 	* WRITEN BY:   Astrid Zwager
 
@@ -286,7 +286,7 @@
 
 	compress
 	
-	save 				"${dt_int}/pooled_rider_audit_exit.dta", replace
-	iemetasave using 	"${dt_int}/pooled_rider_audit_exit.txt", replace
+	save 				"${dt_final}/pooled_rider_audit_exit.dta", replace
+	iemetasave using 	"${dt_final}/pooled_rider_audit_exit.txt", replace
 	
 *************************** End of do file *************************************

@@ -72,7 +72,7 @@
 	do "${do}/rider-audits/baseline/2. Cleaning/mapping.do" 
 
 	/***********************************************************************
-	* Merge tasks						 			 					   *
+	* 							Merge tasks			 					   *
 	************************************************************************		
 	* REQUIRES:		${dt_int}/baseline_ci.dta
 	*				${dt_int}/baseline_ride.dta
@@ -124,7 +124,6 @@
 	*				${doc_rider}/compliance-pilot/codebooks/check_out.xlsx
 	* CREATES:		${dt_int}/compliance_pilot_co.dta
 	***********************************************************************/
-
 	do "${do}/rider-audits/compliance-pilot/2. Cleaning/check-out.do" 
 	
 	/***********************************************************************
@@ -168,20 +167,56 @@
 	* CREATES:		${dt_int}/compliance_pilot_merged.dta
 	***********************************************************************/
 	do "${do}/rider-audits/compliance-pilot/3. Merge.do" 
+
 	
 /*******************************************************************************
-	Merge waves
+	Admin congestion data
 *******************************************************************************/
 
 	/***********************************************************************
-	*	  Append baseline and pilot exit surveys			 			   *
+	* 					Import admin congestion data				 	   *
 	************************************************************************
-	* REQUIRES: 	${dt_int}/compliance_pilot_exit
-	*				${dt_int}/baseline_exit
-	*				${doc_rider}/pooled/pooled_exit.xlsx						  
-	* CREATES:		${dt_int}/pooled_rider_audit_exit.dta 	 
+	* REQUIRES:		${encrypt}/Congestion
+	* CREATES:		${encrypt}/congestion_raw.dta
 	***********************************************************************/
-	do "${do}/rider-audits/pooled/pool_exit.do" 
+	do "${do}/rider-audits/congestion/1. Import.do"
+
+	/***********************************************************************
+	* 			Transform congestion data to station level			 	   *
+	************************************************************************
+	* REQUIRES:		${encrypt}/congestion_raw.dta
+	* CREATES:		${dt_int}/congestion_station_level.dta
+	*				${dt_int}/congestion_station_level_wide.dta
+	***********************************************************************/
+	do "${do}/rider-audits/congestion/2. Clean station level congestion.do"
+	
+	
+	/***********************************************************************
+	* 				Transform congestion data to ride level			 	   *
+	************************************************************************
+	* REQUIRES:		${dt_int}/congestion_station_level.dta
+	* CREATES:		${dt_int}/congestion_ride_level.dta
+	***********************************************************************/
+	*do "${do}/rider-audits/congestion/3. Create ride level congestion.do"
+
+/*******************************************************************************
+	Clean crime data
+*******************************************************************************/
+
+	/***********************************************************************
+	* 					Append baseline and pilot rides				 	   *
+	************************************************************************
+	* REQUIRES:		${dt_raw}/crime/PopulacaoEvolucaoMensalCisp.csv 			// From instituto de segurança pública do Rio de Janeiro
+	*				${dt_raw}/crime/BaseDPEvolucaoMensalCisp.csv				// From instituto de segurança pública do Rio de Janeiro
+	*				${encryptcrime}/dps_stations.xlsx							// Created by mering shapefiles from instituto de segurança pública do Rio de Janeiro and station gps data
+	*				${encryptcrime}/stations_code.dta
+	* CREATES:		${dt_int}/crime_rates_bystation
+	***********************************************************************/
+	do "${do}/rider-audits/crime/clean-crime-data.do"
+
+/*******************************************************************************
+	Merge waves
+*******************************************************************************/
 	
 	/***********************************************************************
 	*    Append baseline and pilot platoform observations surveys		   *
@@ -200,6 +235,54 @@
 	*				${doc_rider}/pooled/codebooks/pooled_rides.xlsx
 	* CREATES:		${dt_int}/pooled_rider_audit_rides.dta
 	***********************************************************************/	
-	do "${do}/rider-audits/pooled/pool_rides.do" 
+	do "${do}/rider-audits/pooled/1_pool_rides.do" 
+	
+	/***********************************************************************
+	*			 Identify stations covered by each ride			 		   *
+	************************************************************************
+	* REQUIRES:  	${dt_int}/pooled_rider_audit_rides
+	* CREATES:		${dt_int}/pooled_rider_audit_rides_coverage
+	***********************************************************************/	
+	do "${do}/rider-audits/pooled/2_pooled_rides_coverage.do"
+	
+	/***********************************************************************
+	*			Identify ride direction (inbound/outbound)				   *
+	************************************************************************
+	* REQUIRES:  	${dt_int}/pooled_rider_audit_rides_coverage
+	* CREATES:		${dt_int}/pooled_rider_audit_rides_coverage_direction
+	***********************************************************************/
+	do "${do}/rider-audits/pooled/3_pooled_rides_direction.do"
+	
+	/***********************************************************************
+	*			 Merge admin congestion data to rides data		 		   *
+	************************************************************************
+	* REQUIRES:  	"${dt_int}/pooled_rider_audit_rides_coverage_direction.dta"
+	* 				"${dt_int}/congestion_station_level.dta"
+	* 				"${dt_int}/congestion_station_level_wide.dta"
+	* CREATES:		"${dt_int}/pooled_rider_audit_rides_congestion.dta"
+	************************************************************************/
+	do "${do}/rider-audits/pooled/4_merge_rides_congestion.do"
+	
+	/***********************************************************************
+	*			  Merge crime rates to rider panel				 		   *
+	************************************************************************
+	* REQUIRES:  	"${dt_int}/crime_rates_bystation.dta"
+	* 				"${encrypt}/compliance_pilot_raw_corrected.dta"
+	* 				"${encrypt}/baseline_raw_corrected.dta"
+	* 				"${dt_int}/pooled_rider_audit_rides_congestion.dta"
+	* CREATES:		"${dt_int}/crime_rates_home_station.dta"
+	* 				"${dt_final}/pooled_rider_audit_rides.dta"
+	***********************************************************************/
+	do "${do}/rider-audits/pooled/5_merge_rides_crime.do"
+
+	/***********************************************************************
+	*	  Append baseline and pilot exit surveys			 			   *
+	************************************************************************
+	* REQUIRES: 	${dt_int}/compliance_pilot_exit
+	*				${dt_int}/baseline_exit
+	*				${doc_rider}/pooled/pooled_exit.xlsx						  
+	* CREATES:		${dt_final}/pooled_rider_audit_exit.dta 	 
+	***********************************************************************/
+	do "${do}/rider-audits/pooled/6_pool_exit.do" 
 	
 ************************************************************************ The end.

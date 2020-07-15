@@ -49,13 +49,6 @@
 	* (the raw data uses different names for the same question in different rides)
 	gen 	CI_work = inlist("Sim", sv_looking_for_work, work_or_looking) if (!missing(work_or_looking) | !missing(sv_looking_for_work))
 	
-/*******************************************************************************
-	Create new variables
-*******************************************************************************/	
-		
-	* Transform time started into time variable
-	gen 	CI_started = clock(started, "YMDhms")
-	format  CI_started %tc
 		
 /*******************************************************************************
 	Clean up and save

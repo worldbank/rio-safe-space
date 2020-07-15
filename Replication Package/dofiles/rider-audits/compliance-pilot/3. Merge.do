@@ -53,38 +53,38 @@
 	* --------------------------------
 	foreach task in CI RI CO {
 	
-		gen 	`task'_date = dofc(`task'_started)
+		split	`task'_started, p(" ")
+		gen 	`task'_date = clock(`task'_started1, "YMD")
+		replace `task'_date = dofc(`task'_date)
 		format 	`task'_date %td
 	
-		gen 	zulu_time = `task'_started
-		format 	zulu_time %tc_hh:mm:SS
+		gen		`task'_time = clock(`task'_started2, "hms")
 		
-		gen 	`task'_time = zulu_time - 10800000
-		format 	`task'_time %tc_hh:mm:SS
-		drop	zulu_time
+		gen 	`task'_hour = hh(`task'_time)							// zulu time
+		replace `task'_hour = `task'_hour - 3			    			// rio time
+		replace `task'_hour = `task'_hour + 1 if `task'_date >= 20743	// rio daylights saving time: 16 Oct - 19 Fev (sample ends in Feb 17)
 
-		replace `task'_time = `task'_time + 3600000 if `task'_date >= 20743		// Sunday, October 16, 2016, 12:00:00 Midnight clocks were turned forward 1 hour to Rio
-	
-	}	
+		gen 	`task'_min 	= mm(`task'_time)
+			
+}	
 
 	* Generate time bins that allow us to merge with mapping data
 	* -----------------------------------------------------------
 	gen 	RI_time_bin = .
-	replace RI_time_bin = 1		if RI_time <= 23400000
-	replace RI_time_bin = 2		if RI_time >= 23400000 & RI_time < 25200000
-	replace RI_time_bin = 3		if RI_time >= 25200000 & RI_time < 27000000
-	replace RI_time_bin = 4		if RI_time >= 27000000 & RI_time < 28800000
-	replace RI_time_bin = 5		if RI_time >= 28800000 & RI_time < 30600000
-	replace RI_time_bin = 6		if (RI_time >= 30600000 & RI_time < 32400000) | ///
-								   (RI_time >= 32400000 & RI_time < 34200000 & ///
-									CI_time < 32400000)
-	replace RI_time_bin = 7		if (RI_time >= 61200000 & RI_time < 63000000) | ///
-								   (RI_time < 61200000 & CO_time >= 61200000)
-	replace RI_time_bin = 8		if RI_time >= 63000000 & RI_time < 64800000
-	replace RI_time_bin = 9		if RI_time >= 64800000 & RI_time < 66600000
-	replace RI_time_bin = 10	if RI_time >= 66600000 & RI_time < 68400000
-	replace RI_time_bin = 11	if RI_time >= 68400000 & RI_time < 70200000
-	replace RI_time_bin = 12	if RI_time >= 70200000
+	replace RI_time_bin = 1	 if RI_hour == 6	& RI_min <= 30
+	replace RI_time_bin = 2	 if RI_hour == 6	& RI_min >  30
+	replace RI_time_bin = 3	 if RI_hour == 7	& RI_min <=	30
+	replace RI_time_bin = 4	 if RI_hour == 7	& RI_min >  30
+	replace RI_time_bin = 5	 if RI_hour == 8	& RI_min <=	30
+	replace RI_time_bin = 6	 if RI_hour == 8	& RI_min >  30
+	replace RI_time_bin = 6  if RI_hour == 9	& RI_min == 00
+	replace RI_time_bin = 7	 if RI_hour == 17	& RI_min <=	30
+	replace RI_time_bin = 8	 if RI_hour == 17	& RI_min >  30
+	replace RI_time_bin = 9	 if RI_hour == 18	& RI_min <= 30
+	replace RI_time_bin = 10 if RI_hour == 18	& RI_min >  30
+	replace RI_time_bin = 11 if RI_hour == 19	& RI_min <=	30
+	replace RI_time_bin = 12 if RI_hour == 19	& RI_min >  30
+	replace RI_time_bin = 12 if RI_hour == 20	& RI_min == 00
 	
 		
 	* Generate station bins that allow us to merge with mapping data
@@ -121,18 +121,17 @@
 	* 4 station bins were not observed at the last time bin
 	* These will have no mapping obs
 	qui count if _merge == 1
-	assert r(N) == 729
+	assert r(N) == 160
 	
 	* Mapping obser with no rides will be dropped
 	qui count if _merge == 2
-	assert r(N) == 228
+	assert r(N) == 6
 	drop if _merge == 2
 	drop	_merge
 	
 ********************************************************************************
 *							  PART 7:  Save data	  					       *
 ********************************************************************************
-	
 	
 	iecodebook apply using "${doc_rider}/compliance-pilot/codebooks/merged.xlsx", drop
 	

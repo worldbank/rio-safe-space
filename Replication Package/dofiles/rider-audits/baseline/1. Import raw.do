@@ -17,27 +17,8 @@
 	Import raw data and save as dta
 ********************************************************************************/
 	
-	import delimited using "${encrypt}/Baseline/07112016/Contributions 07112016", delim (",")  varnames(1) clear
-	
-	* ----------------
-	* Make corrections
-	* ----------------
-	
-	preserve
-	
-		import delimited using "${doc_rider}/baseline-study/demo-data-corrections.csv", encoding(utf8) clear 
+	import delimited using "${encrypt}/Baseline/07112016/Contributions 07112016", delim (",")  varnames(1) clear  bindquotes(strict)
 		
-		tempfile demo_corr
-		save	`demo_corr'
-
-	restore
-	
-	merge m:1 user_uuid using `demo_corr', assert(1 3) nogen
-	
-	drop if drop_user == 1 														// drop users that are found to be fraudulent
-	
-	replace user_gender = user_gender_corr if !missing(user_gender_corr)
-	
 	* -----------------
 	* Clean up and save
 	* -----------------
@@ -47,7 +28,7 @@
 	compress
 		
 	save 			 "${encrypt}/baseline_raw.dta", replace
-	iemetasave using "${dt_raw}/baseline_raw.txt", short replace
+	iemetasave using "${dt_raw}/baseline_raw.txt",  replace short
 
 	
 /*******************************************************************************
@@ -78,7 +59,9 @@
 	Stations not linked to a line
 *******************************************************************************/
 	
-	foreach var in user exit {	
+	rename user_line_home user_home_line
+	
+	foreach var in user exit user_home {	
 	
 		replace `var'_line = "Ramal Santa Cruz" if 	(inlist(`var'_station, "Inhoaiba", ///
 																		   "Inhoaíba", ///
@@ -106,11 +89,20 @@
 		drop	lineVar stationVar
 
 	}
-
+	
+	// Got right station from geolocation when check-in and check-out stations were the same
+	merge m:1 session spectranslated using "${doc_rider}/baseline-study/station_corrections.dta", ///
+			  update replace ///
+			  assert(1 4 5) ///
+			  nogen
+	
 /*******************************************************************************
 	Save
 *******************************************************************************/
 
+	save 			 "${encrypt}/baseline_raw_corrected.dta", replace
+	iemetasave using "${dt_raw}/baseline_raw_corrected.txt", short replace
+	
 	compress
 	dropmiss, force
 	
