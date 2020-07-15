@@ -93,11 +93,12 @@ Imagine that you were taking a ride during your usual rush hour commute. Please 
 
 19. What do you think are the disadvantages of the reserved space?  _(Open-ended)_
 
-_Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the public space._ 
+**Introduction to questions 20-25**
+Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the public space.
 
-20. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the mixed car??  
-____ percent   
-____ I don’t feel comfortable answering this question
+20. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the mixed car? 
+    1. __ percent   
+    2. I don’t feel comfortable answering this question
 
 21. How often do you think a man would make unwanted sexual comments during a year of commuting, while traveling in the public space? 
     1. Never
@@ -110,8 +111,8 @@ ____ I don’t feel comfortable answering this question
     8. I don’t feel comfortable answering this question
     
 22. What do you think is the chance that inside the train a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the mixed car?? 
-    ____ percent  
-    ____ I don’t feel comfortable answering this question
+    1. __ percent   
+    2. I don’t feel comfortable answering this question
     
 23. How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the public space?
     1. Never
@@ -124,8 +125,8 @@ ____ I don’t feel comfortable answering this question
     8. I don’t feel comfortable answering this question
     
 24. What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the public space?
-    ____ percent   
-    ____ I don’t feel comfortable answering this question
+    1. __ percent   
+    2. I don’t feel comfortable answering this question
     
 25. How often do you think someone would rob her at some point during a year of commuting?
     1. Never
@@ -136,14 +137,15 @@ ____ I don’t feel comfortable answering this question
     6. Once a week
     7. Several times a week
     8. I don’t feel comfortable answering this question
- 
-_Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the reserved space. _
+
+**Introduction to questions 26-31**
+Now Imagine a woman similar to you who rides the supervia every day to work on the same commuting route as yours on the reserved space.
 
 26. What do you think is the chance that inside the train a man would make unwanted sexual comments to her at some point during a year of commuting, while traveling in the reserved space?  
-    ____ percent   
-    ____ I don’t feel comfortable answering this question
+    1. __ percent   
+    2. I don’t feel comfortable answering this question
 
-27.  How often do you think a man would make unwanted sexual comments during a year of commuting, while traveling in the reserved space? 
+27. How often do you think a man would make unwanted sexual comments during a year of commuting, while traveling in the reserved space?
     1. Never
     2. Less than once a year
     3. Once a year
@@ -153,11 +155,11 @@ _Now Imagine a woman similar to you who rides the supervia every day to work on 
     7. Several times a week
     8. I don’t feel comfortable answering this question
     
-28.  What do you think is the chance that inside the train a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car? 
-    ____ percent   
-    ____ I don’t feel comfortable answering this question
-
-29.  How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car?
+28. What do you think is the chance that inside the train a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car?
+    1. __ percent   
+    2. I don’t feel comfortable answering this question
+    
+29. How often do you think a man would touch her against her will / grope her at some point during a year of commuting, while traveling in the women’s-only car?
     1. Never
     2. Less than once a year
     3. Once a year
@@ -167,11 +169,11 @@ _Now Imagine a woman similar to you who rides the supervia every day to work on 
     7. Several times a week
     8. I don’t feel comfortable answering this question
 
-30.  What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the women’s-only car?
-    ____ percent   
-    ____ I don’t feel comfortable answering this question
+30. What do you think is the chance that inside the train someone would rob her at some point during a year of commuting, while traveling in the women’s-only car?
+    1. __ percent   
+    2. I don’t feel comfortable answering this question
 
-31.  How often do you think someone would rob her at some point during a year of commuting, while traveling in the reserved space?
+31. How often do you think someone would rob her at some point during a year of commuting, while traveling in the reserved space?
     1. Never
     2. Less than once a year
     3. Once a year

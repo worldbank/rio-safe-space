@@ -97,8 +97,8 @@
 	
 	tableprep `models', panel(A) title(Revealed preference rides) posthead("& (1) & (2)  & (3) & (4) & (5) & (6) \\")
 	
-	esttab 	`models' using "${out_tables}/adjustment.tex",  ///
-			`r(table_options)' ///
+	esttab 	`models' using "${out_tables}/${star}adjustment.tex",  ///
+			`r(table_options)' ${star} ///
 			nonumbers ///
 			drop(_cons) ///
 			scalars	("riders Riders" ///
@@ -114,9 +114,9 @@
 	
 	tableprep `models', panel(B) title(Randomized assignment of space)
 	
-	esttab 	`models' using "${out_tables}/adjustment.tex",  ///
+	esttab 	`models' using "${out_tables}/${star}adjustment.tex",  ///
 			drop(_cons) ///
-			`r(table_options)' ///
+			`r(table_options)' ${star} ///
 			nonumbers nomtitles ///
 			scalars	("riders Riders" ///
 					 "mean Uncontrolled mean when zero opportunity cost" ///

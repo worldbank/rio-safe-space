@@ -91,6 +91,7 @@
 			esttab 	`estimates_`est'' using "${out_tables}/`spec'_carimpactharassment_`est'0.tex" ///
 					,  ///
 					`r(table_options)' ///
+          ${star} ///
 					noobs nomtitles ///
 					mgroups ("Any harassment" "Physical harassment" "Verbal harassment" "Staring", ///
 							 pattern(1 0 1 0 1 0 1 0) ///
@@ -269,11 +270,12 @@
 						title(Impact of randomized assignment by presence of men in reserved space) ///
 						prefoot("\multicolumn{9}{c}{\textit{Mean dependent variable}} \\ Assigned to public space $\times$ Few men in reserved space& \multicolumn{2}{c}{`d_harassment_mean_few'} & \multicolumn{2}{c}{`d_physical_har_mean_few'} & \multicolumn{2}{c}{`d_verbal_har_mean_few'} & \multicolumn{2}{c}{`d_staring_mean_few'} \\  & \multicolumn{2}{c}{`d_harassment_se_few'} & \multicolumn{2}{c}{`d_physical_har_se_few'} & \multicolumn{2}{c}{`d_verbal_har_se_few'} & \multicolumn{2}{c}{`d_staring_se_few'} \\ Assigned to public space $\times$ Many men in reserved space & \multicolumn{2}{c}{`d_harassment_mean_many'} & \multicolumn{2}{c}{`d_physical_har_mean_many'} & \multicolumn{2}{c}{`d_verbal_har_mean_many'} & \multicolumn{2}{c}{`d_staring_mean_many'} \\  & \multicolumn{2}{c}{`d_harassment_se_many'} & \multicolumn{2}{c}{`d_physical_har_se_many'} & \multicolumn{2}{c}{`d_verbal_har_se_many'} & \multicolumn{2}{c}{`d_staring_se_many'} \\\\[-1ex]")
 			
-			esttab `estimates_`est'' using "${out_tables}/`spec'_carimpactharassment_`est'0.tex" ///
+			esttab `estimates_`est'' using "${out_tables}/${star}`spec'_carimpactharassment_`est'0.tex" ///
 					,  ///
 					keep(${interactionvars} `keep`est'') ///
 					nomtitles nonumbers ///
 					`r(table_options)' ///
+          ${star} ///
 					scalar("riders Riders" `scalar`est'' ///
 						   "diff_high  `r(footer_title)' \multicolumn{`r(ncols)'}{l}{Impact on harassment when few men in reserved space: reserved space - public space} \\ \quad $\hat\beta_{M_1}$ - $\hat\beta_{M_2}$" "ftest_high \quad P-value" ///
 						   "diff_low   \multicolumn{`r(ncols)'}{l}{Impact on harassment when many men in reserved space: reserved space - public space} \\\quad $\hat\beta_{M_3}$ - $\hat\beta_{M_4}$" "ftest_low  \quad P-value")

@@ -69,9 +69,10 @@
 *******************************************************************************/
 
 	esttab attrition1 attrition3 attrition2  attrition4 attrition5 ///
-		using "${out_tables}/attrition.tex", ///
+		using "${out_tables}/${star}attrition.tex", ///
 		tex replace se label star(* .1 ** .05 *** .01) nomtitles ///
 		b(%9.3f) se(%9.3f) ///
+		${star} ///
 		scalars("mean1 Regression sample mean") ///
 		prehead("\begin{tabular}{l*{6}{c}} \hline\hline \\[-1.8ex] & \multicolumn{5}{c}{Dependent variable:} \\[-1.8ex]" ) ///
 		mgroups("{p{3.2cm}}{\center Started revealed preferences rides" "{p{5cm}}{\center Started randomized car assignment rides", ///

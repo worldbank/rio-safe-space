@@ -230,7 +230,8 @@
 		esttab 		`models' using "${out_tables}/delete_me.tex" ///
 					,  ///
 					noobs nomtitles ///
-					`r(table_options)'  ///
+					`r(table_options)' ///
+          ${star} ///
 					scalars	("riders Riders" ///
 							 "line Line fixed effects")
 						
@@ -249,7 +250,8 @@
 					keep(zero_low pos_low zero_high pos_high d_highcongestion) ///
 					order(pos_low zero_low pos_high zero_high) ///
 					nomtitles nonumbers ///
-					`r(table_options)'  ///
+					`r(table_options)' ///
+          ${star} ///
 					scalars	("riders Riders" ///
 							 "line Line fixed effects" ///
 							 "risktypet \multirow{2}{*}{Type of perceived risk}" ///
@@ -259,7 +261,7 @@
 							 "diff_zero  \multicolumn{10}{l}{By risk perception: high risk - low risk perceivers} \\ \quad Zero opportunity cost: $\hat\beta_{M_4} - \hat\beta_{M_2}$" "ftest_zero \quad P-value" ///
 							 "diff_pos \quad Positive opportunity cost: $\hat\beta_{M_3} - \hat\beta_{M_1}$" "ftest_pos \quad P-value")
 		
-		filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/`spec'_wtprisk.tex", ///
+		filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/${star}`spec'_wtprisk.tex", ///
 						from("\BSbeta\BS_{M\BS_") to("\BSbeta_{M_") replace
 		
 		erase 		"${out_tables}/delete_me.tex"

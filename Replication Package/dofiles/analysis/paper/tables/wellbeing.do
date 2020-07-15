@@ -181,7 +181,7 @@
 						prehead("&  \begin{tabular}{@{}c@{}} Afraid of \\ harassment \end{tabular} & \begin{tabular}{@{}c@{}} Overall \\ wellbeing \end{tabular} & Happy & Sad & Tense & Relaxed & Frustrated & Satisfied & Vs before \\" )
 	
 			esttab 		`top_`est'' using "${out_tables}/delete_me.tex",  ///
-						`r(table_options)' ///
+						`r(table_options)' ${star} ///
 						noobs nomtitles ///
 						scalars("mean \multicolumn{10}{c}{\textit{Mean dependent variable}} \\ Assigned to public space" ///
 								"se \,")
@@ -192,7 +192,7 @@
 						
 	
 			esttab 		`bottom_`est'' using "${out_tables}/delete_me.tex",  ///
-						`r(table_options)' ///
+						`r(table_options)' ${star} ///
 						nomtitles nonumbers noobs nolines ///
 						scalar("mean_high \multicolumn{10}{c}{\textit{Mean dependent variable}} \\ Assigned to public space $\times$ Few men in reserved space" ///
 							   "se_high \," ///
@@ -207,7 +207,7 @@
 				
 			
 			* Fix the automatic escape of subscripts
-			filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/`spec'_wellbeing_`est'.tex", ///
+			filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/${star}`spec'_wellbeing_`est'.tex", ///
 						from("\BSbeta\BS_{M\BS_") to("\BSbeta_{M_") replace
 				
 			erase 		"${out_tables}/delete_me.tex"

@@ -31,8 +31,9 @@
 		PART 3: Export table
 ********************************************************************************/	
 		
-	esttab corr1 corr2 using "${out_tables}/mappingridercorr.tex" ///
+	esttab corr1 corr2 using "${out_tables}/${star}mappingridercorr.tex" ///
 		, ///
+		${star} ///
 		tex t(3) b(3) ///
 		label se star(* .1 ** .05 *** .01) ///
 		replace nonotes nomtitle ///

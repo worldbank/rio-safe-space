@@ -27,6 +27,8 @@
 * 	PART 1.1: Merges data sets
 * ------------------------------------------------------------------------------
 	
+	if "${star}" == "nostar" local star starsnoadd
+	
 	* ------
 	* Riders
 	* ------
@@ -95,7 +97,8 @@
 					control(2) ///
 					vce(robust) ///
 					rowvarlabels tblnonote ///
-					browse
+					`star' ///
+          browse         
 					
 		
 	/* We're dropping the number of observations from the table, which takes 
@@ -131,7 +134,8 @@
 				, ///
 				grpvar(balance_group) ///
 				rowvarlabels control(2) tblnonote vce(robust) ///
-				browse
+				 `star' ///
+         browse
 			
 	* Drop number of obs and make manual corrections
 	drop 	v2 v4
@@ -226,8 +230,8 @@
 	filefilter "${out_tables}/delete_me2.tex" "${out_tables}/delete_me1.tex", ///
                from("(5) \BS\BS \BShline") to("(5) \BS\BS \BShline \BS\BS[-1.8ex]") replace
 	
-	filefilter "${out_tables}/delete_me1.tex" "${out_tables}/balance_table.tex", ///
-               from("00 ") to("") replace
+	filefilter "${out_tables}/delete_me1.tex" "${out_tables}/${star}balance_table.tex", ///
+              from("00 ") to("") replace
 	
 	erase	"${out_tables}/delete_me1.tex"
 	erase	"${out_tables}/delete_me2.tex"

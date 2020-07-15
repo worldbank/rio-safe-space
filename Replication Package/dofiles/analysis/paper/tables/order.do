@@ -49,8 +49,9 @@
 	PART 3: Export regression table
 ********************************************************************************/	
 
-	esttab top1 top2 using "${out_tables}/order.tex" ///
+	esttab top1 top2 using "${out_tables}/${star}order.tex" ///
 		, ///
+		${star} ///
 		scalars("riders Riders") ///
 		label tex replace se ///
 		star(* .1 ** .05 *** .01) ///

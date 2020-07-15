@@ -10,7 +10,7 @@
 					PART 4:  Analysis
 
 ********************************************************************************
-	PART 0: USER INPUTS
+	PART 0: USER INPUTS															
 ********************************************************************************/
 
 	ieboilstart, v(14.0)  matsize(10000)
@@ -20,14 +20,17 @@
 	Set folder paths
 ------------------------------------------------------------------------------*/
 
-	global github		"/users/bbdaniels/GitHub/rio-safe-space/Replication Package"		//	<----------------------------------------- ADD PATH TO YOUR CLONE HERE
-
+	global github		"C:\Users\wb501238\Documents\GitHub\rio-safe-space/Replication Package"		//	<----------------------------------------- ADD PATH TO YOUR CLONE HERE
+	global encrypt		"C:\Users\wb501238\Dropbox\WB\RJ - Pink car study\Data\Rider audits\Data\Raw"
+	
 /*------------------------------------------------------------------------------
 	Select sections to run
 ------------------------------------------------------------------------------*/
 
-	local packages			1 // Change to 1 to install user-written commands used in the project
-	local mainresults		1
+	local  cleaning			1 // Run data cleaning
+	global encrypted		1 // Start from identified data
+	local  packages			0 // Install user-written commands used in the project
+	local  mainresults		0
 
 /*------------------------------------------------------------------------------
 	Set control variables
@@ -39,7 +42,7 @@
 	global interactionvars_oc	pos_highcompliance zero_highcompliance ///
 								pos_lowcompliance  zero_lowcompliance
 
-	* Balance variables (Table 1)
+* Balance variables (Table 1)
 	global balancevars1			d_employed age_year educ_year ride_frequency ///
 								home_rate_allcrime home_rate_violent home_rate_theft ///
 								grope_pink_cont grope_mixed_cont ///
@@ -51,6 +54,8 @@
 	global adjustind 			CI_wait_time_min d_against_traffic CO_switch ///
 								RI_spot CI_time_AM CI_time_PM
 
+  global star					nostar
+
 /*------------------------------------------------------------------------------
 	Plot settings
 ------------------------------------------------------------------------------*/
@@ -58,13 +63,13 @@
 	global grlabsize 		4
 	global col_womencar		purple
 	global col_mixedcar 	`" "18 148 144" "' // teal
-	global col_1			`" "18 148 144" "'
+	global col_1			`" "18 148 144" "' // teal
 	global col_2			purple //`" "102 51 153" "'
 	global col_aux_bold		gs6
 	global col_aux_light	gs12
 	global col_highlight	cranberry
 	global col_box			gs15
-
+	
 	global paper_plotops	graphregion(color(white)) ///
 							bgcolor(white) ///
 							ylab(, glcolor(${col_box})) ///
@@ -89,8 +94,15 @@
 	global 	do_graphs			"${do_analysis}/paper/graphs"
 
 	* Data sets
-	global	dt_final			"${github}/data/final"
+	global	data				"${github}/data"
+	global	dt_final			"${data}/final"
+	global 	dt_raw				"${data}/raw"
+	global	dt_int				"${data}/intermediate"
 
+	* Documentation
+	global	doc					"${github}/documentation"
+	global 	doc_rider			"${doc}/rider-audits"
+	
 	* Outputs
 	global	out_git				"${github}/outputs"
 	global 	out_tables			"${out_git}/tables"
@@ -101,26 +113,27 @@
 ********************************************************************************/
 
 	if `packages' {
-		ssc install	ietoolkit,	replace
-		ssc install	geodist, 	replace
-		ssc install	reclink, 	replace
-		ssc install	unique, 	replace
-		ssc install estout, 	replace
-		ssc install ranktest,	replace
-		ssc install ivreg2, 	replace
-		ssc install dataout, 	replace
-		ssc install coefplot, 	replace
+		ssc install	ietoolkit
+		ssc install iefieldkit
+		ssc install estout
+		ssc install unique
+		ssc install coefplot
 	}
 
 	* Custom commands
 	do 		"${do}/ado/table_options.ado"
 	do 		"${do}/ado/iemetasave.ado"
+	do 		"${do}/ado/iecodebook.ado"
 
 
 ********************************************************************************
 *						   PART 3: Data preparation     					   *
 ********************************************************************************
 
+	if `cleaning' {
+		do "${do}/rider-audits/MASTER_rider_audits_data_prep.do"
+	}
+	
 ********************************************************************************
 *							PART 4: Analysis     							   *
 ********************************************************************************
@@ -136,9 +149,9 @@
 		*	CREATES: ${out_graphs}/Paper/eventstudy_bypremium.png			   *
 		************************************************************************
 
-		do "${do_graphs}/eventstudy_bypremium.do"
-
-		************************************************************************
+		do "${do_graphs}/eventstudy_bypremium.do"	
+		
+    ************************************************************************
 		* Figure 3: Take-up of reserved space by opportunity cost			   *
 		*----------------------------------------------------------------------*
 		*	REQUIRES: ${dt_final}/pooled_rider_audit_constructed.dta		   *
@@ -147,15 +160,15 @@
 		************************************************************************
 
 		do "${do_graphs}/takeup.do"
-
+		
 	****************************************************************************
 	* Figure 4: Joint distribution of takeup and harassment by presence of men *
 	*--------------------------------------------------------------------------*
 	*	REQUIRES: 	${dt_final}/pooled_rider_audit_constructed.dta		 	   *
 	* 	CREATES:  	${out_graphs}/wtp_harass.png						 	   *
 	****************************************************************************
-
-		do "${do_graphs}/wtp_harass.do"
+		
+    do "${do_graphs}/wtp_harass.do"
 
 		************************************************************************
 		* Figure 5: IAT D-Score distribution by test type and gender		   *
@@ -169,7 +182,6 @@
 
 		do "${do_graphs}/iatscores.do"
 
-
 * Main tables ==================================================================
 
 		************************************************************************
@@ -179,8 +191,8 @@
 		*	  		  ${dt_final}/platform_survey_constructed.dta	 		   *
 		*	CREATES:  ${out_tables}/balance_table.tex						   *
 		************************************************************************
-
-		do "${do_tables}/balance_table.do"
+		
+    do "${do_tables}/balance_table.do"
 
 		************************************************************************
 		* Table 2: Revealed preferences, overall and by ride condition		   *
@@ -191,8 +203,8 @@
 		*			  ${out_tables}/online_wtp_main.tex					   	   *
 		*			  ${out_tables}/online_wtp_appendix.tex					   *
 		************************************************************************
-
-		do "${do_tables}/wtp.do"
+		
+    do "${do_tables}/wtp.do"
 
 	****************************************************************************
 	* Table 3: Impact of randomized assignment of space on reported harassment *
@@ -203,8 +215,8 @@
 	*			  ${out_tables}/online_carimpactharassment_main.tex			   *
 	*			  ${out_tables}/online_carimpactharassment_appendix.tex		   *
 	****************************************************************************
-
-		do "${do_tables}/carimpactharassment.do"
+		
+    do "${do_tables}/carimpactharassment.do"
 
 		************************************************************************
 		* Table 4: Revealed preferences by rider risk perception			   *
@@ -214,17 +226,17 @@
 		*			  ${out_tables}/online_wtprisk.tex						   *
 		************************************************************************
 
-		do "${do_tables}/wtprisk.do"
-
+    do "${do_tables}/wtprisk.do"
+		
 		************************************************************************
 		* Table 5: Back-of-envelope estimates of cost of harassment			   *
 		*----------------------------------------------------------------------*
 		*	REQUIRES: ${dt_final}/pooled_rider_audit_constructed_full.dta 	   *
 		*	CREATES: ${out_tables}/back_envelope_costs_full.tex  			   *
 		************************************************************************
-
+		
 		do "${do_tables}/back_envelope_benefit_table.do"
-
+		
 * Appendix figures =============================================================
 
 		************************************************************************
@@ -234,7 +246,7 @@
 		*			  ${dt_rider_int}/congestion_station_level.dta			   *
 		*	CREATES:  ${out_graphs}/loadfactor.png							   *
 		************************************************************************
-
+		
 		do "${do_graphs}/loadfactor.do"
 
 		************************************************************************
@@ -274,8 +286,8 @@
 		*				${out_graphs}/Paper/eventstudy_hist.png				   *
 		************************************************************************
 
-		do "${do_graphs}/eventstudy.do"
-
+    do "${do_graphs}/eventstudy.do"
+		
 		************************************************************************
 		* Figure A8: Advantages of reserved space: unprompted responses from   *
 		* participants of rider crowdsourcing								   *
@@ -289,7 +301,7 @@
 		************************************************************************
 		* Figure A9: Take-up of women-reserved space with positive opportunity *
 		* cost: stated and revealed preferences								   *
-		*- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - *
+		*----------------------------------------------------------------------*
 		*	REQUIRES:	${dt_final}/pooled_rider_audit_constructed.dta		   *
 		*	CREATES:	${out_graphs}/statedrevealed3.png					   *
 		************************************************************************
@@ -317,7 +329,6 @@
 
 		do "${do_graphs}/beliefs.do"
 
-
 * Appendix tables ==============================================================
 
 		************************************************************************
@@ -328,7 +339,7 @@
 		*	CREATES:	${out_tables}/sample_table.tex						   *
 		************************************************************************
 
-		do "${do_tables}/sample_table.do"
+    do "${do_tables}/sample_table.do"
 
 		************************************************************************
 		* Table A3: Correlation between platform observations data and rider   *
@@ -358,7 +369,7 @@
 
 		do "${do_tables}/priming.do"
 
-		************************************************************************
+    ************************************************************************
 		* Table A6: Test for order effects in on screen presentation of 	   *
 		* public / reserved space											   *
 		*----------------------------------------------------------------------*
@@ -388,7 +399,7 @@
 	*			  ${out_tables}/online_wellbeing_appendix.tex				   *
 	****************************************************************************
 
-		do "${do_tables}/wellbeing.do"
+  do "${do_tables}/wellbeing.do"
 
 		************************************************************************
 		* Table A9: Social norms survey										   *
@@ -441,8 +452,7 @@
 		do "${do_tables}/phase3participation.do"
 
 	}
-
-
+  
 /*******************************************************************************
 	Congratulations, you've made it to the end of the do files!
 	(Actually, there are a lot more that didn't make the final cut)

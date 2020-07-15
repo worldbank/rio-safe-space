@@ -51,8 +51,9 @@
 							Create table
 *******************************************************************************/
 	
-	esttab 	rider day using "${out_tables}/phase3participation.tex", ///
+	esttab 	rider day using "${out_tables}/${star}phase3participation.tex", ///
 			mtitles("Rider-ride" "Rider-day") ///
+			${star} ///
 			label tex replace se ///
 			star(* .1 ** .05 *** .01) ///
 			b(%9.3f) se(%9.3f) ///

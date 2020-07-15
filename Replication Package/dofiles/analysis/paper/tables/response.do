@@ -113,7 +113,8 @@
 ********************************************************************************/
 	
 	esttab responsesurvey2 response2 response3 response4 ///
-		using "${out_tables}/response", ///
+		using "${out_tables}/${star}response", ///
+		${star} ///
 		tex se replace nomtitles nodepvars drop(*.platform) ///
 		label  star(* .1 ** .05 *** .01) nonotes ///
 		scalars("sample Sample" "platform Platform FE" "f F-test for platform dummies (p-value)" "samplemean Sample mean") ///

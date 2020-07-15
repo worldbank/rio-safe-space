@@ -269,7 +269,7 @@
 			esttab 		`models' using "${out_tables}/delete_me.tex" ///
 						,  ///
 						noobs nomtitles ///
-						`r(table_options)' 
+						`r(table_options)' ${star}
 				
 /*------------------------------------------------------------------------------
 	Panel B
@@ -286,7 +286,7 @@
 						using "${out_tables}/delete_me.tex" ///
 						,  ///
 						nomtitles nonumbers ///
-						`r(table_options)' ///
+						`r(table_options)' ${star} ///
 						``est'drop' ///
 						scalar	("riders Riders" "user ``est'fe' fixed effect" ///
 								 "diff_high `r(footer_title)' \multicolumn{`r(ncols)'}{l}{By opportunity cost: zero opportunity cost - positive opportunity cost} \\ \quad Few men in reserved space: $\hat\beta_{M_2} - \hat\beta_{M_1}$" "ftest_high \quad P-value" ///
@@ -295,7 +295,7 @@
 								 "diff_pos \quad Positive oppotunity cost: $\hat\beta_{M_1} - \hat\beta_{M_3}$ " "ftest_pos \quad P-value")
 		
 			* Fix the automatic escape of subscripts
-			filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/`spec'_wtp_`est'.tex", ///
+			filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/${star}`spec'_wtp_`est'.tex", ///
 						from("\BSbeta\BS_{M\BS_") to("\BSbeta_{M_") replace
 
 			erase 		"${out_tables}/delete_me.tex"
