@@ -136,7 +136,8 @@
 	
 	esttab  `models' using "${out_tables}/${star}mainiat.tex", ///
 			drop(*.platform) ///
-			`r(table_options)' ${star} ///
+			`r(table_options)' ///
+      ${star} ///
 			nomtitles  nonotes ///
 			order(reputationversion reputationversion_male d_man d_employed d_young d_lowed scorecareer) ///
 			scalars("riders  Respondents" ///

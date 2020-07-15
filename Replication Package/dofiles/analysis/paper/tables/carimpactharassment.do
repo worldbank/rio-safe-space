@@ -88,9 +88,10 @@
 						title(Overall impact of randomized assignment) ///
 						prefoot("\multicolumn{9}{c}{\textit{Mean dependent variable}} \\ Assigned to public space & \multicolumn{2}{c}{`d_harassment_mean'} & \multicolumn{2}{c}{`d_physical_har_mean'} & \multicolumn{2}{c}{`d_verbal_har_mean'} & \multicolumn{2}{c}{`d_staring_mean'} \\ \, & \multicolumn{2}{c}{`d_harassment_se'} & \multicolumn{2}{c}{`d_physical_har_se'} & \multicolumn{2}{c}{`d_verbal_har_se'} & \multicolumn{2}{c}{`d_staring_se'} \\")
 
-			esttab 	`estimates_`est'' using "${out_tables}/${star}`spec'_carimpactharassment_`est'0.tex" ///
+			esttab 	`estimates_`est'' using "${out_tables}/`spec'_carimpactharassment_`est'0.tex" ///
 					,  ///
-					`r(table_options)' ${star} ///
+					`r(table_options)' ///
+          ${star} ///
 					noobs nomtitles ///
 					mgroups ("Any harassment" "Physical harassment" "Verbal harassment" "Staring", ///
 							 pattern(1 0 1 0 1 0 1 0) ///
@@ -273,7 +274,8 @@
 					,  ///
 					keep(${interactionvars} `keep`est'') ///
 					nomtitles nonumbers ///
-					`r(table_options)' ${star} ///
+					`r(table_options)' ///
+          ${star} ///
 					scalar("riders Riders" `scalar`est'' ///
 						   "diff_high  `r(footer_title)' \multicolumn{`r(ncols)'}{l}{Impact on harassment when few men in reserved space: reserved space - public space} \\ \quad $\hat\beta_{M_1}$ - $\hat\beta_{M_2}$" "ftest_high \quad P-value" ///
 						   "diff_low   \multicolumn{`r(ncols)'}{l}{Impact on harassment when many men in reserved space: reserved space - public space} \\\quad $\hat\beta_{M_3}$ - $\hat\beta_{M_4}$" "ftest_low  \quad P-value")

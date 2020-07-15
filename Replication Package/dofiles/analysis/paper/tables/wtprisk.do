@@ -230,7 +230,8 @@
 		esttab 		`models' using "${out_tables}/delete_me.tex" ///
 					,  ///
 					noobs nomtitles ///
-					`r(table_options)' ${star} ///
+					`r(table_options)' ///
+          ${star} ///
 					scalars	("riders Riders" ///
 							 "line Line fixed effects")
 						
@@ -249,7 +250,8 @@
 					keep(zero_low pos_low zero_high pos_high d_highcongestion) ///
 					order(pos_low zero_low pos_high zero_high) ///
 					nomtitles nonumbers ///
-					`r(table_options)' ${star} ///
+					`r(table_options)' ///
+          ${star} ///
 					scalars	("riders Riders" ///
 							 "line Line fixed effects" ///
 							 "risktypet \multirow{2}{*}{Type of perceived risk}" ///
