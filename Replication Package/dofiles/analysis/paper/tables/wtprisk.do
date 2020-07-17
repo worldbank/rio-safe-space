@@ -21,11 +21,19 @@
 	PART 1: Define sample
 ********************************************************************************/
 	
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 	* Only baseline and price experiment rider
 	keep if inlist(phase, 1, 2)
 	
+	lab def oc_risk 	1 "$\hat\beta_{M_1}$: Positive opportunity cost \$\times\$ Low risk perceiver" 	///
+						2 "$\hat\beta_{M_2}$: Zero opportunity cost \$\times\$ Low risk perceiver"			///
+						3 "$\hat\beta_{M_3}$: Positive opportunity cost \$\times\$ High risk perceiver"	///
+						4 "$\hat\beta_{M_4}$: Zero opportunity cost \$\times\$ High risk perceiver"		
+	
+	gen 	d_risk_high = .
+	lab var d_risk_high	"High risk perceiver"
+
 	foreach spec in online paper {
 	
 	if "`spec'" == "online" {
@@ -41,9 +49,13 @@
 	* Loop over the three different types of risk
 	foreach risk in comments grope robbed {
 	
-		gen d_risk_high = d_`risk'_high
-		lab var d_risk_high "High risk perceiver"
+		cap	drop oc_risk
+		egen  	 oc_risk = 	group(d_pos_premium d_`risk'_high)						
+		recode 	 oc_risk	(1 = 4) (2 = 2) (3 = 3) (4 = 1)			
 		
+		replace	 d_risk_high = d_`risk'_high
+		
+	
 /*------------------------------------------------------------------------------
 	PART 2.1: Top panel
 ------------------------------------------------------------------------------*/
@@ -67,23 +79,23 @@
 		estadd local 	line 		"No"
 		
 		* Model 2: line FE
-		areg d_women_car d_risk_high  ///
-			 [pw = weight] ///
-			if phase == 1, ///
-			cluster(user_id) ///
-			 absorb(CI_line)
-		
+		areg 	d_women_car d_risk_high  ///
+				[pw = weight] ///
+				if phase == 1, ///
+				cluster(user_id) ///
+				absorb(CI_line)
+			
 		eststo `risk't2
 		estadd local 	riders		`e(N_clust)'
 		estadd local 	line 		"Yes"
 		
 		* Model 3: line FE + congestion
-		areg d_women_car d_risk_high ///
-			 d_highcongestion d_highcompliance ///
-			 [pw = weight] ///
-			if phase == 1, ///
-			cluster(user_id) ///
-			 absorb(CI_line)
+		areg	d_women_car d_risk_high ///
+				d_highcongestion d_highcompliance ///
+				[pw = weight] ///
+				if phase == 1, ///
+				cluster(user_id) ///
+				absorb(CI_line)
 		
 		eststo `risk't3
 		estadd local 	riders		`e(N_clust)'
@@ -106,101 +118,105 @@
 				local risktypet "\multirow{2}{*}{Robbery}"
 				local risktypeb ""
 			}
-		
-			* Interact with opportunity cost to create hetergeneity variables
-			gen zero_high 		= (d_pos_premium == 0 & d_`risk'_high == 1) if !missing(d_pos_premium) & !missing(d_`risk'_high)
-			gen pos_high 		= (d_pos_premium == 1 & d_`risk'_high == 1) if !missing(d_pos_premium) & !missing(d_`risk'_high)
-			gen zero_low 		= (d_pos_premium == 0 & d_`risk'_high == 0) if !missing(d_pos_premium) & !missing(d_`risk'_high)
-			gen pos_low 		= (d_pos_premium == 1 & d_`risk'_high == 0) if !missing(d_pos_premium) & !missing(d_`risk'_high)
-			
+	
 			* Model 1: no controls
-			reg d_women_car  zero_low pos_low zero_high pos_high ///
+			reg d_women_car  i.oc_risk ///
 				[pw = weight], ///
-				cluster(user_id) ///
-				nocons
+				cluster(user_id) 
+			
+					local 	riders		`e(N_clust)'
+
+			margins oc_risk, post
 
 			eststo `risk'1
-			estadd local riders		`e(N_clust)'
-			estadd local line 		"No"
-			estadd local risktypet	"`risktypet'"
-			estadd local risktypeb	"`risktypeb'"
-			
-			lincom zero_high - zero_low
+			estadd 	local 	riders		`riders'
+			estadd 	local 	line 		"No"
+			estadd 	local 	risktypet	"`risktypet'"
+			estadd 	local 	risktypeb	"`risktypeb'"
+			estadd 	local  	control		"No"
+		
+			lincom 2.oc_risk - 4.oc_risk
 			estadd scalar 		diff_zero	`r(estimate)'
 			estadd scalar		ftest_zero	`r(p)'
 			
-			lincom pos_high - pos_low
+			lincom 1.oc_risk - 3.oc_risk
 			estadd scalar 		diff_pos	`r(estimate)'
 			estadd scalar		ftest_pos	`r(p)'
 			
-			lincom zero_high - pos_high
+			lincom 2.oc_risk - 1.oc_risk
 			estadd scalar 		diff_high	`r(estimate)'
 			estadd scalar		ftest_high	`r(p)'
 			
-			lincom zero_low - pos_low
+			lincom 4.oc_risk - 3.oc_risk
 			estadd scalar		diff_low	`r(estimate)'
 			estadd scalar		ftest_low	`r(p)'
 			
 			* Model 2: line FE
-			reg d_women_car  zero_low pos_low zero_high pos_high ///
-				i.CI_line ///
+			areg d_women_car  i.oc_risk ///
 				[pw = weight], ///
 				cluster(user_id) ///
-				nocons
+				a(CI_line)
+				
+					local 	riders		`e(N_clust)'
+
+			margins oc_risk, post
 			
 			eststo `risk'2
-			estadd local riders		`e(N_clust)'
-			estadd local line 		"Yes" 
-			estadd local risktypet	"`risktypet'"
-			estadd local risktypeb	"`risktypeb'"
-			
-			lincom zero_high - zero_low
+			estadd 	local 	riders		`riders'
+			estadd	local 	line 		"Yes" 
+			estadd 	local 	risktypet	"`risktypet'"
+			estadd 	local 	risktypeb	"`risktypeb'"
+			estadd 	local  	control		"No"
+		
+			lincom 2.oc_risk - 4.oc_risk
 			estadd scalar 		diff_zero	`r(estimate)'
 			estadd scalar		ftest_zero	`r(p)'
 			
-			lincom pos_high - pos_low
+			lincom 1.oc_risk - 3.oc_risk
 			estadd scalar 		diff_pos	`r(estimate)'
 			estadd scalar		ftest_pos	`r(p)'
 			
-			lincom zero_high - pos_high
+			lincom 2.oc_risk - 1.oc_risk
 			estadd scalar 		diff_high	`r(estimate)'
 			estadd scalar		ftest_high	`r(p)'
 			
-			lincom zero_low - pos_low
+			lincom 4.oc_risk - 3.oc_risk
 			estadd scalar		diff_low	`r(estimate)'
 			estadd scalar		ftest_low	`r(p)'
 			
 			* Model 3: line FE + congestion
-			reg d_women_car  zero_low pos_low zero_high pos_high ///
-				d_highcongestion i.CI_line ///
-				[pw = weight], ///
-				cluster(user_id) ///
-				nocons
+			areg 	d_women_car  i.oc_risk ///
+					d_highcongestion ///
+					[pw = weight], ///
+					cluster(user_id) ///
+					a(CI_line)
+				
+					local 	riders		`e(N_clust)'
+
+			margins oc_risk, post
 			
 			eststo `risk'3
-			estadd local riders		`e(N_clust)'
-			estadd local line 		"Yes" 
-			estadd local risktypet	"`risktypet'"
-			estadd local risktypeb	"`risktypeb'"
-			
-			lincom zero_high - zero_low
+			estadd 	local 	riders		`riders'
+			estadd 	local 	line 		"Yes" 
+			estadd 	local 	risktypet	"`risktypet'"
+			estadd 	local 	risktypeb	"`risktypeb'"
+			estadd 	local  	control		"Yes"
+		
+			lincom 2.oc_risk - 4.oc_risk
 			estadd scalar 		diff_zero	`r(estimate)'
 			estadd scalar		ftest_zero	`r(p)'
 			
-			lincom pos_high - pos_low
+			lincom 1.oc_risk - 3.oc_risk
 			estadd scalar 		diff_pos	`r(estimate)'
 			estadd scalar		ftest_pos	`r(p)'
 			
-			lincom zero_high - pos_high
+			lincom 2.oc_risk - 1.oc_risk
 			estadd scalar 		diff_high	`r(estimate)'
 			estadd scalar		ftest_high	`r(p)'
 			
-			lincom zero_low - pos_low
+			lincom 4.oc_risk - 3.oc_risk
 			estadd scalar		diff_low	`r(estimate)'
 			estadd scalar		ftest_low	`r(p)'
-
-			* Drop heterogeneity vars so we can create them again for the next risk type
-			if "`risk'" != "robbed" drop zero_low pos_low zero_high pos_high d_risk_high
 				
 		}
 	
@@ -209,11 +225,8 @@
 ********************************************************************************/	
 
 		* Label variables for this table only
-		lab var pos_low   "$\hat\beta_{M_1}$: Positive opportunity cost \$\times\$ Low risk perceiver"
-		lab var zero_low  "$\hat\beta_{M_2}$: Zero opportunity cost \$\times\$ Low risk perceiver"
-		lab var pos_high  "$\hat\beta_{M_3}$: Positive opportunity cost \$\times\$ High risk perceiver"
-		lab var zero_high "$\hat\beta_{M_4}$: Zero opportunity cost \$\times\$ High risk perceiver"
-		
+		lab val oc_risk		oc_risk
+
 		
 /*------------------------------------------------------------------------------
 	PART 3.1: Top panel
@@ -230,8 +243,8 @@
 		esttab 		`models' using "${out_tables}/delete_me.tex" ///
 					,  ///
 					noobs nomtitles ///
-					`r(table_options)' ///
-          ${star} ///
+					`r(table_options)'  ///
+					${star} ///
 					scalars	("riders Riders" ///
 							 "line Line fixed effects")
 						
@@ -247,12 +260,11 @@
 						
 		esttab 		`models' using "${out_tables}/delete_me.tex" ///
 					,  ///
-					keep(zero_low pos_low zero_high pos_high d_highcongestion) ///
-					order(pos_low zero_low pos_high zero_high) ///
 					nomtitles nonumbers ///
-					`r(table_options)' ///
-          ${star} ///
+					`r(table_options)'  ///
+					${star} ///
 					scalars	("riders Riders" ///
+							 "control Control for high crowding" ///
 							 "line Line fixed effects" ///
 							 "risktypet \multirow{2}{*}{Type of perceived risk}" ///
 							 "risktypeb \," ///
@@ -261,12 +273,11 @@
 							 "diff_zero  \multicolumn{10}{l}{By risk perception: high risk - low risk perceivers} \\ \quad Zero opportunity cost: $\hat\beta_{M_4} - \hat\beta_{M_2}$" "ftest_zero \quad P-value" ///
 							 "diff_pos \quad Positive opportunity cost: $\hat\beta_{M_3} - \hat\beta_{M_1}$" "ftest_pos \quad P-value")
 		
-		filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/${star}`spec'_wtprisk.tex", ///
+		filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/`spec'_wtprisk.tex", ///
 						from("\BSbeta\BS_{M\BS_") to("\BSbeta_{M_") replace
 		
 		erase 		"${out_tables}/delete_me.tex"
 		
-		drop d_risk_high zero_high pos_high zero_low pos_low
 	}
 
 *------------------------ End of do-file --------------------------------------*

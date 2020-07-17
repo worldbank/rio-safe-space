@@ -113,10 +113,10 @@
 ********************************************************************************/
 	
 	esttab responsesurvey2 response2 response3 response4 ///
-		using "${out_tables}/${star}response", ///
+		using "${out_tables}/response", ///
 		${star} ///
 		tex se replace nomtitles nodepvars drop(*.platform) ///
-		label  star(* .1 ** .05 *** .01) nonotes ///
+		label nonotes ///
 		scalars("sample Sample" "platform Platform FE" "f F-test for platform dummies (p-value)" "samplemean Sample mean") ///
 		sfmt(%9.3f) b(%9.3f) se(%9.3f) ///
 		prehead("\begin{tabular}{l*{5}{c}} \hline\hline \\[-1.8ex] & \multicolumn{4}{c}{Dependent variable:} \\ & \multicolumn{1}{c}{Responds platform survey} & \multicolumn{3}{c}{Responds IAT} \\ \cmidrule(lr){2-2}\cmidrule(lr){3-5}") ///

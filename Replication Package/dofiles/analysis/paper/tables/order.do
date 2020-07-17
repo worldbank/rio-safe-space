@@ -12,7 +12,7 @@
        PART 1: Define sample
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 	* Only baseline and price experiment rider
 	keep if inlist(phase, 1, 2)
@@ -49,12 +49,11 @@
 	PART 3: Export regression table
 ********************************************************************************/	
 
-	esttab top1 top2 using "${out_tables}/${star}order.tex" ///
+	esttab top1 top2 using "${out_tables}/order.tex" ///
 		, ///
 		${star} ///
 		scalars("riders Riders") ///
 		label tex replace se ///
-		star(* .1 ** .05 *** .01) ///
 		nonotes nomtitles nobaselevels noomit ///
 		b(%9.3f) se(%9.3f) ///
 		prehead("\begin{tabular}{l*{2}{c}} \hline\hline \\[-1.8ex] & \multicolumn{2}{c}{\begin{tabular}{@{}c@{}}Dependent variable: \\ Chose reserved space\end{tabular}} \\" ) ///

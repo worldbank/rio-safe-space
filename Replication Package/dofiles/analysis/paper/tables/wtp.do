@@ -15,13 +15,13 @@
        PART 1: Define sample
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 
 	* Only baseline and price experiment rider
 	keep if inlist(phase, 1, 2)
 	
 	* Drop user with no mapping observations (missing compliance)
-	drop if flag_nomapping == 1
+	drop if flag_nomapping == 1	
 		
 /********************************************************************************
 	PART 3: Run regressions
@@ -130,27 +130,33 @@
 		* No controls *
 		***************
 		
-		reg d_women_car ${interactionvars_oc} ///
+		reg d_women_car i.oc_compliance ///
 			[pw = weightfe], ///
-			cluster(user_id) nocons
+			cluster(user_id) 
+		
+		local  		riders		`e(N_clust)'
+		
+		margins oc_compliance, post
 		
 		eststo appendix3
-		estadd local  		riders		"`e(N_clust)'"
+		estadd local  		riders		"`riders'"
 		estadd local  		user		"No"
+		estadd local  		line		"No"
+		estadd local  		control		"No"
 		
-		lincom zero_highcompliance - zero_lowcompliance
+		lincom 2.oc_compliance - 4.oc_compliance
 		estadd scalar 		diff_zero	`r(estimate)'
 		estadd scalar		ftest_zero	`r(p)'
 		
-		lincom pos_highcompliance - pos_lowcompliance
+		lincom 1.oc_compliance - 3.oc_compliance
 		estadd scalar 		diff_pos	`r(estimate)'
 		estadd scalar		ftest_pos	`r(p)'
 		
-		lincom zero_highcompliance - pos_highcompliance
+		lincom 2.oc_compliance - 1.oc_compliance
 		estadd scalar 		diff_high	`r(estimate)'
 		estadd scalar		ftest_high	`r(p)'
 		
-		lincom zero_lowcompliance - pos_lowcompliance
+		lincom 4.oc_compliance - 3.oc_compliance
 		estadd scalar		diff_low	`r(estimate)'
 		estadd scalar		ftest_low	`r(p)'
 		
@@ -158,57 +164,70 @@
 		* Line FE *
 		***********
 		
-		reg d_women_car ${interactionvars_oc} ///
-			I.CI_line ///
-			[pw = weightfe], ///
-			cluster(user_id) nocons
+		areg d_women_car i.oc_compliance ///
+			 [pw = weightfe], ///
+			 cluster(user_id) ///
+			 a(CI_line)
+		
+		local  		riders		`e(N_clust)'
+		
+		margins oc_compliance, post
 		
 		eststo appendix4
-		estadd local  		riders		"`e(N_clust)'"
-		estadd local  		user		"Yes"
+		estadd local  		riders		"`riders'"
+		estadd local  		user		"No"
+		estadd local  		line		"Yes"
+		estadd local  		control		"No"
 		
-		lincom zero_highcompliance - zero_lowcompliance
+		
+		lincom 2.oc_compliance - 4.oc_compliance
 		estadd scalar 		diff_zero	`r(estimate)'
 		estadd scalar		ftest_zero	`r(p)'
 		
-		lincom pos_highcompliance - pos_lowcompliance
+		lincom 1.oc_compliance - 3.oc_compliance
 		estadd scalar 		diff_pos	`r(estimate)'
 		estadd scalar		ftest_pos	`r(p)'
 		
-		lincom zero_highcompliance - pos_highcompliance
+		lincom 2.oc_compliance - 1.oc_compliance
 		estadd scalar 		diff_high	`r(estimate)'
 		estadd scalar		ftest_high	`r(p)'
 		
-		lincom zero_lowcompliance - pos_lowcompliance
+		lincom 4.oc_compliance - 3.oc_compliance
 		estadd scalar		diff_low	`r(estimate)'
-		estadd scalar		ftest_low	`r(p)'		
+		estadd scalar		ftest_low	`r(p)'
 		
 		***********
 		* User FE *
 		***********	
 		
-		reg d_women_car  ${interactionvars_oc} ///
-			i.user_id ///
-			[pw = weightfe], ///
-			cluster(user_id) nocons
+		areg d_women_car  i.oc_compliance ///
+			 [pw = weightfe], ///
+			 cluster(user_id) ///
+			 a(user_id)
+		
+		local  		riders		`e(N_clust)'
+		
+		margins oc_compliance, post
 		
 		eststo main3
-		estadd local  		riders		"`e(N_clust)'"
+		estadd local  		riders		"`riders'"
 		estadd local  		user		"Yes"
+		estadd local  		control		"No"
 		
-		lincom zero_highcompliance - zero_lowcompliance
+		
+		lincom 2.oc_compliance - 4.oc_compliance
 		estadd scalar 		diff_zero	`r(estimate)'
 		estadd scalar		ftest_zero	`r(p)'
 		
-		lincom pos_highcompliance - pos_lowcompliance
+		lincom 1.oc_compliance - 3.oc_compliance
 		estadd scalar 		diff_pos	`r(estimate)'
 		estadd scalar		ftest_pos	`r(p)'
 		
-		lincom zero_highcompliance - pos_highcompliance
+		lincom 2.oc_compliance - 1.oc_compliance
 		estadd scalar 		diff_high	`r(estimate)'
 		estadd scalar		ftest_high	`r(p)'
-	
-		lincom zero_lowcompliance - pos_lowcompliance
+		
+		lincom 4.oc_compliance - 3.oc_compliance
 		estadd scalar		diff_low	`r(estimate)'
 		estadd scalar		ftest_low	`r(p)'
 		
@@ -216,40 +235,43 @@
 		* User FE + congestion *
 		************************
 		
-		reg d_women_car ${interactionvars_oc} ///
+		areg d_women_car i.oc_compliance ///
 			d_highcongestion ///
-			i.user_id ///
 			[pw = weightfe], ///
-			cluster(user_id) nocons
-	
-		eststo main4
-		estadd local  		riders		"`e(N_clust)'"
-		estadd local  		user		"Yes"
+			cluster(user_id) ///
+			a(user_id)
 		
-		lincom zero_highcompliance - zero_lowcompliance
+		local  		riders		`e(N_clust)'
+		
+		margins oc_compliance, post
+		
+		eststo main4
+		estadd local  		riders		"`riders'"
+		estadd local  		user		"Yes"
+		estadd local  		control		"Yes"
+			
+		lincom 2.oc_compliance - 4.oc_compliance
 		estadd scalar 		diff_zero	`r(estimate)'
 		estadd scalar		ftest_zero	`r(p)'
 		
-		lincom pos_highcompliance - pos_lowcompliance
+		lincom 1.oc_compliance - 3.oc_compliance
 		estadd scalar 		diff_pos	`r(estimate)'
 		estadd scalar		ftest_pos	`r(p)'
 		
-		lincom zero_highcompliance - pos_highcompliance
+		lincom 2.oc_compliance - 1.oc_compliance
 		estadd scalar 		diff_high	`r(estimate)'
 		estadd scalar		ftest_high	`r(p)'
 		
-		lincom zero_lowcompliance - pos_lowcompliance
+		lincom 4.oc_compliance - 3.oc_compliance
 		estadd scalar		diff_low	`r(estimate)'
-		estadd scalar		ftest_low	`r(p)'		
+		estadd scalar		ftest_low	`r(p)'
+		
 
 /********************************************************************************
 	PART 4: Export tables
 ********************************************************************************/	
 
-		local maindrop		drop(*.user_id)
-		local appendixdrop	drop(*.CI_line)
-		local mainfe		Rider
-		local appendixfe	Line
+		local appendixfe	`""line Line fixed effect""'
 		
 		foreach est in main appendix {
 		
@@ -269,7 +291,7 @@
 			esttab 		`models' using "${out_tables}/delete_me.tex" ///
 						,  ///
 						noobs nomtitles ///
-						`r(table_options)' ${star}
+						`r(table_options)' ${star} 
 				
 /*------------------------------------------------------------------------------
 	Panel B
@@ -286,16 +308,15 @@
 						using "${out_tables}/delete_me.tex" ///
 						,  ///
 						nomtitles nonumbers ///
-						`r(table_options)' ${star} ///
-						``est'drop' ///
-						scalar	("riders Riders" "user ``est'fe' fixed effect" ///
+						`r(table_options)' ${star}  ///
+						scalar	("riders Riders" "control Control for high crowding" "user Rider fixed effect" ``est'fe'  ///
 								 "diff_high `r(footer_title)' \multicolumn{`r(ncols)'}{l}{By opportunity cost: zero opportunity cost - positive opportunity cost} \\ \quad Few men in reserved space: $\hat\beta_{M_2} - \hat\beta_{M_1}$" "ftest_high \quad P-value" ///
-								 "diff_low  \quad Many men in rserved space: $\hat\beta_{M_4} - \hat\beta_{M_3}$ " "ftest_low  \quad P-value" ///
+								 "diff_low  \quad Many men in reserved space: $\hat\beta_{M_4} - \hat\beta_{M_3}$ " "ftest_low  \quad P-value" ///
 								 "diff_zero \multicolumn{`r(ncols)'}{l}{By male presence in reserved space: few men - many men in reserved space} \\ \quad Zero opportunity cost: $\hat\beta_{M_2} - \hat\beta_{M_4}$" "ftest_zero \quad P-value" ///
 								 "diff_pos \quad Positive oppotunity cost: $\hat\beta_{M_1} - \hat\beta_{M_3}$ " "ftest_pos \quad P-value")
 		
 			* Fix the automatic escape of subscripts
-			filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/${star}`spec'_wtp_`est'.tex", ///
+			filefilter 	"${out_tables}/delete_me.tex" "${out_tables}/`spec'_wtp_`est'.tex", ///
 						from("\BSbeta\BS_{M\BS_") to("\BSbeta_{M_") replace
 
 			erase 		"${out_tables}/delete_me.tex"

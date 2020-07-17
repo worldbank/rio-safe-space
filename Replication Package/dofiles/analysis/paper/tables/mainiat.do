@@ -134,10 +134,10 @@
 	local	   models main1 main3 main5 main2 main4 main6
 	tableprep `models', panel(A) depvar(Dependent variable: IAT D-Score)
 	
-	esttab  `models' using "${out_tables}/${star}mainiat.tex", ///
+	esttab  `models' using "${out_tables}/mainiat.tex", ///
 			drop(*.platform) ///
 			`r(table_options)' ///
-      ${star} ///
+			${star} ///
 			nomtitles  nonotes ///
 			order(reputationversion reputationversion_male d_man d_employed d_young d_lowed scorecareer) ///
 			scalars("riders  Respondents" ///

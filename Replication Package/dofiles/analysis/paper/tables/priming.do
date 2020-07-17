@@ -39,9 +39,9 @@
 ********************************************************************************/
 
 	esttab priming1 priming2 ///
-		using "${out_tables}/${star}priming.tex",  ///
+		using "${out_tables}/priming.tex",  ///
 		${star} ///
-		tex se replace label  star(* .1 ** .05 *** .01) ///
+		tex se replace label ///
 		nomtitles nonotes ///
 		drop(1.q_group) ///
 		b(%9.3f) se(%9.3f) ///

@@ -32,7 +32,7 @@
 	* ------
 	* Riders
 	* ------
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 
 	* Rename variables to match platform survey
 	keep	user_id 	${balancevars1} ${balancevars2}	stage
@@ -98,7 +98,7 @@
 					vce(robust) ///
 					rowvarlabels tblnonote ///
 					`star' ///
-          browse         
+					browse         
 					
 		
 	/* We're dropping the number of observations from the table, which takes 
@@ -135,7 +135,7 @@
 				grpvar(balance_group) ///
 				rowvarlabels control(2) tblnonote vce(robust) ///
 				 `star' ///
-         browse
+				browse
 			
 	* Drop number of obs and make manual corrections
 	drop 	v2 v4
@@ -230,8 +230,8 @@
 	filefilter "${out_tables}/delete_me2.tex" "${out_tables}/delete_me1.tex", ///
                from("(5) \BS\BS \BShline") to("(5) \BS\BS \BShline \BS\BS[-1.8ex]") replace
 	
-	filefilter "${out_tables}/delete_me1.tex" "${out_tables}/${star}balance_table.tex", ///
-              from("00 ") to("") replace
+	filefilter "${out_tables}/delete_me1.tex" "${out_tables}/balance_table.tex", ///
+               from("00 ") to("") replace
 	
 	erase	"${out_tables}/delete_me1.tex"
 	erase	"${out_tables}/delete_me2.tex"

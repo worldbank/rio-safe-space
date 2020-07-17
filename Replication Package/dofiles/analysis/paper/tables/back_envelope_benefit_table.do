@@ -18,7 +18,7 @@
 				PART 5:   Rescale scalars to percentage points for table 
 				PART 6:   Construct table 
 				
-	REQUIRES:	${dt_final}/pooled_rider_audit_constructed_full.dta
+	REQUIRES:	${dt_final}/pooled_rider_audit_constructed.dta
 	CREATES:	${out_tables}/back_envelope_costs_full.tex
 				
 	WRITEN BY:  Kate Vyborny and Luiza Andrade
@@ -31,7 +31,7 @@
 	PART 1.1: Load data and keep the same sample as in the carimpactharassment.do
 ------------------------------------------------------------------------------*/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 
 	keep		if missing(flag_nomapping)
 

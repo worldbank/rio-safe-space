@@ -12,13 +12,13 @@
        PART 1: Define sample 
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 
 /********************************************************************************
        PART 2: Regressions  
 ********************************************************************************/
 
-	reg RI_men_present_pink MA_men_present_pink, cluster(user_uuid) 
+	reg RI_men_present MA_men_present_pink if d_women_car == 1, cluster(user_uuid) 
 	est sto corr1
 	estadd local	riders	`e(N_clust)'
 
@@ -31,11 +31,11 @@
 		PART 3: Export table
 ********************************************************************************/	
 		
-	esttab corr1 corr2 using "${out_tables}/${star}mappingridercorr.tex" ///
+	esttab corr1 corr2 using "${out_tables}/mappingridercorr.tex" ///
 		, ///
 		${star} ///
-		tex t(3) b(3) ///
-		label se star(* .1 ** .05 *** .01) ///
+		tex se(3) b(3) ///
+		label se ///
 		replace nonotes nomtitle ///
 		scalar("riders Riders") ///
 		prehead("\begin{tabular}{l*{2}{c}} \hline\hline \\[-1.8ex] & \multicolumn{2}{c}{\begin{tabular}{@{}c@{}}Rider reports \end{tabular}} \\ Platform observations & Share of men in reserved space & High crowding \\" )  ///

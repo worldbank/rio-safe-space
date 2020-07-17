@@ -7,7 +7,6 @@ cap program drop tableprep
 	local nmodels		: word count `anything'
 	local ncols			= `nmodels' + 1	
 	local formatting	label f tex se ///
-						star	(* .1 ** .05 *** .01) ///
 						b		(%9.3f) ///
 						se		(%9.3f) ///
 						sfmt	(%9.3f) 

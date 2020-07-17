@@ -27,7 +27,7 @@
 	PART 1: Calculate rider audit numbers
 *******************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 /*------------------------------------------------------------------------------
 	PART 1.1: Demographic survey
@@ -36,7 +36,7 @@
 	preserve
 	
 		* Rider level data sets
-		duplicates drop user_uuid, force
+		collapse (min) flag_nodemovars, by(user_uuid)
 		
 		* Total number of riders
 		local total_rider = _N
