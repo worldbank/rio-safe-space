@@ -17,7 +17,7 @@
 	PART 1: Define sample
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 	* Only baseline and price experiment rider
 	keep if inlist(phase, 1, 2)

@@ -12,7 +12,7 @@
 ********************************************************************************/	
 	
 	* Load full rider data
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 	* Relevant variables are in the exit survey, so only one obs per rider
 	duplicates drop user_uuid, force

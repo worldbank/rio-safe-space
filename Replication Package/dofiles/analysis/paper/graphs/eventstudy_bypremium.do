@@ -11,47 +11,11 @@
     PART 1: Prepare data
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 
-	keep if phase != 3	// keep only willingness to pay rides
-
-/*------------------------------------------------------------------------------
-* We want to align the premia and use only the last 10 rides for each level,
-* because that's the number of rides that should have been taken. Only a few
-* riders took more than 10 rides
-------------------------------------------------------------------------------*/
-
-	* Order rides within premium level
-	bys user_id phase premium: egen premium_ride = rank(ride)
+	keep if phase != 3 				// keep only willingness to pay rides
+	keep if !missing(premium_ride)	// this variable was defined only for the observations relevant for this graph
 	
-	* Now we will identify the first ride at each premium level within the
-	* whole ride sequencing, 
-	gen first_premium_ride = ride if premium == 20 & premium_ride == 1
-	bys user_id: egen firstpremiumride = max(first_premium_ride)
-	gen premiumride = ride - firstpremiumride if premium == 0
-	
-	gen first_five_ride = ride if premium == 5 & premium_ride == 1
-	bys user_id: egen firstfiveride = max(first_five_ride)
-	replace premiumride = ride - firstfiveride if premium == 20
-	
-	gen first_ten_ride = ride if premium == 10 & premium_ride == 1
-	bys user_id: egen firsttenride = max(first_ten_ride)
-	replace premiumride = ride - firsttenride if premium == 5
-	
-	bys user_id: egen lastride = max(ride) if premium == 10
-	
-	sort user_id ride
-	replace premiumride = ride - lastride if premium == 10
-	
-	drop if premiumride < -10 | premiumride > 0
-	drop premium_ride
-	bys user_id phase premium: egen premium_ride = rank(ride)
-	
-	replace premium_ride = premium_ride + 10 if premium == 20
-	replace premium_ride = premium_ride + 20 if premium == 5
-	replace premium_ride = premium_ride + 30 if premium == 10
-	drop if premium_ride == 41
-
 /********************************************************************************
     PART 2: Top panel -- event study graph
 ********************************************************************************/

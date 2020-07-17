@@ -11,7 +11,7 @@
        PART 1: Prepare data
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 	* We're only looking at opportunity cost rides
 	keep if phase < 3 

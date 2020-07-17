@@ -12,7 +12,7 @@
        PART 1: Prepare data
 ********************************************************************************/
 		
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 	drop if inlist(user_uuid, 	"c3153718-9ae0-4d9e-a706-c12b05865c39", ///		these users report harassment on very large share of their rides
 								"f82b3911-6691-4526-b1e6-344e0f72755b", ///		we don't drop them from the main specification because there we're controlling for user fixed effects

@@ -12,7 +12,7 @@
 *******************************************************************************/
 
 	* Load data
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 
 	* Subset sample
 	keep if phase == 1 & d_anyphase2 == 1

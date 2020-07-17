@@ -13,7 +13,7 @@
 *******************************************************************************/
 
 	* Load data: rider audits
-	use "${dt_final}/pooled_mapping.dta", clear
+	use "${dt_final}/platform-observations.dta", clear
 	
 	* Adjust variables format: from 0-1 to 0-100%
 	foreach car in mix pink {

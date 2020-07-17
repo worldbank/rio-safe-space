@@ -12,7 +12,7 @@
     PART 1: Load data
 ********************************************************************************/
 
-	use "${dt_final}/pooled_rider_audit_constructed.dta", clear
+	use "${dt_final}/rider-audits-constructed.dta", clear
 	
 /********************************************************************************
     PART 2: Top panel -- event study graph

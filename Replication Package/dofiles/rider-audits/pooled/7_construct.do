@@ -265,18 +265,20 @@
 		
 	* By phase	
 	forvalues phase = 1/3 {
+	
 		gen d_phase`phase' = (phase == `phase')
 		
 		bys user_uuid: 		 egen d_anyphase`phase' 		= max(d_phase`phase')
 		bys user_uuid phase: egen d_anyphase`phase'_instage = max(d_anyphase`phase')
-	}	
-
+	}
+	
 	* Number of baseline rides
 	bysort user_uuid: 	egen baselinerides 		= total(d_phase1)
 	
 	* Number of rides at 5 or 10 cents premium
 	gen 					 fiveten 			= inlist(premium, 5, 10) & !missing(premium)
 	bysort user_uuid: 	egen fivetenrides 		= total(fiveten)
+
 	
 	/*-----------------------------------------------
 	 Identify riders who participated in both stages
@@ -343,7 +345,7 @@
 		local 	newName = subinstr("`var'", "pref", "", .)
 		rename  `var' `newName'
 		
-		* Now repcde
+		* Now recode
 		gen 	`newName'_cont = `newName'
 		recode 	`newName'_cont	(1 = 0) 	/// Always public space
 								(2 = .25)  /// Mostly public space
@@ -365,6 +367,7 @@
 
 	compress
 	order 	user_uuid session
+	order 	d_anyphase3 baselinerides fivetenrides, after(d_anyphase2)
 	
 	save 			  "${dt_final}/pooled_rider_audit_constructed_full.dta", replace
 	iemetasave  using "${dt_final}/pooled_rider_audit_constructed_full.txt", replace
@@ -480,6 +483,7 @@
 	xtset 				user_id ride
 	
 	sort 				user_id ride	
+	
 	order 	user_uuid 	user_id ride session stage n_stages phase premium premium_cat d_pos_premium	///
 			d_return_rider d_anyphase2 d_anyphase3 d_exit ///
 			ride_frequency 	educ_year age_year ///
