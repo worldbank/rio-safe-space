@@ -177,9 +177,9 @@
 	
 	collapse 	(mean) boardings exits lengthkm loadfact seatprob speedkmhr timemin volume, ///
 				by	   (CI_line CI_station CI_direction hora month_merge year)
-				
 	
-
+	replace loadfact = round(loadfact, .01)	// rounding was causing the number of unique values to change
+				
 ********************************************************************************
 *							PART 5:  Label variables						   *
 ********************************************************************************
@@ -200,6 +200,8 @@
 *							  PART 6:  Save data							   *
 ********************************************************************************
 
+	compress 
+	
 	save 				"${dt_final}/congestion_station_level.dta", replace
 	iemetasave 	using 	"${dt_final}/congestion_station_level.txt", replace
 	

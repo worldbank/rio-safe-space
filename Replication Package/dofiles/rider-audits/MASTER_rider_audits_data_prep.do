@@ -197,7 +197,7 @@
 	* REQUIRES:		${dt_int}/congestion_station_level.dta
 	* CREATES:		${dt_int}/congestion_ride_level.dta
 	***********************************************************************/
-	*do "${do}/rider-audits/congestion/3. Create ride level congestion.do"
+	do "${do}/rider-audits/congestion/3. Create ride level congestion.do"
 
 /*******************************************************************************
 	Clean crime data
@@ -212,7 +212,7 @@
 	*				${encryptcrime}/stations_code.dta
 	* CREATES:		${dt_int}/crime_rates_bystation
 	***********************************************************************/
-	do "${do}/rider-audits/crime/clean-crime-data.do"
+	if ${encrypted} do "${do}/rider-audits/crime/clean-crime-data.do"
 
 /*******************************************************************************
 	Merge waves

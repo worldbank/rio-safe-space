@@ -1,0 +1,1422 @@
+
+------------------------------------------------------------------------------------------
+user_uuid                                                            Unique contributor ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str36)
+
+         unique values:  363                      missing "":  0/21,397
+
+              examples:  "395007d8-7702-4b69-959b-df9eec8b1ee2"
+                         "744967d3-b5db-496c-a646-d71bfb996fe0"
+                         "a6eac498-dcc3-45d0-8673-72e2417a3557"
+                         "d639120a-f76c-4d77-a1b7-63737b759e1d"
+
+------------------------------------------------------------------------------------------
+user_id                                                              Unique contributor ID
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+                 label:  user_id
+
+                 range:  [1,545]                      units:  1
+         unique values:  363                      missing .:  0/21,397
+
+              examples:  117   395007d8-7702-4b69-959b-df9eec8b1ee2
+                         236   744967d3-b5db-496c-a646-d71bfb996fe0
+                         351   a6eac498-dcc3-45d0-8673-72e2417a3557
+                         454   d639120a-f76c-4d77-a1b7-63737b759e1d
+
+------------------------------------------------------------------------------------------
+ride                                                    rank of (datetime)    by user_uuid
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [1,288]                      units:  1
+         unique values:  288                      missing .:  0/21,397
+
+                  mean:   45.0131
+              std. dev:   40.4101
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        16        34        61       100
+
+------------------------------------------------------------------------------------------
+session                                                                     Unique ride ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str52)
+
+         unique values:  21,396                   missing "":  1/21,397
+
+              examples:  "2016_10_19
+                         PM_e68e42ef-51d2-4c69-9015-a7a39910f57c_1"
+                         "2017_01_24
+                         PM_60feb4a2-a9fa-4921-ac5d-f6070b05e84b_1"
+                         "74f74f74_session_ac012d1ca7abed4"
+                         "bfc6a479_session_b4d493a2b7cc2f4"
+
+               warning:  variable has embedded blanks
+
+------------------------------------------------------------------------------------------
+stage                                                                     Recruitment wave
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  stage
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        13,912         0  First wave: baseline
+                         7,485         1  Second wave: pilot
+
+------------------------------------------------------------------------------------------
+n_stages                                    Number of recruitment waves rider participated
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,2]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.  Value
+                        12,365  1
+                         9,032  2
+
+------------------------------------------------------------------------------------------
+phase                                                                          Study phase
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  phase
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         7,943         1  Baseline
+                         9,648         2  Willingness to pay
+                         3,806         3  Randomized car assignment
+
+------------------------------------------------------------------------------------------
+premium                                    Opportunity cost of riding reserved space (USD)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,20]                       units:  1
+         unique values:  4                        missing .:  879/21,397
+
+            tabulation:  Freq.  Value
+                        11,432  0
+                         2,277  5
+                         5,056  10
+                         1,753  20
+                           879  .
+
+------------------------------------------------------------------------------------------
+premium_cat                                     Opportunity cost for riding reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  premium
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        12,311         1  0 cent
+                         2,277         2  5 cents
+                         5,056         3  10 cents
+                         1,753         4  20 cents
+
+------------------------------------------------------------------------------------------
+d_pos_premium                                                    Positive opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  d_pos_premium
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        12,311         0  No opportunity cost
+                         9,086         1  Positive opportunity cost
+
+------------------------------------------------------------------------------------------
+d_return_rider                                               Waves with rider observations
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  rider
+
+                 range:  [2,3]                        units:  1
+         unique values:  2                        missing .:  13,912/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         4,907         2  Pilot study only
+                         2,578         3  Both
+                        13,912         .  
+
+------------------------------------------------------------------------------------------
+d_anyphase2                           Rider completed at least one willingness to pay ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [1,1]                        units:  1
+         unique values:  1                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        21,397         1  Yes
+
+------------------------------------------------------------------------------------------
+d_anyphase3                    Rider completed at least one randomized car assignment ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,141         0  No
+                        19,256         1  Yes
+
+------------------------------------------------------------------------------------------
+d_exit                                                               Completed exit survey
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         3,626         0  No
+                        17,771         1  Yes
+
+------------------------------------------------------------------------------------------
+ride_frequency                                  Number of Supervia rides in typical a week
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,20]                       units:  1
+         unique values:  12                       missing .:  13,912/21,397
+
+                  mean:   6.50608
+              std. dev:   3.38322
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 2         5         5        10        10
+
+------------------------------------------------------------------------------------------
+educ_year                                                               Years of schooling
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [9,19]                       units:  1
+         unique values:  4                        missing .:  4,625/21,397
+
+            tabulation:  Freq.  Value
+                         5,633  9
+                         4,807  12
+                         4,685  16
+                         1,647  19
+                         4,625  .
+
+------------------------------------------------------------------------------------------
+age_year                                                                               Age
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [21,65]                      units:  .1
+         unique values:  6                        missing .:  4,625/21,397
+
+            tabulation:  Freq.  Value
+                         4,830  21
+                         3,542  27.5
+                         4,673  35
+                         2,135  45
+                         1,137  55
+                           455  65
+                         4,625  .
+
+------------------------------------------------------------------------------------------
+top_car                                                         Reserved space shown first
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  top_car
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  15,396/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,970         0  Public space shown first
+                         3,031         1  Reserved space shown first
+                        15,396         .  
+
+------------------------------------------------------------------------------------------
+d_women_car                                                           Chose reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  d_women_car
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        16,406         0  Chose public space
+                         4,991         1  Chose reserved space
+
+------------------------------------------------------------------------------------------
+d_mixed_car                                                          Assigned public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         4,991         0  No
+                        16,406         1  Yes
+
+------------------------------------------------------------------------------------------
+CI_line                                                           Check-in - Supervia line
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,7]                        units:  1
+         unique values:  7                        missing .:  0/21,397
+
+            tabulation:  Freq.  Value
+                         8,093  1
+                         4,195  2
+                         3,821  3
+                         1,462  4
+                         3,809  5
+                            13  6
+                             4  7
+
+------------------------------------------------------------------------------------------
+CI_time_AM                                                                       Time - AM
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [315,539]                    units:  1
+         unique values:  184                      missing .:  10,090/21,397
+
+                  mean:   443.595
+              std. dev:   47.1931
+
+           percentiles:        10%       25%       50%       75%       90%
+                               381       405       441       484       511
+
+------------------------------------------------------------------------------------------
+CI_time_PM                                                                       Time - PM
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [212,502]                    units:  1
+         unique values:  182                      missing .:  11,307/21,397
+
+                  mean:   371.946
+              std. dev:   48.0547
+
+           percentiles:        10%       25%       50%       75%       90%
+                               308       330       371       409       440
+
+------------------------------------------------------------------------------------------
+CI_wait_time_min                                                                  Wait min
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,59.916668]                units:  1.000e-08
+         unique values:  2,563                    missing .:  618/21,397
+
+                  mean:    7.7919
+              std. dev:   11.3414
+
+           percentiles:        10%       25%       50%       75%       90%
+                               .75       1.3      3.15   8.41667   22.1833
+
+------------------------------------------------------------------------------------------
+RI_spot                                                                 Moved within space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  879/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         9,798         0  No
+                        10,720         1  Yes
+                           879         .  
+
+------------------------------------------------------------------------------------------
+RI_men_present                  Share of reserved space riders who are male - Rider report
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+                 label:  RI_men_present, but 6 nonmissing values are not labeled
+
+                 range:  [.05,.95]                    units:  .01
+         unique values:  6                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         1,863       .05  
+                         1,489        .2  
+                         4,211        .4  
+                         8,476        .6  
+                         4,724        .8  
+                           634       .95  
+
+------------------------------------------------------------------------------------------
+rider_obs_crowd                                                       Ride - High crowding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        10,379         0  No
+                        11,018         1  Yes
+
+------------------------------------------------------------------------------------------
+CO_switch                                                                  Switched spaces
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,935/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        13,754         0  No
+                           708         1  Yes
+                         6,935         .  
+
+------------------------------------------------------------------------------------------
+d_verbal_har                               Rider experienced verbal harassment during ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  10,711/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        10,004         0  No
+                           682         1  Yes
+                        10,711         .  
+
+------------------------------------------------------------------------------------------
+d_staring                                                  Rider was stared at during ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  10,711/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         9,290         0  No
+                         1,396         1  Yes
+                        10,711         .  
+
+------------------------------------------------------------------------------------------
+d_physical_har                           Rider experienced physical harassment during ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  10,711/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        10,260         0  No
+                           426         1  Yes
+                        10,711         .  
+
+------------------------------------------------------------------------------------------
+d_harassment                                      Rider experienced harassment during ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  harassment
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  10,711/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         8,772         0  Did not experience harassment
+                         1,914         1  Experienced harassment
+                        10,711         .  
+
+------------------------------------------------------------------------------------------
+comments_mixed_cont                                                   Verbal, public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,156]                      units:  .1
+         unique values:  7                        missing .:  11,614/21,397
+       unique mv codes:  2                       missing .*:  357/21,397
+
+            tabulation:  Freq.  Value
+                           317  0
+                           802  .5
+                           617  1
+                         4,125  5
+                           983  18
+                           446  52
+                         2,136  156
+                        11,614  .
+                           357  .r
+
+------------------------------------------------------------------------------------------
+comments_pink_cont                                                  Verbal, reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,156]                      units:  .1
+         unique values:  7                        missing .:  11,614/21,397
+       unique mv codes:  2                       missing .*:  392/21,397
+
+            tabulation:  Freq.  Value
+                           696  0
+                           897  .5
+                         2,186  1
+                         3,279  5
+                         1,152  18
+                           251  52
+                           930  156
+                        11,614  .
+                           392  .r
+
+------------------------------------------------------------------------------------------
+grope_mixed_cont                                                    Physical, public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,156]                      units:  .1
+         unique values:  7                        missing .:  11,614/21,397
+       unique mv codes:  2                       missing .*:  626/21,397
+
+            tabulation:  Freq.  Value
+                           880  0
+                         1,308  .5
+                         1,561  1
+                         3,303  5
+                           930  18
+                           247  52
+                           928  156
+                        11,614  .
+                           626  .r
+
+------------------------------------------------------------------------------------------
+grope_pink_cont                                                   Physical, reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,156]                      units:  .1
+         unique values:  7                        missing .:  11,614/21,397
+       unique mv codes:  2                       missing .*:  542/21,397
+
+            tabulation:  Freq.  Value
+                         1,079  0
+                         3,075  .5
+                         1,865  1
+                         1,686  5
+                           788  18
+                           319  52
+                           429  156
+                        11,614  .
+                           542  .r
+
+------------------------------------------------------------------------------------------
+advantage_pink_0                                                                      None
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  3,626/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        16,601         0  No
+                         1,170         1  Yes
+                         3,626         .  
+
+------------------------------------------------------------------------------------------
+advantage_pink_1                                                              More comfort
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  3,626/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        15,757         0  No
+                         2,014         1  Yes
+                         3,626         .  
+
+------------------------------------------------------------------------------------------
+advantage_pink_2                                                           Less harassment
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  3,626/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         7,136         0  No
+                        10,635         1  Yes
+                         3,626         .  
+
+------------------------------------------------------------------------------------------
+advantage_pink_3                                                             Less crowding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  3,626/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        15,252         0  No
+                         2,519         1  Yes
+                         3,626         .  
+
+------------------------------------------------------------------------------------------
+advantage_pink_4                                                                    Safety
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  3,626/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        13,761         0  No
+                         4,010         1  Yes
+                         3,626         .  
+
+------------------------------------------------------------------------------------------
+advantage_pink_5                                                                     Other
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  3,626/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        16,640         0  No
+                         1,131         1  Yes
+                         3,626         .  
+
+------------------------------------------------------------------------------------------
+load_factor                                                       Average ride load factor
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (double)
+
+                 range:  [.01,.94]                    units:  .01
+         unique values:  87                       missing .:  15,532/21,397
+
+                  mean:   .349855
+              std. dev:   .199447
+
+           percentiles:        10%       25%       50%       75%       90%
+                               .08       .18       .34        .5       .62
+
+------------------------------------------------------------------------------------------
+home_rate_allcrime                                         Crime rate at user home station
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [311.99896,4900.3076]        units:  .00001
+         unique values:  29                       missing .:  5,327/21,397
+
+                  mean:   1410.16
+              std. dev:   751.723
+
+           percentiles:        10%       25%       50%       75%       90%
+                           826.672   989.925   1168.03   1463.15   2403.67
+
+------------------------------------------------------------------------------------------
+home_rate_violent                                       Violent crime rate at home station
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [28.79525,101.22813]         units:  1.000e-06
+         unique values:  29                       missing .:  5,327/21,397
+
+                  mean:   45.6996
+              std. dev:   12.6026
+
+           percentiles:        10%       25%       50%       75%       90%
+                           32.6263   38.7873   45.8713   51.1703   57.2918
+
+------------------------------------------------------------------------------------------
+home_rate_theft                               Crimes against property rate at home station
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [20.349436,1108.0277]        units:  1.000e-06
+         unique values:  29                       missing .:  5,327/21,397
+
+                  mean:   274.294
+              std. dev:   181.784
+
+           percentiles:        10%       25%       50%       75%       90%
+                           132.814   177.172   219.967   305.034   518.933
+
+------------------------------------------------------------------------------------------
+d_lowed                                              Low education (middle school or less)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,003/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         5,836         0  No
+                        11,558         1  Yes
+                         4,003         .  
+
+------------------------------------------------------------------------------------------
+d_young                                                            Young (18-25 years-old)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,003/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        12,286         0  No
+                         5,108         1  Yes
+                         4,003         .  
+
+------------------------------------------------------------------------------------------
+d_single                                                                            Single
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,003/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         8,092         0  No
+                         9,302         1  Yes
+                         4,003         .  
+
+------------------------------------------------------------------------------------------
+d_employed                                                                        Employed
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,003/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         4,773         0  No
+                        12,621         1  Yes
+                         4,003         .  
+
+------------------------------------------------------------------------------------------
+d_highses                                         High self-reported socio-economic status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,003/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        15,619         0  No
+                         1,775         1  Yes
+                         4,003         .  
+
+------------------------------------------------------------------------------------------
+pcbaselinetakeup                                          Take-up at zero opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,100]                      units:  100
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.  Value
+                         3,250  0
+                        18,147  100
+
+------------------------------------------------------------------------------------------
+any510takeup                                    Any take-up with positive opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        10,124         0  No
+                        11,273         1  Yes
+
+------------------------------------------------------------------------------------------
+baselinerides                                                   Number of rides at zero OC
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [4,161]                      units:  1
+         unique values:  73                       missing .:  0/21,397
+
+                  mean:   35.5663
+              std. dev:    32.171
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6        11        25        50        80
+
+------------------------------------------------------------------------------------------
+fivetenrides                                           Number of rides at 5 or 10 cents OC
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,64]                       units:  1
+         unique values:  58                       missing .:  0/21,397
+
+                  mean:   29.0581
+              std. dev:   16.2514
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 9        18        24        42        55
+
+------------------------------------------------------------------------------------------
+d_highcongestion                                                             High crowding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  655/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        18,547         0  No
+                         2,195         1  Yes
+                           655         .  
+
+------------------------------------------------------------------------------------------
+d_highcompliance                                                 Few men in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  655/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        10,464         0  No
+                        10,278         1  Yes
+                           655         .  
+
+------------------------------------------------------------------------------------------
+d_against_traffic                                                          Against traffic
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  76/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        16,645         0  No
+                         4,676         1  Yes
+                            76         .  
+
+------------------------------------------------------------------------------------------
+d_grope_high                   High risk of physical harassment (self-reported perception)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,882/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        10,810         0  No
+                         5,705         1  Yes
+                         4,882         .  
+
+------------------------------------------------------------------------------------------
+d_comments_high                  High risk of verbal harassment (self-reported perception)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,995/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         9,320         0  No
+                         7,082         1  Yes
+                         4,995         .  
+
+------------------------------------------------------------------------------------------
+d_robbed_high                             High risk  of robbery (self-reported perception)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  12,255/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         5,245         0  No
+                         3,897         1  Yes
+                        12,255         .  
+
+------------------------------------------------------------------------------------------
+concern_high                           Concern of being harrassed during ride above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  4,793/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                        11,984         0  No
+                         4,620         1  Yes
+                         4,793         .  
+
+------------------------------------------------------------------------------------------
+feel_level_high                                           Feeling above median before ride
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,527         0  No
+                         1,224         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+happy_high                                            Happiness after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         1,879         0  No
+                         1,872         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+sad_high                                                Sadness after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,024         0  No
+                         1,727         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+tense_high                                              Tension after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,083         0  No
+                         1,668         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+relaxed_high                                         Relaxation after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         1,978         0  No
+                         1,773         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+frustrated_high                                     Frustration after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         1,949         0  No
+                         1,802         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+satisfied_high                                     Satisfaction after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,201         0  No
+                         1,550         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+feel_compare_high                              Mood improvement after ride is above median
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  17,646/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         3,207         0  No
+                           544         1  Yes
+                        17,646         .  
+
+------------------------------------------------------------------------------------------
+oc_compliance                           Opportunity cost x Male presence in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  oc_compliance
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  655/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         4,389         1  $\hat\beta_{M_1}$: Positive
+                                          opportunity cost $\times$ Few
+                                          men in reserved space
+                         5,889         2  $\hat\beta_{M_2}$: Zero
+                                          opportunity cost $\times$ Few
+                                          men in reserved space
+                         4,448         3  $\hat\beta_{M_3}$: Positive
+                                          opportunity cost $\times$ Many
+                                          men in reserved space
+                         6,016         4  $\hat\beta_{M_4}$: Zero
+                                          opportunity cost $\times$ Many
+                                          men in reserved space
+                           655         .  
+
+------------------------------------------------------------------------------------------
+car_compliance                              Space chosen x Male presence in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  car_compliance
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  655/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         2,644         1  $\hat\beta_{M_1}$: Assigned to
+                                          reserved space $\times$ Few men
+                                          in reserved space
+                         7,634         2  $\hat\beta_{M_2}$: Assigned to
+                                          public space $\times$ Few men in
+                                          reserved space
+                         2,202         3  $\hat\beta_{M_3}$: Assigned to
+                                          reserved space $\times$ Many men
+                                          in reserved space
+                         8,262         4  $\hat\beta_{M_4}$: Assigned to
+                                          public space $\times$ Many men
+                                          in reserved space
+                           655         .  
+
+------------------------------------------------------------------------------------------
+MA_men_present_pink                    Average share of reserved space riders who are male
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.05,.73333335]              units:  1.000e-09
+         unique values:  373                      missing .:  655/21,397
+
+                  mean:   .282917
+              std. dev:   .140011
+
+           percentiles:        10%       25%       50%       75%       90%
+                            .10625   .173913   .277273       .38   .482432
+
+------------------------------------------------------------------------------------------
+MA_men_present_mix                     Average share of reserved space riders who are male
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.2,.9285714]                units:  1.000e-08
+         unique values:  362                      missing .:  655/21,397
+
+                  mean:   .635107
+              std. dev:   .105075
+
+           percentiles:        10%       25%       50%       75%       90%
+                           .497222       .58   .648438   .704286   .766667
+
+------------------------------------------------------------------------------------------
+MA_compliance_diff                     Difference in percent of riders who are male
+                                       between public and reserved space (
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [-18.333334,75]              units:  1.000e-07
+         unique values:  425                      missing .:  655/21,397
+
+                  mean:    35.219
+              std. dev:   15.9492
+
+           percentiles:        10%       25%       50%       75%       90%
+                           15.7143   23.3621   33.9884    48.125   56.6364
+
+------------------------------------------------------------------------------------------
+MA_compliance_diff_quint        Quintiles of difference in percent of riders who are male 
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  655/21,397
+
+            tabulation:  Freq.  Value
+                         4,176  1
+                         4,112  2
+                         4,382  3
+                         4,039  4
+                         4,033  5
+                           655  .
+
+------------------------------------------------------------------------------------------
+pink_compliance_diff_quint             Quintiles of difference in percent of riders who
+                                       are male x assigned to reserved
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,5]                        units:  1
+         unique values:  6                        missing .:  655/21,397
+
+            tabulation:  Freq.  Value
+                        15,896  0
+                           843  1
+                           916  2
+                           974  3
+                           981  4
+                         1,132  5
+                           655  .
+
+------------------------------------------------------------------------------------------
+usual_car_cont                                                                  Status quo
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,1]                        units:  .01
+         unique values:  5                        missing .:  11,614/21,397
+
+            tabulation:  Freq.  Value
+                           306  0
+                         3,538  .25
+                         3,324  .5
+                         2,469  .75
+                           146  1
+                        11,614  .
+
+------------------------------------------------------------------------------------------
+nocomp_20                Car choice under current compliance and 20 cents opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  8,189/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                         3,617         1  Always mixed
+                         2,425         2  Mostly mixed
+                         4,339         3  50/50
+                         1,669         4  Mostly pink
+                         1,158         5  Always pink
+                         8,189         .  
+
+------------------------------------------------------------------------------------------
+nocomp_30_cont                                 Current scenario, 30 cents opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,1]                        units:  .01
+         unique values:  5                        missing .:  11,614/21,397
+
+            tabulation:  Freq.  Value
+                         2,830  0
+                         3,173  .25
+                         1,629  .5
+                         1,534  .75
+                           617  1
+                        11,614  .
+
+------------------------------------------------------------------------------------------
+nocomp_65_cont                                 Current scenario, 65 cents opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,1]                        units:  .01
+         unique values:  5                        missing .:  11,614/21,397
+
+            tabulation:  Freq.  Value
+                         4,073  0
+                         2,934  .25
+                         1,611  .5
+                           887  .75
+                           278  1
+                        11,614  .
+
+------------------------------------------------------------------------------------------
+fullcomp_30_cont                       No men on reserved space, 30 cents opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,1]                        units:  .01
+         unique values:  5                        missing .:  11,614/21,397
+
+            tabulation:  Freq.  Value
+                         1,834  0
+                         1,914  .25
+                         2,004  .5
+                         2,437  .75
+                         1,594  1
+                        11,614  .
+
+------------------------------------------------------------------------------------------
+fullcomp_65_cont                       No men on reserved space, 65 cents opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [0,1]                        units:  .01
+         unique values:  5                        missing .:  11,614/21,397
+
+            tabulation:  Freq.  Value
+                         2,594  0
+                         3,063  .25
+                         1,999  .5
+                         1,481  .75
+                           646  1
+                        11,614  .
+
+------------------------------------------------------------------------------------------
+event_ride                                                       Ride order in event study
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [3,220]                      units:  1
+         unique values:  218                      missing .:  4,036/21,397
+
+                  mean:   106.015
+              std. dev:    21.987
+
+           percentiles:        10%       25%       50%       75%       90%
+                                82        95       105       118       128
+
+------------------------------------------------------------------------------------------
+premium_ride                                            Ride order within opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,40]                       units:  1
+         unique values:  40                       missing .:  14,497/21,397
+
+                  mean:   19.9341
+              std. dev:   12.5509
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 3         8        21        32        36
+
+------------------------------------------------------------------------------------------
+d_post                                Ride happened after introduction of opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  19,196/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                           521         0  No
+                         1,680         1  Yes
+                        19,196         .  
+
+------------------------------------------------------------------------------------------
+weight                                                                     Sampling weight
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.0047619,1]                 units:  1.000e-10
+         unique values:  92                       missing .:  0/21,397
+
+                  mean:   .057438
+              std. dev:   .069442
+
+           percentiles:        10%       25%       50%       75%       90%
+                           .010417       .02   .035714   .083333      .125
+
+------------------------------------------------------------------------------------------
+weightfe                                           Sampling weight within opportunity cost
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.0041841,1]                 units:  1.000e-10
+         unique values:  113                      missing .:  0/21,397
+
+                  mean:   .029163
+              std. dev:    .03387
+
+           percentiles:        10%       25%       50%       75%       90%
+                           .007576   .011905   .020833    .03125   .071429
+
+------------------------------------------------------------------------------------------
+flag_nomapping                                                   No mapping data available
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,1]                        units:  1
+         unique values:  1                        missing .:  20,742/21,397
+
+            tabulation:  Freq.  Value
+                           655  1
+                        20,742  .
+
+------------------------------------------------------------------------------------------
+flag_nodemovars                             Respondent did not complete demographic survey
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/21,397
+
+            tabulation:  Freq.  Value
+                        16,772  0
+                         4,625  1
+
+------------------------------------------------------------------------------------------
+user_gender_corr_cat                                                           (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  gender_corr
+
+                 range:  [1,1]                        units:  1
+         unique values:  1                        missing .:  20,434/21,397
+
+            tabulation:  Freq.   Numeric  Label
+                           963         1  feminino
+                        20,434         .  

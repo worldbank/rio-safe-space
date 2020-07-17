@@ -3,28 +3,35 @@
 	capture program drop iemetasave
 	program iemetasave
 
-		syntax using/, [replace labdrop(string) short]
-	
+		syntax using/, [replace labdrop(string) short linesize(integer 90)]
+		
 	qui {
 		preserve
+
+			local old_linesize `c(linesize)'
+						
+			set linesize `linesize'
 			
 			if "`labdrop'" != "" lab drop `labdrop'
 			
+						log using "`using'", text `replace'		
+
 			if "`short'" != "" {
-				qui {
-					log using "`using'", text `replace'
+
+			qui {
 					noisily describe
-					log close
 				}
 			}
 			else {
 				qui {
-					log using "`using'", text `replace'
 					noisily codebook
-					log close
 				}
 			}
 		
+			log close
+
+			set linesize `old_linesize'
+			
 		restore
 	}	
 	

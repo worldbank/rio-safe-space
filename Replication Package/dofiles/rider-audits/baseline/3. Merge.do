@@ -65,7 +65,9 @@
 	
 	drop if drop_user == 1 														// drop users that are found to be fraudulent
 	
-	replace user_gender = user_gender_corr if !missing(user_gender_corr)
+	lab def gender_corr 0 "masculino" 1 "feminino"
+	encode 	user_gender_corr, label(gender_corr) gen(user_gender_corr_cat)
+	replace user_gender = user_gender_corr_cat if !missing(user_gender_corr_cat)
 
 	isid 	session
 	sort 	session
