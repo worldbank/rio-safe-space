@@ -32,9 +32,10 @@
 	estadd 	local 	platform 	"No"
 	
 	* Are women more likely to take the survey, controlling for platform?
-	reg d_accepted d_woman i.platform , robust 
+	areg d_accepted d_woman, robust a(platform)
 	est sto responsesurvey2
 	
+	reg d_accepted d_woman i.platform , robust 
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
 			(i8.platform == 0)  ///
@@ -59,9 +60,10 @@
 	
 	* Are women more likely to take the IAT, controlling for platform?
 	* (Only applies to people invited to take IAT)
-	reg d_iat d_woman i.platform 				if d_iat_invited == 1, robust 
+	areg d_iat d_woman 					if d_iat_invited == 1, robust a(platform)
 	est sto response2
 	
+	reg d_iat d_woman i.platform		if d_iat_invited == 1, robust 
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
 			(i8.platform == 0)  ///
@@ -76,9 +78,10 @@
 	
 	* Are women who ride the pink car more likely to take the IAT?
 	* (Only applies to women invited to take IAT)
-	reg d_iat mostlypink_self i.platform   			if d_woman == 1 & d_iat_invited == 1, robust 
+	areg d_iat mostlypink_self 				if d_woman == 1 & d_iat_invited == 1, robust  a(platform)
 	est sto response3
 	
+	reg d_iat mostlypink_self i.platform 	if d_woman == 1 & d_iat_invited == 1, robust 
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
 			(i8.platform == 0)  ///
@@ -93,9 +96,10 @@
 	
 	* Are men who have women in the family riding the pink car more likely to take the IAT?
 	* (Only applies to men invited to take IAT)
-	reg d_iat mostlypink_family i.platform  			if d_woman == 0 & d_iat_invited == 1, robust 
+	areg d_iat mostlypink_family			if d_woman == 0 & d_iat_invited == 1, robust  a(platform)
 	est sto response4
 	
+	reg d_iat mostlypink_family i.platform  if d_woman == 0 & d_iat_invited == 1, robust 
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
 			(i8.platform == 0)  ///
@@ -115,7 +119,7 @@
 	esttab responsesurvey2 response2 response3 response4 ///
 		using "${out_tables}/response", ///
 		${star} ///
-		tex se replace nomtitles nodepvars drop(*.platform) ///
+		tex se replace nomtitles nodepvars ///
 		label nonotes ///
 		scalars("sample Sample" "platform Platform FE" "f F-test for platform dummies (p-value)" "samplemean Sample mean") ///
 		sfmt(%9.3f) b(%9.3f) se(%9.3f) ///
