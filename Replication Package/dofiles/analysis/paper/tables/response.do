@@ -32,21 +32,23 @@
 	estadd 	local 	platform 	"No"
 	
 	* Are women more likely to take the survey, controlling for platform?
-	areg d_accepted d_woman, robust a(platform)
-	est sto responsesurvey2
-	
-	reg d_accepted d_woman i.platform , robust 
+	reg d_accepted i.platform d_woman, robust
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
 			(i8.platform == 0)  ///
 			(i11.platform == 0) ///
 			(i12.platform == 0)
-	estadd scalar f = round(r(p),.001) 	
+	local f = r(p)
+	
+	areg d_accepted d_woman, robust a(platform)
+	est sto responsesurvey2
 	
 	sum d_accepted
 	estadd scalar samplemean = round(r(mean),.001)
 	estadd local sample "All" 
 	estadd local platform "Yes"
+	estadd 	scalar 	f 			= round(`f',.001) 	
+
 	
 	* Are women more likely to take the IAT?
 	* (Only applies to people invited to take IAT)
@@ -57,30 +59,30 @@
 	estadd 	scalar 	samplemean 	= round(r(mean),.001) 	
 	estadd 	local 	sample 		"All" 
 	estadd 	local 	platform 	"No"
+	estadd 	scalar 	f 			= round(`f',.001) 	
 	
 	* Are women more likely to take the IAT, controlling for platform?
 	* (Only applies to people invited to take IAT)
-	areg d_iat d_woman 					if d_iat_invited == 1, robust a(platform)
-	est sto response2
-	
 	reg d_iat d_woman i.platform		if d_iat_invited == 1, robust 
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
 			(i8.platform == 0)  ///
 			(i11.platform == 0) ///
 			(i12.platform == 0)
-			
-	estadd 	scalar 	f 			= round(r(p),.001) 	
+	local f = r(p)
+	
+	areg d_iat d_woman 					if d_iat_invited == 1, robust a(platform)
+	est sto response2
+	
 	sum 	d_iat 	if d_iat_invited == 1
 	estadd 	scalar 	samplemean 	= round(r(mean),.001) 	
 	estadd 	local 	sample 		"All" 
 	estadd 	local 	platform 	"Yes"
+	estadd 	scalar 	f 			= round(`f',.001) 	
 	
+
 	* Are women who ride the pink car more likely to take the IAT?
-	* (Only applies to women invited to take IAT)
-	areg d_iat mostlypink_self 				if d_woman == 1 & d_iat_invited == 1, robust  a(platform)
-	est sto response3
-	
+	* (Only applies to women invited to take IAT)		
 	reg d_iat mostlypink_self i.platform 	if d_woman == 1 & d_iat_invited == 1, robust 
 	test 	(i2.platform == 0)  ///
 			(i6.platform == 0)  ///
@@ -88,16 +90,20 @@
 			(i11.platform == 0) ///
 			(i12.platform == 0)
 			
-	estadd 	scalar 	f 			= round(r(p),.001)
+	local f = r(p)
+	
+	areg d_iat mostlypink_self 				if d_woman == 1 & d_iat_invited == 1, robust  a(platform)
+	est sto response3
+	
 	sum 	d_iat	if d_woman == 1 & d_iat_invited == 1
 	estadd 	scalar 	samplemean 	= round(r(mean),.001) 	
 	estadd 	local 	sample 		"Females" 
 	estadd 	local 	platform 	"Yes"
+	estadd 	scalar 	f 			= round(`f',.001) 	
+
 	
 	* Are men who have women in the family riding the pink car more likely to take the IAT?
 	* (Only applies to men invited to take IAT)
-	areg d_iat mostlypink_family			if d_woman == 0 & d_iat_invited == 1, robust  a(platform)
-	est sto response4
 	
 	reg d_iat mostlypink_family i.platform  if d_woman == 0 & d_iat_invited == 1, robust 
 	test 	(i2.platform == 0)  ///
@@ -106,11 +112,17 @@
 			(i11.platform == 0) ///
 			(i12.platform == 0)
 			
-	estadd 	scalar 	f 			= round(r(p),.001) 		
+	local f = r(p)
+	
+	areg d_iat mostlypink_family			if d_woman == 0 & d_iat_invited == 1, robust  a(platform)
+	est sto response4
+		
 	sum 	d_iat 	if d_woman == 0 & d_iat_invited == 1
 	estadd 	scalar 	samplemean 	= round(r(mean),.001) 	
 	estadd 	local	sample 		"Males" 
 	estadd 	local 	platform 	"Yes"
+	estadd 	scalar 	f 			= round(`f',.001) 	
+	
 
 /*******************************************************************************
        PART 3: Export table

@@ -663,8 +663,8 @@ load_factor                                                       Average ride l
                  range:  [.01,.94]                    units:  .01
          unique values:  87                       missing .:  15,532/21,397
 
-                  mean:   .349855
-              std. dev:   .199447
+                  mean:   .349858
+              std. dev:   .199451
 
            percentiles:        10%       25%       50%       75%       90%
                                .08       .18       .34        .5       .62

@@ -28,16 +28,16 @@
 ------------------------------------------------------------------------------*/
 
 	local  packages			0 // Install user-written commands used in the project
-	local  cleaning			1 // Run data cleaning
+	local  cleaning			0 // Run data cleaning
 	global encrypted		0 // Start from identified data
-	local  construction		1 // Re-create analysis indicators
+	local  construction		0 // Re-create analysis indicators
 	local  mainresults		1 // Re-create analysis outputs
 
 /*------------------------------------------------------------------------------
 	Set control variables
 ------------------------------------------------------------------------------*/
 
-	global star					star	(* .1 ** .05 *** .01) //nostar
+	global star					star	(* .1 ** .05 *** .01) // nostar
 
 	global demographics 		d_lowed d_young d_single d_employed d_highses
 	global interactionvars		pink_highcompliance mixed_highcompliance ///
