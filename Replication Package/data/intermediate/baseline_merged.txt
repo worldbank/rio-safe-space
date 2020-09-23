@@ -1,0 +1,957 @@
+
+------------------------------------------------------------------------------------------
+user_uuid                                                            Unique contributor ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str36)
+
+         unique values:  500                      missing "":  0/15,850
+
+              examples:  "3adc350f-4573-4c66-9dcf-6a785a0e8db6"
+                         "77dbcc8f-2619-445f-9bbf-84d84ad9476f"
+                         "a88122b3-5f16-41f5-a6fb-c66521cd8583"
+                         "d639120a-f76c-4d77-a1b7-63737b759e1d"
+
+------------------------------------------------------------------------------------------
+session                                                                     Unique ride ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str32)
+
+         unique values:  15,850                   missing "":  0/15,850
+
+              examples:  "3adc350f_session_032316c1fcbd152"
+                         "77dbcc8f_session_b368eb35dc89c80"
+                         "a88122b3_session_7908a05888abca3"
+                         "d639120a_session_cf76dbd1df0a6a2"
+
+------------------------------------------------------------------------------------------
+phase                                                                          Study phase
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  phase
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         7,367         1  Baseline
+                         5,465         2  Willingness to pay
+                         3,018         3  Randomized car assignment
+
+------------------------------------------------------------------------------------------
+CI_line                                                           Check-in - Supervia line
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,7]                        units:  1
+         unique values:  7                        missing .:  0/15,850
+
+            tabulation:  Freq.  Value
+                         7,033  1
+                         2,969  2
+                         2,061  3
+                           933  4
+                         2,848  5
+                             1  6
+                             5  7
+
+------------------------------------------------------------------------------------------
+CI_station                                                     Check-in - Supervia station
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [101,621]                    units:  1
+         unique values:  92                       missing .:  10/15,850
+
+                  mean:   244.206
+              std. dev:   153.137
+
+           percentiles:        10%       25%       50%       75%       90%
+                               101       110       207       317       515
+
+------------------------------------------------------------------------------------------
+CI_feel_level                           Check-in - how do you feel now(1 worst - 10 best)?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,832/15,850
+
+                  mean:   7.04506
+              std. dev:   1.85538
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 5         6         7         8        10
+
+------------------------------------------------------------------------------------------
+premium                                                    Check-in - premium for pink car
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,40]                       units:  1
+         unique values:  5                        missing .:  0/15,850
+
+            tabulation:  Freq.  Value
+                        10,385  0
+                         2,313  5
+                         1,353  10
+                         1,765  20
+                            34  40
+
+------------------------------------------------------------------------------------------
+CI_women_car                                                Check-in - car type pink/mixed
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  space
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                        12,254         0  Public space
+                         3,596         1  Reserved space
+
+------------------------------------------------------------------------------------------
+CI_work                                        Check-in - Are you coming or going to work?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  7,367/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         1,218         0  No
+                         7,265         1  Yes
+                         7,367         .  
+
+------------------------------------------------------------------------------------------
+CI_started                                                   Check-in - Time started (GMT)
+------------------------------------------------------------------------------------------
+
+                  type:  string (str19)
+
+         unique values:  15,780                   missing "":  0/15,850
+
+              examples:  "2015-12-14 19:29:25"
+                         "2016-01-19 19:58:52"
+                         "2016-02-15 19:07:25"
+                         "2016-04-14 22:05:07"
+
+               warning:  variable has embedded blanks
+
+------------------------------------------------------------------------------------------
+RI_pa                                                     Ride - is the pa system working?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,315/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           849         0  No
+                         5,686         1  Yes
+                         9,315         .  
+
+------------------------------------------------------------------------------------------
+RI_light                                                    Ride - are the lights working?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,315/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         4,388         0  No
+                         2,147         1  Yes
+                         9,315         .  
+
+------------------------------------------------------------------------------------------
+RI_ac                                                            Ride - is the ac working?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,315/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           499         0  No
+                         6,036         1  Yes
+                         9,315         .  
+
+------------------------------------------------------------------------------------------
+RI_push                                      Ride - is it so crowded you are being pushed?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                        12,091         0  No
+                         3,759         1  Yes
+
+------------------------------------------------------------------------------------------
+RI_spot                                     Ride - did you choose location to avoid crowd?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         7,624         0  No
+                         8,226         1  Yes
+
+------------------------------------------------------------------------------------------
+RI_together                                    Ride - are you riding with someon you know?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,176/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         7,635         0  No
+                         2,039         1  Yes
+                         6,176         .  
+
+------------------------------------------------------------------------------------------
+RI_police_present                                Ride - was there a guard at the platform?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,062/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         4,738         0  No
+                         2,050         1  Yes
+                         9,062         .  
+
+------------------------------------------------------------------------------------------
+CI_top_car                                      Check-in - Car type that is offered at top
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  space
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,674/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         3,039         0  Public space
+                         3,137         1  Reserved space
+                         9,674         .  
+
+------------------------------------------------------------------------------------------
+RI_look_pink                         Ride - did you look in reserved space before deciding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  12,324/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         2,021         0  No
+                         1,505         1  Yes
+                        12,324         .  
+
+------------------------------------------------------------------------------------------
+RI_look_mixed                           Ride - did you look in public spacebefore deciding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,922/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         3,971         0  No
+                         4,957         1  Yes
+                         6,922         .  
+
+------------------------------------------------------------------------------------------
+RI_crowd_rate                                                Ride - crowd rate self-report
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  crowd
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         2,917         1  All can sit
+                         4,953         2  Some cannot sit
+                         5,559         3  Many standing
+                         2,421         4  Very crowded
+
+------------------------------------------------------------------------------------------
+RI_men_present                                          Ride - male compliance self-report
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  RI_men_present
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         1,288         1  0-10%
+                         1,049         2  10-30%
+                         3,112         3  30-50%
+                         6,352         4  50-70%
+                         3,615         5  70-90%
+                           434         6  90-100%
+
+------------------------------------------------------------------------------------------
+RI_started                                                  Ride - time task started (GMT)
+------------------------------------------------------------------------------------------
+
+                  type:  string (str19)
+
+         unique values:  15,780                   missing "":  0/15,850
+
+              examples:  "2015-12-14 19:30:36"
+                         "2016-01-19 20:02:59"
+                         "2016-02-15 19:10:52"
+                         "2016-04-14 22:20:37"
+
+               warning:  variable has embedded blanks
+
+------------------------------------------------------------------------------------------
+CO_line                                                          Check-out - Supervia line
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,7]                        units:  1
+         unique values:  7                        missing .:  0/15,850
+
+            tabulation:  Freq.  Value
+                         7,067  1
+                         2,964  2
+                         2,038  3
+                           928  4
+                         2,850  5
+                             1  6
+                             2  7
+
+------------------------------------------------------------------------------------------
+CO_station                                                    Check-out - Supervia station
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (int)
+
+                 range:  [101,621]                    units:  1
+         unique values:  95                       missing .:  5/15,850
+
+                  mean:   242.755
+              std. dev:   153.048
+
+           percentiles:        10%       25%       50%       75%       90%
+                               101       110       202       315       513
+
+------------------------------------------------------------------------------------------
+CO_comments                                          Check-out - did anyone make comments?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,092/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         9,059         0  No
+                           699         1  Yes
+                         6,092         .  
+
+------------------------------------------------------------------------------------------
+CO_stare                                              Check-out - did anyone stare at you?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,092/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         8,429         0  No
+                         1,329         1  Yes
+                         6,092         .  
+
+------------------------------------------------------------------------------------------
+CO_concern                           Check-out - were you concerned someone may touch you?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                        11,399         0  No
+                         4,451         1  Yes
+
+------------------------------------------------------------------------------------------
+CO_touch                                                 Check-out - did anyone touch you?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,092/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         9,343         0  No
+                           415         1  Yes
+                         6,092         .  
+
+------------------------------------------------------------------------------------------
+CO_comfort                                      Check-out - how comfortable was your ride?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  2,958/15,850
+
+            tabulation:  Freq.  Value
+                         1,143  1
+                         1,822  2
+                         3,757  3
+                         3,971  4
+                         2,199  5
+                         2,958  .
+
+------------------------------------------------------------------------------------------
+CO_feel_level                              Check-out -  How do you feel - 1 worst, 10 best
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   6.62306
+              std. dev:   1.98086
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 4         5         7         8         9
+
+------------------------------------------------------------------------------------------
+CO_happy                                     Check-out - How much do you feel happy (1-10)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   6.36883
+              std. dev:   2.17688
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 4         5         6         8         9
+
+------------------------------------------------------------------------------------------
+CO_sad                                         Check-out - How much do you feel sad (1-10)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   4.35328
+              std. dev:   2.60172
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         2         4         6         8
+
+------------------------------------------------------------------------------------------
+CO_tense                                     Check-out - How much do you feel tense (1-10)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   5.28972
+              std. dev:    2.7247
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         3         5         7         9
+
+------------------------------------------------------------------------------------------
+CO_relaxed                                 Check-out - How much do you feel relaxed (1-10)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   5.44422
+              std. dev:   2.43177
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 2         4         5         7         9
+
+------------------------------------------------------------------------------------------
+CO_frustrated                           Check-out - How much do you feel frustrated (1-10)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   4.66667
+              std. dev:   2.76784
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 1         2         5         7         9
+
+------------------------------------------------------------------------------------------
+CO_satisfied                             Check-out - How much do you feel satisfied (1-10)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,10]                       units:  1
+         unique values:  10                       missing .:  12,892/15,850
+
+                  mean:   5.83502
+              std. dev:   2.39444
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 2         4         6         8         9
+
+------------------------------------------------------------------------------------------
+CO_feel_compare                                       Check-out: Feel compared to check-in
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  feeling
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  12,892/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           545         1  Worse
+                         1,987         2  Same
+                           426         3  Better
+                        12,892         .  
+
+------------------------------------------------------------------------------------------
+CO_switch                                Check-out - Did you switch cars after getting on?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,800/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         8,478         0  No
+                           572         1  Yes
+                         6,800         .  
+
+------------------------------------------------------------------------------------------
+user_marital                                                         Demo - marital status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  marital
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  5,361/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         3,165         1  Married
+                           375         2  Divorced
+                         5,629         3  Single
+                         1,264         4  Common-law marriage
+                            56         5  Widow
+                         5,361         .  
+
+------------------------------------------------------------------------------------------
+user_gender                                                                  Demo - gender
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  gender
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  1/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           410         0  Male
+                        15,439         1  Female
+                             1         .  
+
+------------------------------------------------------------------------------------------
+user_age                                                                        Demo - age
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  user_age
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  5,361/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         3,207         1  18-25
+                         2,319         2  26-30
+                         3,139         3  31-40
+                         1,119         4  41-50
+                           467         5  51-60
+                           238         6  60+
+                         5,361         .  
+
+------------------------------------------------------------------------------------------
+user_ed                                                           Demo - highest education
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  educ
+
+                 range:  [0,4]                        units:  1
+         unique values:  5                        missing .:  5,361/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           330         0  Didn't graduate from high school
+                         2,999         1  Graduated from high school
+                         3,198         2  Didn't graduate from college
+                         2,710         3  College graduate
+                         1,252         4  Graduate degree
+                         5,361         .  
+
+------------------------------------------------------------------------------------------
+user_ses                                                      Demo - socio-economic status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  user_ses
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  5,361/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                            25         1  Classe A
+                         1,112         2  Classe B
+                         7,556         3  Classe C
+                         1,628         4  Classe D
+                           168         5  Classe E
+                         5,361         .  
+
+------------------------------------------------------------------------------------------
+user_earnings                                            Demo - number of minimum salaries
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  user_earnings
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  5,361/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         6,936         1  0-25%
+                         1,891         2  25-50%
+                           992         3  50-75%
+                           670         4  75-100%
+                         5,361         .  
+
+------------------------------------------------------------------------------------------
+user_employment                                                   Demo - employment status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  employment
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  5,361/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           787         1  Unemployed, not looking for job
+                         1,091         2  Unemployed, looking for job
+                         7,386         3  Employed, full-time
+                         1,225         4  Employed, part-time
+                         5,361         .  
+
+------------------------------------------------------------------------------------------
+user_commute_period                         Demo - normal period of day you leave for work
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  period
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  6,148/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                         9,219         1  Morning
+                           432         2  Afternoon
+                            51         3  Evening
+                         6,148         .  
+
+------------------------------------------------------------------------------------------
+user_commute_hour                             Demo - normal time of day you leave for work
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [18000000,72000000]          units:  100000
+         unique values:  24                       missing .:  6,148/15,850
+
+                  mean:   2.7e+07
+              std. dev:   7.7e+06
+
+           percentiles:        10%       25%       50%       75%       90%
+                           2.2e+07   2.3e+07   2.5e+07   2.7e+07   3.2e+07
+
+------------------------------------------------------------------------------------------
+user_return_period                            Demo - normal period of day you go back home
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  period
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  6,148/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                             2         1  Morning
+                         6,753         2  Afternoon
+                         2,947         3  Evening
+                         6,148         .  
+
+------------------------------------------------------------------------------------------
+user_return_hour                                Demo - normal time of day you go back home
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [25200000,84600000]          units:  100000
+         unique values:  25                       missing .:  6,148/15,850
+
+                  mean:   6.5e+07
+              std. dev:   4.7e+06
+
+           percentiles:        10%       25%       50%       75%       90%
+                           5.9e+07   6.1e+07   6.5e+07   6.8e+07   7.0e+07
+
+------------------------------------------------------------------------------------------
+flag_nodemovars                                                                (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,850
+
+            tabulation:  Freq.  Value
+                        10,489  0
+                         5,361  1
+
+------------------------------------------------------------------------------------------
+user_gender_corr_cat                                                           (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  gender_corr
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  14,771/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                             7         0  masculino
+                         1,072         1  feminino
+                        14,771         .  
+
+------------------------------------------------------------------------------------------
+CI_time                                                                        (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [18972000,83846000]          units:  1000
+         unique values:  11,543                   missing .:  0/15,850
+
+                  mean:   5.4e+07
+              std. dev:   2.0e+07
+
+           percentiles:        10%       25%       50%       75%       90%
+                           3.2e+07   3.5e+07   4.1e+07   7.4e+07   7.7e+07
+
+------------------------------------------------------------------------------------------
+CI_hour                                                                        (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [2,20]                       units:  1
+         unique values:  16                       missing .:  0/15,850
+
+                  mean:   12.1199
+              std. dev:   5.48828
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6         7         8        18        19
+
+------------------------------------------------------------------------------------------
+CI_min                                                                         (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,59]                       units:  1
+         unique values:  60                       missing .:  0/15,850
+
+                  mean:   27.9535
+              std. dev:   17.1215
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 4        13        28        42        52
+
+------------------------------------------------------------------------------------------
+RI_time                                                                        (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [19716000,83989000]          units:  1000
+         unique values:  11,621                   missing .:  0/15,850
+
+                  mean:   5.4e+07
+              std. dev:   2.0e+07
+
+           percentiles:        10%       25%       50%       75%       90%
+                           3.3e+07   3.6e+07   4.2e+07   7.4e+07   7.8e+07
+
+------------------------------------------------------------------------------------------
+RI_hour                                                                        (unlabeled)
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [2,20]                       units:  1
+         unique values:  16                       missing .:  0/15,850
+
+                  mean:   12.2536
+              std. dev:   5.45844
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 6         7         8        18        19
+
+------------------------------------------------------------------------------------------
+RI_time_bin                                                                Ride - time bin
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  time_bin
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  240/15,850
+
+              examples:  3     7:00-7:30 AM
+                         5     8:00-8:30 AM
+                         7     5:00-5:30 PM
+                         10    6:30-7:00 PM
+
+------------------------------------------------------------------------------------------
+MA_men_present_pink                       Mapping - Share of male riders in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.05,.63809526]              units:  1.000e-09
+         unique values:  175                      missing .:  875/15,850
+
+                  mean:   .299482
+              std. dev:   .151596
+
+           percentiles:        10%       25%       50%       75%       90%
+                           .103571   .190491   .297368   .414286       .52
+
+------------------------------------------------------------------------------------------
+MA_men_present_mix                          Mapping - Share of male riders in public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.45909092,.9285714]         units:  1.000e-08
+         unique values:  155                      missing .:  875/15,850
+
+                  mean:   .674027
+              std. dev:   .080948
+
+           percentiles:        10%       25%       50%       75%       90%
+                               .58   .616667   .671875   .738462       .78
+
+------------------------------------------------------------------------------------------
+MA_crowd_rate_mix                                       Mapping - Crowding in public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  crowd
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  875/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           728         1  All can sit
+                         4,899         2  Some cannot sit
+                         7,743         3  Many standing
+                         1,605         4  Very crowded
+                           875         .  
+
+------------------------------------------------------------------------------------------
+MA_crowd_rate_pink                                    Mapping - Crowding in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  crowd
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  875/15,850
+
+            tabulation:  Freq.   Numeric  Label
+                           728         1  All can sit
+                         4,899         2  Some cannot sit
+                         7,743         3  Many standing
+                         1,605         4  Very crowded
+                           875         .  

@@ -1,0 +1,120 @@
+
+------------------------------------------------------------------------------------------
+RI_time_bin                                                             Mapping - Time bin
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  time_bin
+
+                 range:  [1,12]                       units:  1
+         unique values:  12                       missing .:  0/246
+
+              examples:  3     7:00-7:30 AM
+                         5     8:00-8:30 AM
+                         8     5:30-6:00 PM
+                         10    6:30-7:00 PM
+
+------------------------------------------------------------------------------------------
+MA_line                                                                     Mapping - Line
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/246
+
+            tabulation:  Freq.  Value
+                            48  1
+                            54  2
+                            48  3
+                            44  4
+                            52  5
+
+------------------------------------------------------------------------------------------
+station_bin                                                          Mapping - Station bin
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,22]                       units:  1
+         unique values:  22                       missing .:  0/246
+
+                  mean:   11.1626
+              std. dev:   6.27515
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 3         6        11        17        20
+
+------------------------------------------------------------------------------------------
+MA_men_present_pink                       Mapping - Share of male riders in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.05,.73333335]              units:  1.000e-09
+         unique values:  221                      missing .:  0/246
+
+                  mean:   .266263
+              std. dev:     .1177
+
+           percentiles:        10%       25%       50%       75%       90%
+                              .124   .184868    .25633   .321875     .4175
+
+------------------------------------------------------------------------------------------
+MA_men_present_mix                          Mapping - Share of male riders in public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (float)
+
+                 range:  [.2,.85000002]               units:  1.000e-08
+         unique values:  228                      missing .:  0/246
+
+                  mean:   .553938
+              std. dev:   .116018
+
+           percentiles:        10%       25%       50%       75%       90%
+                           .407317   .495146   .559685   .629839   .686364
+
+------------------------------------------------------------------------------------------
+MA_crowd_rate_mix                                       Mapping - Crowding in public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  crowd
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/246
+
+            tabulation:  Freq.   Numeric  Label
+                            33         1  All can sit
+                            75         2  Some cannot sit
+                           110         3  Many standing
+                            28         4  Very crowded
+
+------------------------------------------------------------------------------------------
+MA_crowd_rate_pink                                    Mapping - Crowding in reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  crowd
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/246
+
+            tabulation:  Freq.   Numeric  Label
+                            37         1  All can sit
+                            85         2  Some cannot sit
+                            99         3  Many standing
+                            25         4  Very crowded
+
+------------------------------------------------------------------------------------------
+stage                                                                          Study phase
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,1]                        units:  1
+         unique values:  1                        missing .:  0/246
+
+            tabulation:  Freq.  Value
+                           246  1

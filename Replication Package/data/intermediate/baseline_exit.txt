@@ -1,0 +1,488 @@
+
+------------------------------------------------------------------------------------------
+user_uuid                                                            Unique contributor ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str36)
+
+         unique values:  152                      missing "":  0/152
+
+              examples:  "395007d8-7702-4b69-959b-df9eec8b1ee2"
+                         "744967d3-b5db-496c-a646-d71bfb996fe0"
+                         "a88122b3-5f16-41f5-a6fb-c66521cd8583"
+                         "d56ba9b8-9202-4e79-bff1-1c951ee51727"
+
+------------------------------------------------------------------------------------------
+advantage_pink                                     Advantages riding reserved space - open
+------------------------------------------------------------------------------------------
+
+                  type:  string (str237)
+
+         unique values:  136                      missing "":  0/152
+
+              examples:  "Não seria assediada. "
+                         "São menos cheios"
+                         "liberdade e conforto"
+                         "por não ter homem e ter mais comodidade."
+
+               warning:  variable has embedded and trailing blanks
+
+------------------------------------------------------------------------------------------
+disadvantage_pink                               Disadvantages riding reserved space - open
+------------------------------------------------------------------------------------------
+
+                  type:  string (str212)
+
+         unique values:  128                      missing "":  0/152
+
+              examples:  "Nenhuma"
+                         "Segregação"
+                         "homens podem se revoltar"
+                         "não existe "
+
+               warning:  variable has embedded and trailing blanks
+
+------------------------------------------------------------------------------------------
+pref_nocompl                                          Preferred space - current compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  pref
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            15         1  I would only ride the reserved
+                                          space
+                            70         2  I would prefer to ride the
+                                          reserved space
+                            52         3  I have no preference between the
+                                          two
+                            12         4  I would prefer to ride the
+                                          public space
+                             3         5  I would only ride the public
+                                          space
+
+------------------------------------------------------------------------------------------
+nocomp_pref0          Car choice when 0 premium on the reserved space - current compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             7         1  Always public space
+                            19         2  Mostly public space
+                            57         3  50/50
+                            43         4  Mostly reserved space
+                            26         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+nocomp_pref5          Car choice when 5 premium on the reserved space - current compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            17         1  Always public space
+                            24         2  Mostly public space
+                            48         3  50/50
+                            42         4  Mostly reserved space
+                            21         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+nocomp_pref10        Car choice when 10 premium on the reserved space - current compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            23         1  Always public space
+                            31         2  Mostly public space
+                            48         3  50/50
+                            34         4  Mostly reserved space
+                            16         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+nocomp_pref20        Car choice when 20 premium on the reserved space - current compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            33         1  Always public space
+                            34         2  Mostly public space
+                            53         3  50/50
+                            21         4  Mostly reserved space
+                            11         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+pref_fullcompl                                           Preferred space - full compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  pref
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            56         1  I would only ride the reserved
+                                          space
+                            64         2  I would prefer to ride the
+                                          reserved space
+                            21         3  I have no preference between the
+                                          two
+                             9         4  I would prefer to ride the
+                                          public space
+                             2         5  I would only ride the public
+                                          space
+
+------------------------------------------------------------------------------------------
+fullcomp_pref0           Car choice when 0 premium on the reserved space - full compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             7         1  Always public space
+                            12         2  Mostly public space
+                            32         3  50/50
+                            48         4  Mostly reserved space
+                            53         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+fullcomp_pref5           Car choice when 5 premium on the reserved space - full compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            10         1  Always public space
+                            19         2  Mostly public space
+                            32         3  50/50
+                            50         4  Mostly reserved space
+                            41         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+fullcomp_pref10         Car choice when 10 premium on the reserved space - full compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            12         1  Always public space
+                            23         2  Mostly public space
+                            45         3  50/50
+                            44         4  Mostly reserved space
+                            28         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+fullcomp_pref20         Car choice when 20 premium on the reserved space - full compliance
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  choice
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            16         1  Always public space
+                            38         2  Mostly public space
+                            51         3  50/50
+                            26         4  Mostly reserved space
+                            21         5  Always reserved space
+
+------------------------------------------------------------------------------------------
+comments_mixed_consent                   Chance sexual comments - public space - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                            10         0  No
+                           142         1  Yes
+
+------------------------------------------------------------------------------------------
+comments_pink_consent                  Chance sexual comments - reserved space - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             8         0  No
+                           144         1  Yes
+
+------------------------------------------------------------------------------------------
+comments_mixed_central_consent   Chance sexual comments - public space central - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             6         0  No
+                           146         1  Yes
+
+------------------------------------------------------------------------------------------
+comments_pink_central_consent          Chance sexual comments - reserved space central -
+                                       consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             6         0  No
+                           146         1  Yes
+
+------------------------------------------------------------------------------------------
+comments_mixed                                       Chance sexual comments - public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  10/152
+
+            tabulation:  Freq.   Numeric  Label
+                            26         1  0-10%
+                            27         2  10-30%
+                            35         3  30-50%
+                            24         4  50-70%
+                            17         5  70-90%
+                            13         6  90-100%
+                            10         .  
+
+------------------------------------------------------------------------------------------
+comments_pink                                      Chance sexual comments - reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  8/152
+
+            tabulation:  Freq.   Numeric  Label
+                            50         1  0-10%
+                            32         2  10-30%
+                            22         3  30-50%
+                            18         4  50-70%
+                            14         5  70-90%
+                             8         6  90-100%
+                             8         .  
+
+------------------------------------------------------------------------------------------
+comments_mixed_central                       Chance sexual comments - public space central
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  6/152
+
+            tabulation:  Freq.   Numeric  Label
+                            51         1  0-10%
+                            36         2  10-30%
+                            24         3  30-50%
+                            19         4  50-70%
+                             9         5  70-90%
+                             7         6  90-100%
+                             6         .  
+
+------------------------------------------------------------------------------------------
+comments_pink_central                      Chance sexual comments - reserved space central
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  6/152
+
+            tabulation:  Freq.   Numeric  Label
+                            66         1  0-10%
+                            39         2  10-30%
+                            17         3  30-50%
+                            10         4  50-70%
+                             7         5  70-90%
+                             7         6  90-100%
+                             6         .  
+
+------------------------------------------------------------------------------------------
+grope_mixed_consent                                Chance grope - public space - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             7         0  No
+                           145         1  Yes
+
+------------------------------------------------------------------------------------------
+grope_pink_consent                               Chance grope - reserved space - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             6         0  No
+                           146         1  Yes
+
+------------------------------------------------------------------------------------------
+grope_mixed_central_consent                Chance grope - public space central - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             7         0  No
+                           145         1  Yes
+
+------------------------------------------------------------------------------------------
+grope_pink_central_consent               Chance grope - reserved space central - consented
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/152
+
+            tabulation:  Freq.   Numeric  Label
+                             7         0  No
+                           145         1  Yes
+
+------------------------------------------------------------------------------------------
+grope_mixed                                                    Chance grope - public space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  7/152
+
+            tabulation:  Freq.   Numeric  Label
+                            37         1  0-10%
+                            34         2  10-30%
+                            31         3  30-50%
+                            20         4  50-70%
+                            12         5  70-90%
+                            11         6  90-100%
+                             7         .  
+
+------------------------------------------------------------------------------------------
+grope_pink                                                   Chance grope - reserved space
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  6/152
+
+            tabulation:  Freq.   Numeric  Label
+                            57         1  0-10%
+                            33         2  10-30%
+                            25         3  30-50%
+                            14         4  50-70%
+                            10         5  70-90%
+                             7         6  90-100%
+                             6         .  
+
+------------------------------------------------------------------------------------------
+grope_mixed_central                                    Chance grope - public space central
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  7/152
+
+            tabulation:  Freq.   Numeric  Label
+                            53         1  0-10%
+                            39         2  10-30%
+                            23         3  30-50%
+                            22         4  50-70%
+                             6         5  70-90%
+                             2         6  90-100%
+                             7         .  
+
+------------------------------------------------------------------------------------------
+grope_pink_central                                   Chance grope - reserved space central
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  chance
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  7/152
+
+            tabulation:  Freq.   Numeric  Label
+                            71         1  0-10%
+                            34         2  10-30%
+                            17         3  30-50%
+                            13         4  50-70%
+                             8         5  70-90%
+                             2         6  90-100%
+                             7         .  

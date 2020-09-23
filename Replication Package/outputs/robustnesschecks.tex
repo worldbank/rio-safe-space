@@ -1,0 +1,200 @@
+
+% ---------------- Preamble ------------------
+\documentclass[12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{xcolor}
+\usepackage[utf8]{inputenc}
+\usepackage{float}
+\usepackage{subcaption}
+\usepackage{threeparttable}
+\usepackage{adjustbox}
+\usepackage{booktabs}
+\usepackage{multirow}
+\usepackage{hyperref}
+
+\newcommand{\footremember}[2]{%
+	\footnote{#2}
+	\newcounter{#1}
+	\setcounter{#1}{\value{footnote}}%
+}
+\newcommand{\footrecall}[1]{%
+	\footnotemark[\value{#1}]%
+} 
+
+
+\def\sym#1{\ifmmode^{#1}\else\(^{#1}\)\fi}
+% ----------------- Preamble ends here -------------------
+
+
+\begin{document}
+\title{Demand for ``Safe Spaces'': Avoiding Harassment and Stigma \\
+Robustness checks online appendix}
+\author{%
+	Florence Kondylis\footremember{wb}{Development Economics, World Bank}%
+	\and Arianna Legovini\footrecall{wb}%
+	\and Kate Vyborny\footremember{duke}{Duke University}%
+	\and Astrid Zwager\footrecall{wb} \hspace{1.2cm} Luiza Andrade\footrecall{wb}%
+}
+
+\date{\today}
+\maketitle
+
+\tableofcontents
+
+\singlespacing
+
+\section{Revealed preferences, overall and by ride condition}
+
+\subsection{Main sample: riders who started revealed preference rides}
+
+\begin{table}[H]
+	\centering
+	\caption{Alternative specification: no controls, line fixed effects }
+	\begin{adjustbox}{max width = .5\textwidth}
+		\begin{threeparttable}
+			\input{Tables/paper_wtp_appendix.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\subsection{Sample: riders who completed exit survey}
+
+\begin{table}[H]
+	\centering
+	\caption{Main specification: riders fixed effect}
+	\begin{adjustbox}{max width = .5\textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_wtp_main.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. All specifications include rider fixed effects. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Alternative specification: no controls, line fixed effects }
+	\begin{adjustbox}{max width = .5\textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_wtp_appendix.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\section{Impact of randomized assignment of space on reported harassment, overall and by ride condition}
+
+\subsection{Main sample: riders who started randomized car assignment rides}
+
+\begin{table}[H]
+    \centering
+	\caption{Alternative specification: no controls, line fixed effects }
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/paper_carimpactharassment_appendix.tex}
+		\begin{tablenotes}
+			\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+		\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\subsection{Sample: riders who completed exit survey}
+
+\begin{table}[H]
+	\centering
+	\caption{Main specification: riders fixed effect}
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_carimpactharassment_main.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. All specifications include rider fixed effects. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Alternative specification: no controls, line fixed effects }
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_carimpactharassment_appendix.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\section{Revealed preferences by rider risk perception}
+
+\subsection{Sample: riders who completed exit survey}
+\begin{table}[H]
+	\centering
+	\caption{Main specification}
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_wtprisk.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\section{Impact of randomized assignment of car on fear and subjective well-being, overall and by ride condition}
+
+\subsection{Main sample: riders who started randomized car assignment rides}
+
+\begin{table}[H]
+	\centering
+	\caption{Alternative specification: no controls}
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/paper_wellbeing_appendix.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\subsection{Sample: riders who completed exit survey}
+
+\begin{table}[H]
+	\centering
+	\caption{Main specification: riders fixed effect}
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_wellbeing_main.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. All specifications include rider fixed effects. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+\begin{table}[H]
+	\centering
+	\caption{Alternative specification: no controls}
+	\begin{adjustbox}{max width = \textwidth}
+		\begin{threeparttable}
+			\input{Tables/online_wellbeing_appendix.tex}
+			\begin{tablenotes}
+				\item  \footnotesize\textit{Notes:} Standard errors in parentheses, clustered at participant level. *** p $<$ .01; ** p $<$ .05; * p $<$ .1.
+			\end{tablenotes}
+		\end{threeparttable}
+	\end{adjustbox}
+\end{table}
+
+
+\end{document}

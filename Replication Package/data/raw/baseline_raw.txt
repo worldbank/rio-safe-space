@@ -1,0 +1,159 @@
+
+Contains data from C:\Users\wb501238\Dropbox\WB\RJ - Pink car study\Data\Rider audits\Data\Raw/baseline_raw.dta
+  obs:        48,409                          
+ vars:           148                          21 May 2020 00:18
+ size:   160,572,653                          
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+v1              str264  %264s                 
+obs_uid         str36   %36s                  
+url             str219  %219s                 
+user_uuid       str36   %36s                  Unique contributor ID
+spectranslated  str14   %14s                  spec.translated
+created         str19   %19s                  
+submitted       str19   %19s                  
+started         str19   %19s                  
+campaign_id     str39   %39s                  
+loc_long        float   %9.0g                 
+loc_lat         float   %9.0g                 
+ride_light      str4    %9s                   
+ride_spot       str4    %9s                   
+user_gender     str9    %9s                   Demo - gender
+user_return_a~n str5    %9s                   
+ride_comfort    byte    %8.0g                 
+user_line_home  str20   %20s                  
+user_return_m~g str5    %9s                   
+ride_pa         str4    %9s                   
+ride_police_p~t str4    %9s                   
+ride_touch      str4    %9s                   
+user_return_e~g str5    %9s                   
+ride_alone      str4    %9s                   
+ride_ac         str4    %9s                   
+user_commute_~n str6    %9s                   
+user_ed         str26   %26s                  Demo - highest education
+ride_comments   str4    %9s                   
+user_marital    str15   %15s                  Demo - marital status
+user_line_work  str20   %20s                  
+user_employment str42   %42s                  Demo - employment status
+ride_push       str4    %9s                   
+user_earnings   str7    %9s                   Demo - number of minimum salaries
+user_station1   str40   %40s                  
+user_station2   str9    %9s                   
+user_station3   str8    %9s                   
+user_age        str5    %9s                   Demo - age
+user_station4   str21   %21s                  
+user_station5   str22   %22s                  
+user_station7   str22   %22s                  
+user_station8   str17   %17s                  
+user_commute_~1 str40   %40s                  
+user_commute_~2 str5    %9s                   
+user_commute_~3 str11   %11s                  
+user_commute_~4 str21   %21s                  
+user_commute_~5 str22   %22s                  
+user_commute_~7 str17   %17s                  
+user_commute_~8 str17   %17s                  
+user_commute_~9 str10   %10s                  
+ride_men_pres~t str7    %9s                   
+user_comm~rning str5    %9s                   
+user_line       str18   %18s                  
+ride_stare      str4    %9s                   
+user_comm~ening str5    %9s                   
+user_home_sta~1 str40   %40s                  
+user_home_sta~3 str16   %16s                  
+user_home_sta~4 str21   %21s                  
+user_home_sta~5 str22   %22s                  
+user_home_sta~6 str17   %17s                  
+user_home_sta~7 str22   %22s                  
+user_home_sta~8 str17   %17s                  
+user_home_sta~9 str10   %10s                  
+user_comute_a~n str5    %9s                   
+user_commute_~r str6    %9s                   Demo - normal time of day you leave for work
+ride_concern    str4    %9s                   
+user_geo        str48   %48s                  Demo - description of home location
+ride_crowd_rate str47   %47s                  
+user_ses        str8    %9s                   Demo - socio-economic status
+entity_uuid     str37   %37s                  
+session         str32   %32s                  Unique ride ID
+car             str14   %14s                  
+sessionduration float   %9.0g                 session.duration
+gender          str9    %9s                   
+age             str5    %9s                   
+marital_status  str15   %15s                  
+earnings        str7    %9s                   
+employment      str42   %42s                  
+sv_looking_fo~k str4    %9s                   
+sv_choice_pink  str4    %9s                   
+sv_choice_reg~r str4    %9s                   
+sv_switch_car   str4    %9s                   
+checkin_to      str37   %37s                  
+checkin_from    str47   %47s                  
+checkin_habit   str30   %30s                  
+user_feeling    byte    %8.0g                 
+using_line      str18   %18s                  
+user_line_ph~xo str22   %22s                  
+user_line_ph~ro str40   %40s                  
+user_line_phi~i str22   %22s                  
+user_line_phi~z str21   %21s                  
+user_line_phi~a str17   %17s                  
+work_or_looking str4    %9s                   
+known_rider     str4    %9s                   
+v93             str47   %47s                  ride_crowd_rate
+crowded_push    str4    %9s                   
+avoid_crowds    str4    %9s                   
+approx_percen~n str7    %9s                   
+studied_mix_car str4    %9s                   
+studied_fem_car str4    %9s                   
+exit_line       str18   %18s                  
+exit_line_ph~xo str22   %22s                  
+exit_line_ph~ro str40   %40s                  
+exit_line_phi~i str22   %22s                  
+exit_line_phi~z str21   %21s                  
+exit_line_phi~a str17   %17s                  
+exit_line_ph~co str7    %9s                   
+switch_cars     str4    %9s                   
+stranger_touc~d str4    %9s                   
+concern_stran~d str4    %9s                   
+stranger_star~g str4    %9s                   
+stranger_comm~s str4    %9s                   
+feeling_now     byte    %8.0g                 
+feeling_refle~n str6    %9s                   
+happy           byte    %8.0g                 
+sad             byte    %8.0g                 
+tense           byte    %8.0g                 
+relaxed         byte    %8.0g                 
+frustrated      byte    %8.0g                 
+satisfied       byte    %8.0g                 
+consent_exit    str3    %9s                   
+sv_preference   str43   %43s                  
+option_1        str62   %62s                  
+option_2        str62   %62s                  
+option_3        str62   %62s                  
+option_4        str62   %62s                  
+assured_male_~e str43   %43s                  
+price_option_1  str62   %62s                  
+price_option_2  str62   %62s                  
+price_option_3  str62   %62s                  
+price_option_4  str62   %62s                  
+advantages_sv~n str203  %203s                 
+disadvantages~n str212  %212s                 
+percent_assau~t str4    %9s                   
+percent_assau~d str7    %9s                   
+percent_touch.. str4    %9s                   
+percent~d_mixed str7    %9s                   
+percent_comme~t str4    %9s                   
+percent_comme~m str7    %9s                   
+p~d_fem_consent str4    %9s                   
+percent_touch~m str7    %9s                   
+percent_comme~n str4    %9s                   percent_comment_centralmixed_consent
+percent_comme~d str7    %9s                   
+percent_touch~n str4    %9s                   percent_touched_centralmixed_consent
+~d_centralmixed str7    %9s                   
+percent_femc~ns str4    %9s                   percent_femcentral_comments_consent
+percent_femc~ts str7    %9s                   
+percent_femce~e str4    %9s                   percent_femcentral_touched_consent
+percent_femce~d str7    %9s                   
+long_prompt     str56   %56s                  
+-------------------------------------------------------------------------------------------------------------------------------------------------------------------
+Sorted by: 

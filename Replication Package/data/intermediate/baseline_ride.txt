@@ -1,0 +1,223 @@
+
+------------------------------------------------------------------------------------------
+session                                                                     Unique ride ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str32)
+
+         unique values:  15,887                   missing "":  0/15,887
+
+              examples:  "3ad52b71_session_c0139f15371a5c4"
+                         "77dbcc8f_session_8b3292fd6238b9d"
+                         "a88122b3_session_5d61cbaa68a38a8"
+                         "d639120a_session_c36715239a982f0"
+
+------------------------------------------------------------------------------------------
+user_uuid                                                            Unique contributor ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str36)
+
+         unique values:  506                      missing "":  0/15,887
+
+              examples:  "3ad52b71-fbdb-4562-ba17-706ad9b36816"
+                         "77dbcc8f-2619-445f-9bbf-84d84ad9476f"
+                         "a88122b3-5f16-41f5-a6fb-c66521cd8583"
+                         "d639120a-f76c-4d77-a1b7-63737b759e1d"
+
+------------------------------------------------------------------------------------------
+RI_pa                                                     Ride - is the pa system working?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,315/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                           849         0  No
+                         5,723         1  Yes
+                         9,315         .  
+
+------------------------------------------------------------------------------------------
+RI_light                                                    Ride - are the lights working?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,315/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         4,424         0  No
+                         2,148         1  Yes
+                         9,315         .  
+
+------------------------------------------------------------------------------------------
+RI_ac                                                            Ride - is the ac working?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,315/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                           499         0  No
+                         6,073         1  Yes
+                         9,315         .  
+
+------------------------------------------------------------------------------------------
+RI_push                                      Ride - is it so crowded you are being pushed?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                        12,128         0  No
+                         3,759         1  Yes
+
+------------------------------------------------------------------------------------------
+RI_spot                                     Ride - did you choose location to avoid crowd?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         7,656         0  No
+                         8,231         1  Yes
+
+------------------------------------------------------------------------------------------
+RI_together                                    Ride - are you riding with someon you know?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,176/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         7,658         0  No
+                         2,053         1  Yes
+                         6,176         .  
+
+------------------------------------------------------------------------------------------
+RI_police_present                                Ride - was there a guard at the platform?
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,062/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         4,750         0  No
+                         2,075         1  Yes
+                         9,062         .  
+
+------------------------------------------------------------------------------------------
+CI_top_car                                      Check-in - Car type that is offered at top
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  space
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  9,711/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         3,039         0  Public space
+                         3,137         1  Reserved space
+                         9,711         .  
+
+------------------------------------------------------------------------------------------
+RI_look_pink                         Ride - did you look in reserved space before deciding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  12,361/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         2,021         0  No
+                         1,505         1  Yes
+                        12,361         .  
+
+------------------------------------------------------------------------------------------
+RI_look_mixed                           Ride - did you look in public spacebefore deciding
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  6,959/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         3,971         0  No
+                         4,957         1  Yes
+                         6,959         .  
+
+------------------------------------------------------------------------------------------
+RI_crowd_rate                                                Ride - crowd rate self-report
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  crowd
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         2,935         1  All can sit
+                         4,963         2  Some cannot sit
+                         5,568         3  Many standing
+                         2,421         4  Very crowded
+
+------------------------------------------------------------------------------------------
+RI_men_present                                          Ride - male compliance self-report
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  RI_men_present
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  0/15,887
+
+            tabulation:  Freq.   Numeric  Label
+                         1,290         1  0-10%
+                         1,049         2  10-30%
+                         3,140         3  30-50%
+                         6,359         4  50-70%
+                         3,615         5  70-90%
+                           434         6  90-100%
+
+------------------------------------------------------------------------------------------
+RI_started                                                  Ride - time task started (GMT)
+------------------------------------------------------------------------------------------
+
+                  type:  string (str19)
+
+         unique values:  15,817                   missing "":  0/15,887
+
+              examples:  "2015-12-14 10:05:46"
+                         "2016-01-19 19:21:36"
+                         "2016-02-15 10:40:06"
+                         "2016-04-14 21:43:54"
+
+               warning:  variable has embedded blanks

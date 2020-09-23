@@ -1,0 +1,251 @@
+
+------------------------------------------------------------------------------------------
+user_uuid                                                            Unique contributor ID
+------------------------------------------------------------------------------------------
+
+                  type:  string (str36)
+
+         unique values:  234                      missing "":  0/234
+
+              examples:  "395007d8-7702-4b69-959b-df9eec8b1ee2"
+                         "6d562569-bf3d-4fbe-ae62-1148e0105a39"
+                         "a04c87b2-cb08-4fb1-bbed-04ba0b95b115"
+                         "d5852b5f-8938-4c84-aff2-54eba2a4dc18"
+
+------------------------------------------------------------------------------------------
+user_new                                                                   Demo - new user
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            62         0  No
+                           172         1  Yes
+
+------------------------------------------------------------------------------------------
+user_marital                                                         Demo - marital status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  marital
+
+                 range:  [1,5]                        units:  1
+         unique values:  5                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            67         1  Married
+                            18         2  Divorced
+                           134         3  Single
+                            13         4  Common-law marriage
+                             2         5  Widow(er)
+
+------------------------------------------------------------------------------------------
+user_gender                                                                  Demo - gender
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  gender
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  1/234
+
+            tabulation:  Freq.   Numeric  Label
+                             1         0  Male
+                           232         1  Female
+                             1         .  
+
+------------------------------------------------------------------------------------------
+user_age                                                                        Demo - age
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  user_age
+
+                 range:  [1,6]                        units:  1
+         unique values:  6                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            71         1  18-25
+                            49         2  26-30
+                            67         3  31-40
+                            27         4  41-50
+                            16         5  51-60
+                             4         6  60+
+
+------------------------------------------------------------------------------------------
+user_ed                                                           Demo - highest education
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  educ
+
+                 range:  [0,4]                        units:  1
+         unique values:  5                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            16         0  Graduated from high school
+                            81         1  Didn't graduate from high school
+                            72         2  College graduate
+                            46         3  Didn't graduate from college
+                            19         4  Graduate degree
+
+------------------------------------------------------------------------------------------
+user_ses                                                      Demo - socio-economic status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  ses
+
+                 range:  [2,5]                        units:  1
+         unique values:  4                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            22         2  B
+                           166         3  C
+                            43         4  D
+                             3         5  E
+
+------------------------------------------------------------------------------------------
+user_household_size                                   Demo - number of people in household
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [1,7]                        units:  1
+         unique values:  7                        missing .:  0/234
+
+            tabulation:  Freq.  Value
+                             9  1
+                            51  2
+                            76  3
+                            61  4
+                            27  5
+                             6  6
+                             4  7
+
+------------------------------------------------------------------------------------------
+user_earnings                                            Demo - number of minimum salaries
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  user_earnings
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                           120         1  0-25%
+                            71         2  25-50%
+                            29         3  50-75%
+                            14         4  75-100%
+
+------------------------------------------------------------------------------------------
+user_employment                                                   Demo - employment status
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  user_employment
+
+                 range:  [1,4]                        units:  1
+         unique values:  4                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            59         1  Unemployed, not looking for work
+                            44         2  Unemployed, looking for work
+                           101         3  Employed full-time
+                            30         4  Employed part-time
+
+------------------------------------------------------------------------------------------
+user_weekly_rides                                 Demo - number of rides in a typical week
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+
+                 range:  [0,20]                       units:  1
+         unique values:  13                       missing .:  0/234
+
+                  mean:   5.55983
+              std. dev:   3.29759
+
+           percentiles:        10%       25%       50%       75%       90%
+                                 2         3         5        10        10
+
+------------------------------------------------------------------------------------------
+user_other_transport                         Demo - other form of transportation available
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  yesno
+
+                 range:  [0,1]                        units:  1
+         unique values:  2                        missing .:  0/234
+
+            tabulation:  Freq.   Numeric  Label
+                            84         0  No
+                           150         1  Yes
+
+------------------------------------------------------------------------------------------
+user_commute_period                         Demo - normal period of day you leave for work
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  period
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  59/234
+
+            tabulation:  Freq.   Numeric  Label
+                           165         1  Morning
+                             9         2  Afternoon
+                             1         3  Evening
+                            59         .  
+
+------------------------------------------------------------------------------------------
+user_commute_hour                             Demo - normal time of day you leave for work
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (long)
+
+                 range:  [14400000,68400000]          units:  100000
+         unique values:  23                       missing .:  59/234
+
+                  mean:   2.7e+07
+              std. dev:   8.9e+06
+
+           percentiles:        10%       25%       50%       75%       90%
+                           2.2e+07   2.2e+07   2.5e+07   2.7e+07   3.6e+07
+
+------------------------------------------------------------------------------------------
+user_return_period                            Demo - normal period of day you go back home
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (byte)
+                 label:  period
+
+                 range:  [1,3]                        units:  1
+         unique values:  3                        missing .:  59/234
+
+            tabulation:  Freq.   Numeric  Label
+                             1         1  Morning
+                           123         2  Afternoon
+                            51         3  Evening
+                            59         .  
+
+------------------------------------------------------------------------------------------
+user_return_hour                                Demo - normal time of day you go back home
+------------------------------------------------------------------------------------------
+
+                  type:  numeric (long)
+
+                 range:  [23400000,81000000]          units:  100000
+         unique values:  20                       missing .:  59/234
+
+                  mean:   6.4e+07
+              std. dev:   6.5e+06
+
+           percentiles:        10%       25%       50%       75%       90%
+                           5.9e+07   6.1e+07   6.5e+07   6.8e+07   7.0e+07
