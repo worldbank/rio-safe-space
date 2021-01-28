@@ -376,7 +376,7 @@
 		* Table A5: IAT: Robustness check for priming with survey questions	   *
 		*----------------------------------------------------------------------*
 		*	REQUIRES: ${dt_final}/platform_survey_constructed.dta		 	   *
-		*	CREATES:  ${out_tables}/order.tex							  	   *
+		*	CREATES:  ${out_tables}/priming.tex							  	   *
 		************************************************************************
 
 		do "${do_tables}/priming.do"
