@@ -1,68 +1,47 @@
 #------------------------------------------------------------------------------#
+#         Demand for "Safe Spaces": Avoiding Harassment and Stigma             #
+#                    R reproducibility master script                           #
 #                                                                              #
-#                                     DIME                                     #
-#                                                                              #                                     
-#                               MASTER DO_FILE                                 #                           
-#                                                                              #
+#    NOTE: Running this script will instal the packages listed under PART 2    #
 #------------------------------------------------------------------------------#
 
-# PURPOSE:    
+# PART 1: User input ----------------------------------------------------------
 
-# NOTES:  
-  
-# WRITTEN BY: Luiza Cardoso de Andrade, 
+  github  <- "C:/Documents/GitHub" # Replace with the root folder the repository was cloned
 
-#                                                    Last modified in July 2018
-
-# PART 0: Clear memory --------------------------------------------------------
-  
-  rm(list=ls())
-
-# PART 1: Select sections to run ----------------------------------------------
-
-  map_supervia    <- 0
-  map_rides       <- 1
+  # Select sections to run
+  map_supervia    <- 0 # Figure A1 (requires access to identified data to run)
+  map_rides       <- 1 # Figure A4
   
   
 # PART 2: Load packages   -----------------------------------------------------
-  
-  # install.packages("pacman")
-  
-  packages  <- c("readstata13",
-                 "sp", 
-                 "rgdal", 
-                 "rgeos", 
-                 "ggplot2", 
-                 "ggmap", 
-                 "maptools",
-                 "raster",
-                 "qdap",
-                 "plyr")
+    
+  packages  <- c(
+   "readstata13",
+   "sp", 
+   "rgdal", 
+   "rgeos", 
+   "tidyverse", 
+   "ggmap", 
+   "maptools",
+   "raster",
+   "qdap"
+  )
 
-  
-  pacman::p_load(packages, character.only = TRUE) # Load all packages -- run line 33 if pacman is not installed
-  
+  pacman::p_load(packages, 
+                 character.only = TRUE) # Load all packages -- run line 33 if pacman is not installed  
 
 # PART 3: Set folder folder paths --------------------------------------------
 
-  #-------------#
-  # Root folder #
-  #-------------#
+  # Root folder 
+  github  <- file.path(github, "rio-safe-space/Replication Package")
  
-    github  <- "rio-safe-space/Replication Package"
- 
-  
-  #--------------------#
-  # Project subfolders #
-  #--------------------#
-
-  # Data sets
-  
+  # Project subfolders
   dt_final    <- file.path(github, "data", "final")
   out_maps    <- file.path(github, "outputs", "maps")
   code        <- file.path(github, "dofiles", "analysis", "maps")
   
-# PART 5: Run selected sections -----------------------------------------------
+# PART 4: Run selected sections -----------------------------------------------
   
   # Set map options
   if (map_supervia | map_rides) {source(file.path(code, "settings.R"))}
