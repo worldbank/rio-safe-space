@@ -22,11 +22,6 @@ Computational requirements
   - `coefplot` (1.8.3)
   - the program "`MASTER.do`" will install all dependencies locally if the local `packages` in line 30 is set to 1.
 
-- R (code was last run with version 4.0.2)
-  - `tidyr` (0.8.3)
-  - `rdrobust` (0.99.4)
-  - the file "`0_setup.R`" will install all dependencies (latest version), and should be run once prior to running other programs.
-
 ### Memory and Runtime Requirements
 
 - The code was last run on a **Windows 10 laptop with 16GB of RAM**. 
