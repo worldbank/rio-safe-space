@@ -7,12 +7,17 @@
 
 # PART 1: User input ----------------------------------------------------------
 
+  # PART 1.1: root folder ----------------------------------------------------
   github  <- "C:/Documents/GitHub" # Replace with the root folder the repository was cloned
 
-  # Select sections to run
-  map_supervia    <- 0 # Figure A1 (requires access to identified data to run)
-  map_rides       <- 1 # Figure A4
+  # PART 1.2: root folder ----------------------------------------------------
   
+  # Figure A1: SuperVia lines and riders home location (requires access to
+  # confidential data to run)
+  map_supervia    <- 0
+
+  # Figure A4: Presence of male riders in reserved space over stations
+  map_rides       <- 1  
   
 # PART 2: Load packages   -----------------------------------------------------
     
@@ -45,12 +50,6 @@
   
   # Set map options
   if (map_supervia | map_rides) {source(file.path(code, "settings.R"))}
-  
-  # Figure A1: SuperVia lines and riders home location
-  # The data used to create this figure contains confidential information and will only replicate for people 
-  # who have access to the raw data
   if (map_supervia)             {source(file.path(code, "ramais-and-homes.R"))}
-  
-  # Figure A4: Presence of male riders in reserved space over stations
   if (map_rides)                {source(file.path(code, "compliance.R"))}
   
