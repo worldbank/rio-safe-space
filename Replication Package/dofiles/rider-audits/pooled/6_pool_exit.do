@@ -282,6 +282,7 @@
 *								STEP 5: SAVE DATA							   *
 ********************************************************************************
 
+	isid user_uuid, sort
 	iecodebook apply using "${doc_rider}/pooled/codebooks/pooled_exit.xlsx"
 
 	compress
