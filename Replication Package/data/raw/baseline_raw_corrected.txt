@@ -2,7 +2,7 @@
 Contains data from C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified/ba
 > seline_raw_corrected.dta
   obs:        48,476                          
- vars:           152                          31 Jan 2021 12:36
+ vars:           152                          31 Jan 2021 13:06
 ------------------------------------------------------------------------------------------
               storage   display    value
 variable name   type    format     label      variable label
@@ -153,11 +153,11 @@ percent_femce~e str4    %9s                   percent_femcentral_touched_consent
 percent_femce~d str7    %9s                   
 long_prompt     str56   %56s                  
 user_commute~on str40   %40s                  
-user_line       float   %20.0g     line       
-user_station    float   %9.0g                 
-exit_line       float   %20.0g     line       
-exit_station    float   %9.0g                 
-user_home_line  float   %20.0g     line       
-user_home_sta~n float   %9.0g                 
+user_line       byte    %20.0g     line       
+user_station    int     %9.0g                 
+exit_line       byte    %20.0g     line       
+exit_station    int     %9.0g                 
+user_home_line  byte    %20.0g     line       
+user_home_sta~n int     %9.0g                 
 ------------------------------------------------------------------------------------------
-Sorted by: v1
+Sorted by: user_uuid  obs_uid

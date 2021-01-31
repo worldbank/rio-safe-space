@@ -5,6 +5,7 @@
 
 	REQUIRES:	"${encrypt}/Baseline/07112016/Contributions 07112016"
 				"${doc_rider}/baseline-study/codebooks/raw.xlsx"
+				"${doc_rider}/baseline-study/raw-duplicates.xlsx"
 				"${doc_rider}/baseline-study/codebooks/raw_deidentify.xlsx"
 	CREATES:	"${encrypt}/baseline_raw.dta"
 				"${dt_raw}/baseline_raw_deidentified.dta"
@@ -12,29 +13,42 @@
 	WRITEN BY:  Luiza Andrade [lcardoso@worldbank.org]
 	
 	NOTES:		Access to encrypted, identified data is required to run this file
+				Station and line NAMES are considered identifying data
 	
 ********************************************************************************
-	Import raw data and save as dta
+	1 RIDES DATA
 ********************************************************************************/
 	
-	import delimited using "${encrypt}/Baseline/07112016/Contributions 07112016", delim (",")  varnames(1) clear  bindquotes(strict)
-		
-	* -----------------
-	* Clean up and save
-	* -----------------
+// Import to Stata format ======================================================
+	import delimited using "${encrypt}/Baseline/07112016/Contributions 07112016", ///
+		delim (",") ///
+		bindquotes(strict) ///
+		varnames(1) ///
+		clear  
+	
+	* Label variables
 	iecodebook apply using "${doc_rider}/baseline-study/codebooks/raw.xlsx", drop
 
+	* There are two duplicated values for obs_uid, each with two submissions.
+	* All four entries are demographic survey from the same user, who seems to 
+	* have submitted the data twice, each time creating two entries. 
+	* Possibly a connectivity issue
+	ieduplicates obs_uid using "${doc_rider}/baseline-study/raw-duplicates.xlsx", uniquevars(v1) keepvars(created submitted started)
+
+	* Save in Stata format
+	isid user_uuid obs_uid, sort
 	compress
+	dropmiss, force
 		
 	save 			 "${encrypt}/baseline_raw.dta", replace
 	iemetasave using "${dt_raw}/baseline_raw.txt",  replace short
 
 	
-/*******************************************************************************
-	Unify station variables
-	- Different station variables were created originally, one for each line
-	- Variable names also changed across between data handovers from app firm
-*******************************************************************************/
+// Corrections =================================================================
+
+/*	Unify station variables: ---------------------------------------------------
+	station names were originally saved in different variables, one for each line. 
+	Variable names also changed across between data handovers from app firm */
 	
 	* From demographic survey
 	foreach var in user user_commute user_home {
@@ -54,9 +68,9 @@
 		cap replace user_station = user_line_phiii_`line' if !missing(user_line_phiii_`line')
 	}
 	
-/*******************************************************************************
-	Stations not linked to a line
-*******************************************************************************/
+/*	Stations not linked to a line ----------------------------------------------
+	Line was missing for some stations for an unknown reason. These cases were
+	corrected by looking up the SuperVia sation map. */
 	
 	rename user_line_home user_home_line
 	
@@ -89,30 +103,31 @@
 
 	}
 	
-	// Got right station from geolocation when check-in and check-out stations were the same
+	* Got right station from geolocation when check-in and check-out stations were the same
 	merge m:1 session spectranslated using "${doc_rider}/baseline-study/station_corrections.dta", ///
 			  update replace ///
 			  assert(1 4 5) ///
 			  nogen
 	
-/*******************************************************************************
-	Save
-*******************************************************************************/
+//	Save =======================================================================
 
-	* There are two duplicated values for obs_uid, each with two submissions.
-	* All four entries are demographic survey from the same user, who seems to 
-	* have submitted the data twice, each time creating two entries. 
-	* Possibly a connectivity issue
-	ieduplicates obs_uid using "${doc_rider}/baseline-study/raw-duplicates.xlsx", uniquevars(v1) keepvars(created submitted started)
-	
+	* Corrected, identified data
+	isid user_uuid obs_uid, sort
+	compress
+	dropmiss, force
+
 	save 			 "${encrypt}/baseline_raw_corrected.dta", replace
 	iemetasave using "${dt_raw}/baseline_raw_corrected.txt", short replace
 	
-	compress
-	dropmiss, force
-	
+
+//	Deidentify =================================================================
+
+	* Remove identifying variables
 	iecodebook apply using "${doc_rider}/baseline-study/codebooks/raw_deidentify.xlsx", drop
 	
+	isid user_uuid obs_uid, sort
+	compress
+	dropmiss, force
 	
 	save 			 "${dt_raw}/baseline_raw_deidentified.dta", replace
 	iemetasave using "${dt_raw}/baseline_raw_deidentified.txt", replace

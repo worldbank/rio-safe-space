@@ -1,8 +1,8 @@
 
 Contains data from C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified/ba
 > seline_raw.dta
-  obs:        48,479                          
- vars:           148                          31 Jan 2021 12:36
+  obs:        48,476                          
+ vars:           148                          31 Jan 2021 13:06
 ------------------------------------------------------------------------------------------
               storage   display    value
 variable name   type    format     label      variable label
@@ -156,4 +156,4 @@ percent_femce~e str4    %9s                   percent_femcentral_touched_consent
 percent_femce~d str7    %9s                   
 long_prompt     str56   %56s                  
 ------------------------------------------------------------------------------------------
-Sorted by: 
+Sorted by: user_uuid  obs_uid

@@ -4,15 +4,17 @@
 *******************************************************************************/
 	
 	/************************************************************************
-	*	 Import and de-identify baseline data			 		   			*
+	*	 Import and de-identify rides baseline data			 		   			*
 	*************************************************************************
 	* REQUIRES:		${encrypt}/Baseline/07112016/Contributions 07112016
 	*				${doc_rider}/baseline-study/codebooks/raw.xlsx
 	*				${doc_rider}/baseline-study/codebooks/raw_deidentify.xlsx
+					${doc_rider}/baseline-study/raw-duplicates.xlsx
 	* CREATES:		${encrypt}/baseline_raw.dta
 	*				${dt_raw}/baseline_raw_deidentified.dta
 	************************************************************************/			
-	if ${encrypted} do "${do}/rider-audits/baseline/1. Import raw.do" 
+	if ${encrypted} do "${do}/rider-audits/baseline/1. Importing/import-rides.do" 
+		
 	
 	/************************************************************************
 	*			   Clean baseline demographic survey			 		    *
