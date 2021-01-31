@@ -1,0 +1,25 @@
+
+Contains data from C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified/ba
+> seline_mapping_raw.dta
+  obs:         5,193                          
+ vars:            14                          31 Jan 2021 13:32
+------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+------------------------------------------------------------------------------------------
+v1              int     %8.0g                 
+obs_uid         str36   %36s                  
+user_profile_~d str36   %36s                  
+item_uid        str37   %37s                  
+created_at      str23   %23s                  
+submitted_at    str23   %23s                  
+created_fr_lon  float   %9.0g                 
+created_fr_lat  float   %9.0g                 
+sv_line         str18   %18s                  
+item_uid1       str37   %37s                  
+regular_car_c~n str47   %47s                  
+regular_car_c~e str7    %9s                   
+pink_car_cong~n str47   %47s                  
+pink_car_comp~e str7    %9s                   
+------------------------------------------------------------------------------------------
+Sorted by: obs_uid

@@ -3,19 +3,41 @@
 	First wave of data collection
 *******************************************************************************/
 	
-	/************************************************************************
-	*	 Import and de-identify rides baseline data			 		   			*
-	*************************************************************************
-	* REQUIRES:		${encrypt}/Baseline/07112016/Contributions 07112016
-	*				${doc_rider}/baseline-study/codebooks/raw.xlsx
-	*				${doc_rider}/baseline-study/codebooks/raw_deidentify.xlsx
-					${doc_rider}/baseline-study/raw-duplicates.xlsx
-	* CREATES:		${encrypt}/baseline_raw.dta
-	*				${dt_raw}/baseline_raw_deidentified.dta
-	************************************************************************/			
-	if ${encrypted} do "${do}/rider-audits/baseline/1. Importing/import-rides.do" 
-		
 	
+/*------------------------------------------------------------------------------
+	ACCESS TO IDENTIFIED DATA IS REQUIRED TO RUN THE IMPORTING DO-FILES.
+  THEY CREATE DEIDENTIFIED DATA SETS THAT WILL BE USED BY THE REMAINING CODES
+------------------------------------------------------------------------------*/
+
+if ${encrypted} {
+	
+	/************************************************************************
+		 Import and de-identify baseline rides data			 		   		
+	*************************************************************************
+	 REQUIRES:		${encrypt}/Baseline/07112016/Contributions 07112016
+					${doc_rider}/baseline-study/codebooks/raw.xlsx
+					${doc_rider}/baseline-study/codebooks/raw_deidentify.xlsx
+					${doc_rider}/baseline-study/raw-duplicates.xlsx
+	 CREATES:		${encrypt}/baseline_raw.dta
+					${dt_raw}/baseline_raw_deidentified.dta
+	************************************************************************/			
+	 do "${do}/rider-audits/baseline/1. Importing/import-rides.do" 
+	
+	/************************************************************************
+		 Import and de-identify baseline mapping data	 		   			
+	*************************************************************************
+	 REQUIRES:		${encrypt}/Baseline/07112016/Mapping 07112016
+					${encrypt}/Baseline/mapping_task_key
+					${doc_rider}/baseline-study/codebooks/mapping.xlsx
+	 CREATES:	 	${encrypt}/baseline_mapping_raw.dta
+				    ${dt_raw}/baseline_mapping_raw_deidentified.dta
+	************************************************************************/			
+	 do "${do}/rider-audits/baseline/1. Importing/import-mapping.do" 
+
+}
+
+//----------------------------------------------------------------------------//
+
 	/************************************************************************
 	*			   Clean baseline demographic survey			 		    *
 	*************************************************************************
@@ -61,18 +83,6 @@
 	************************************************************************/
 	do "${do}/rider-audits/baseline/2. Cleaning/exit.do" 
 	
-	/************************************************************************
-	* 			  	 	Clean baseline platform observations			 	*
-	*************************************************************************
-	* REQUIRES:		${encrypt}/Baseline/07112016/Mapping 07112016
-	*				${encrypt}/Baseline/mapping_task_key
-	*				${doc_rider}/baseline-study/codebooks/mapping.xlsx
-	*				${doc_rider}/baseline-study/codebooks/mapping_long.xlsx																		
-	* CREATES:	 	${dt_int}/baseline_mapping.dta
-	*				${dt_int}/baseline_mapping_long.dta
-	************************************************************************/
-	do "${do}/rider-audits/baseline/2. Cleaning/mapping.do" 
-
 	/***********************************************************************
 	* 							Merge tasks			 					   *
 	************************************************************************		
