@@ -8,7 +8,7 @@
 # PART 1: User input ----------------------------------------------------------
 
   # PART 1.1: root folder ----------------------------------------------------
-  github  <- "C:/Documents/GitHub" # Replace with the root folder the repository was cloned
+  github  <- "C:/Users/wb501238/Documents/GitHub" # Replace with the root folder the repository was cloned
 
   # PART 1.2: root folder ----------------------------------------------------
   
@@ -44,7 +44,7 @@
   # Project subfolders
   dt_final    <- file.path(github, "data", "final")
   out_maps    <- file.path(github, "outputs", "maps")
-  code        <- file.path(github, "dofiles", "analysis", "maps")
+  code        <- file.path(github, "dofiles", "analysis", "paper", "maps")
   
 # PART 4: Run selected sections -----------------------------------------------
   
