@@ -2,9 +2,9 @@
 
 ## Data linkage table
 
-| Data source | Dataset name | Unit of observation | ID variable | One to many ID | Many to one ID | Notes |
-|-------------|--------------|---------------------|-------------|----------------|----------------|-------|
-| Rider audits - first wave | baseline_raw_deidentified.dta | rider - ride - task |  obs_uid |
+| Data source | Dataset name | Unit of observation | ID variable | External keys | Notes |
+|-------------|--------------|---------------------|-------------| ---------------|-------|
+| Rider audits - first wave | baseline_raw_deidentified.dta | rider - ride - task |  `obs_uid` | `user_uuid` <br> `spectranslated` <br> `campaign_id` <br> `user_line` <br> `user_station` <br> `exit_line` <br> `exit_station` |
 | Platform observations - first wave | baseline_mapping.dta | observer - data - time bin - station bin |
 | Rider audits - second wave | compliance_pilot_deidentified.dta | rider - ride - task |
 | Platform observations - second wave | compliance_pilot_mapping.dta |  observer - data - time bin - station bin |
