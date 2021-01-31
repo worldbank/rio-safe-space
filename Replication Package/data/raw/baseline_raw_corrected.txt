@@ -1,8 +1,8 @@
 
 Contains data from C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified/ba
-> seline_raw.dta
-  obs:        48,479                          
- vars:           148                          31 Jan 2021 12:36
+> seline_raw_corrected.dta
+  obs:        48,476                          
+ vars:           152                          31 Jan 2021 12:36
 ------------------------------------------------------------------------------------------
               storage   display    value
 variable name   type    format     label      variable label
@@ -23,7 +23,6 @@ ride_spot       str4    %9s
 user_gender     str9    %9s                   Demo - gender
 user_return_a~n str5    %9s                   
 ride_comfort    byte    %8.0g                 
-user_line_home  str20   %20s                  
 user_return_m~g str5    %9s                   
 ride_pa         str4    %9s                   
 ride_police_p~t str4    %9s                   
@@ -31,7 +30,7 @@ ride_touch      str4    %9s
 user_return_e~g str5    %9s                   
 ride_alone      str4    %9s                   
 ride_ac         str4    %9s                   
-user_commute_~n str6    %9s                   
+user_commute~rn str6    %9s                   
 user_ed         str26   %26s                  Demo - highest education
 ride_comments   str4    %9s                   
 user_marital    str15   %15s                  Demo - marital status
@@ -57,7 +56,6 @@ user_commute_~8 str17   %17s
 user_commute_~9 str10   %10s                  
 ride_men_pres~t str7    %9s                   
 user_comm~rning str5    %9s                   
-user_line       str18   %18s                  
 ride_stare      str4    %9s                   
 user_comm~ening str5    %9s                   
 user_home_sta~1 str40   %40s                  
@@ -105,7 +103,6 @@ avoid_crowds    str4    %9s
 approx_percen~n str7    %9s                   
 studied_mix_car str4    %9s                   
 studied_fem_car str4    %9s                   
-exit_line       str18   %18s                  
 exit_line_ph~xo str22   %22s                  
 exit_line_ph~ro str40   %40s                  
 exit_line_phi~i str22   %22s                  
@@ -155,5 +152,12 @@ percent_femc~ts str7    %9s
 percent_femce~e str4    %9s                   percent_femcentral_touched_consent
 percent_femce~d str7    %9s                   
 long_prompt     str56   %56s                  
+user_commute~on str40   %40s                  
+user_line       float   %20.0g     line       
+user_station    float   %9.0g                 
+exit_line       float   %20.0g     line       
+exit_station    float   %9.0g                 
+user_home_line  float   %20.0g     line       
+user_home_sta~n float   %9.0g                 
 ------------------------------------------------------------------------------------------
-Sorted by: 
+Sorted by: v1

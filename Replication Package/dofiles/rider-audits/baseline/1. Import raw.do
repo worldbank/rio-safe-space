@@ -22,7 +22,6 @@
 	* -----------------
 	* Clean up and save
 	* -----------------
-	
 	iecodebook apply using "${doc_rider}/baseline-study/codebooks/raw.xlsx", drop
 
 	compress
@@ -100,6 +99,12 @@
 	Save
 *******************************************************************************/
 
+	* There are two duplicated values for obs_uid, each with two submissions.
+	* All four entries are demographic survey from the same user, who seems to 
+	* have submitted the data twice, each time creating two entries. 
+	* Possibly a connectivity issue
+	ieduplicates obs_uid using "${doc_rider}/baseline-study/raw-duplicates.xlsx", uniquevars(v1) keepvars(created submitted started)
+	
 	save 			 "${encrypt}/baseline_raw_corrected.dta", replace
 	iemetasave using "${dt_raw}/baseline_raw_corrected.txt", short replace
 	
