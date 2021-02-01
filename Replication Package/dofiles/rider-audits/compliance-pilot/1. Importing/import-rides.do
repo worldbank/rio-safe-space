@@ -111,10 +111,10 @@
 
 	* There was a problem with the line option for one of the stations. This fixes it:
 	* --------------------------------------------------------------------------------
-	merge m:1 obs_uuid using "${doc_rider}/compliance-pilot/station_corrections.dta", ///
-			  update replace ///
-			  keepusing(user_station) ///
-			  assert(1 4) ///
+	merge 1:1 obs_uuid using "${doc_rider}/compliance-pilot/station_corrections.dta", ///
+			  update replace /// replace current values with corrected values
+			  keepusing(user_station) /// the variable to be replaced with corrected values
+			  assert(master match_update) /// all observations in the correction file will be updated, but not all observations in the current dataset have corrections to be made
 			  nogen
 	
 	* Fix start time variable
