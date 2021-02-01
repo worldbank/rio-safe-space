@@ -18,7 +18,12 @@
 	import	delimited using "${encrypt}/Compliance pilot/02212017\Contributions 02212017.csv", ///
 			clear bindquotes(strict) delimiters(",")
 	
+	isid  		  obs_uuid
+	sort  user_id obs_uuid
+	order user_id obs_uuid
+	
 	compress
+	dropmiss, force	
 	
 	save				"${encrypt}/compliance_pilot_raw.dta", replace
 	iemetasave using	"${dt_raw}/compliance_pilot_raw.txt", short replace
@@ -63,7 +68,7 @@
 	* ---------------
 	replace user_line = using_line 							if user_line == ""
 	replace user_line = exit_line 							if user_line == ""
-	drop	using_line user_commute_afternoon
+	drop	using_line
 
 	* Create unified station variable
 	* -------------------------------
@@ -77,10 +82,15 @@
 		replace 	user_home_station = user_home_station`stationCode' 	if user_home_station`stationCode' != ""
 	}
 
-	foreach lineName in roxo deodoro japeri cruz saracuruna {
+	foreach lineName in roxo deodoro japeri cruz saracuruna paracambi {
 		local typeVar : type user_line_phiii_`lineName'
 		if substr("`typeVar'",1,1) == "s" {	
 			replace 	user_station = user_line_phiii_`lineName' if user_line_phiii_`lineName' != ""
+		}
+		
+		local typeVar : type exit_line_phiii_`lineName'
+		if substr("`typeVar'",1,1) == "s" {	
+			replace 	user_station = exit_line_phiii_`lineName' if exit_line_phiii_`lineName' != "" & missing(user_station)
 		}
 	}
 		
@@ -101,11 +111,11 @@
 
 	* There was a problem with the line option for one of the stations. This fixes it:
 	* --------------------------------------------------------------------------------
-	merge m:1 session_id spec_translated using "${doc_rider}/compliance-pilot/station_correctons.dta", ///
+	merge m:1 obs_uuid using "${doc_rider}/compliance-pilot/station_corrections.dta", ///
 			  update replace ///
-			  assert(1 4 5) ///
+			  keepusing(user_station) ///
+			  assert(1 4) ///
 			  nogen
-	
 	
 	* Fix start time variable
 	* -----------------------
@@ -116,12 +126,14 @@
 	Save raw data
 *******************************************************************************/
 	
+	sort  user_id obs_uuid
+	
 	save				"${encrypt}/compliance_pilot_raw_corrected.dta", replace
 	iemetasave using	"${dt_raw}/compliance_pilot_raw_corrected.txt", short replace
 	
-	dropmiss, force	
-	
+	* De-identify
 	iecodebook apply using "${doc_rider}/compliance-pilot/codebooks/raw.xlsx", drop
+	sort  user_uuid obs_uuid
 	
 	save 			 "${dt_raw}/compliance_pilot_deidentified.dta", replace
 	iemetasave using "${dt_raw}/compliance_pilot_deidentified.txt", replace

@@ -109,7 +109,7 @@ if ${encrypted} {
 	* CREATES:	${encrypt}/compliance_pilot_raw.dta"
 	*			${dt_raw}/compliance_pilot_deidentified.dta"
 	***********************************************************************/	
-	if ${encrypted} do "${do}/rider-audits/compliance-pilot/1. Import raw.do" 
+	if ${encrypted} do "${do}/rider-audits/compliance-pilot/1. Importing/import-rides.do" 
 	
 	/***********************************************************************
 	*		Clean compliance pilot demographic survey task			 	   *

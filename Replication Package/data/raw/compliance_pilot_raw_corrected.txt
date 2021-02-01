@@ -1,8 +1,8 @@
 
 Contains data from C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified/co
-> mpliance_pilot_raw.dta
+> mpliance_pilot_raw_corrected.dta
   obs:        26,408                          
- vars:           207                          1 Feb 2021 08:55
+ vars:           208                          1 Feb 2021 08:55
 ------------------------------------------------------------------------------------------
               storage   display    value
 variable name   type    format     label      variable label
@@ -172,8 +172,6 @@ user_home_sta~7 str22   %22s
 user_home_sta~8 str16   %16s                  
 user_home_sta~9 str10   %10s                  
 user_househol~e byte    %8.0g                 
-user_line       str18   %18s                  
-user_line_home  str18   %18s                  
 user_line_phi~z str21   %21s                  
 user_line_ph~ro str40   %40s                  
 user_line_ph~ri str22   %22s                  
@@ -197,7 +195,6 @@ user_station6   str17   %17s
 user_station7   str22   %22s                  
 user_station8   str17   %17s                  
 user_weekly_r~s byte    %8.0g                 
-using_line      str18   %18s                  
 why_govt_cont~k strL    %9s                   
 work_or_looking str4    %9s                   
 yes_no_switch~s str3    %9s                   
@@ -214,5 +211,9 @@ consider_ridi~d str6    %9s                   consider_riding_pink.D
 consider_ridi~e str6    %9s                   consider_riding_pink.E
 consider_ridi~f str6    %9s                   consider_riding_pink.F
 consider_ridi~g str6    %9s                   consider_riding_pink.G
+user_line       float   %20.0g     line       
+user_station    float   %9.0g                 
+user_home_line  float   %20.0g     line       
+user_home_sta~n float   %9.0g                 
 ------------------------------------------------------------------------------------------
 Sorted by: user_id  obs_uuid
