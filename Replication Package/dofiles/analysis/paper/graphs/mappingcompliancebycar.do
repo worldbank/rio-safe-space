@@ -36,7 +36,7 @@
 				   region(lcolor(white))) ///
 			ytitle(Density) ///
 			xtitle("Percent of riders who are male") ///
-			${paper_plotops}
+			${plot_options}
 			
 	* Save graph
 	graph export "${out_graphs}/paper_mappingcompliancebycar.png", replace width(5000)

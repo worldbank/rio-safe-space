@@ -33,8 +33,8 @@
 
 	* Create it
 	twoway 	(bar cum load_factor, 					color(${col_aux_light})) 	///
-			(lpoly d_women_car load_factor, 		color(${col_1}) bwidth(10)) ///
-			(lpoly MA_men_present_pink load_factor, color(${col_2}) bwidth(10)) ///
+			(lpoly d_women_car load_factor, 		color(${col_mixedcar}) bwidth(10)) ///
+			(lpoly MA_men_present_pink load_factor, color(${col_womencar}) bwidth(10)) ///
 		, ///
 			xline(50, lcolor(cranberry) lpattern(dot)) ///
 			text(100 62 "High crowding") ///
@@ -46,7 +46,7 @@
 						 3 "Percent of reserved space passengers who are men") ///
 					cols(1) ///	 
 					region(lcolor(white))) ///
-			${paper_plotops}
+			${plot_options}
 
 	* Save it
 	gr export "${out_graphs}/takeupandcongestion.png", width(5000) replace

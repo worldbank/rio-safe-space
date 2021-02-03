@@ -51,7 +51,7 @@
 		xtitle(Opportunity cost (USD)) ///
 		ytitle(Percent of riders who ever choose reserved space) ///
 		title("") ///
-		${paper_plotops} ///
+		${plot_options} ///
 		yscale(range(0(20)80)) ///
 		ylabel(0(20)80) ///
 		text(60 3 "F-test for coefficient equality" "across positive opportunity cost" "P-value  = `pval'")
