@@ -6,8 +6,7 @@
 					PART 0:  User inputs
 					PART 1:  Prepare folder paths
 					PART 2:  Load necessary packages
-					PART 3:  Data preparation
-					PART 4:  Analysis
+					PART 3:  Run selected code
 
 ********************************************************************************
 	PART 0: USER INPUTS															
@@ -16,18 +15,14 @@
 	ieboilstart, v(14.0)  matsize(10000)
 	`r(version)'
 
-/*------------------------------------------------------------------------------
-	Set folder paths
-------------------------------------------------------------------------------*/
+//	Set folder paths -----------------------------------------------------------
 
-	if inlist(c(username), "wb501238", "WB501238") {
-		global github		"C:\Users\wb501238\Documents\GitHub\rio-safe-space/Replication Package"
-		global encrypt		"C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified"
+	if inlist(c(username), "Luiza") {
+		global github		"C:\Users\Documents\GitHub\rio-safe-space\Replication Package"
+		global encrypt		"C:\Users\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified"
 	}
 	
-/*------------------------------------------------------------------------------
-	Select sections to run
-------------------------------------------------------------------------------*/
+// Select sections to run ------------------------------------------------------
 
 	local  packages			0 // Install user-written commands used in the project
 	local  cleaning			0 // Run data cleaning
@@ -35,12 +30,9 @@
 	local  construction		0 // Re-create analysis indicators
 	local  mainresults		0 // Re-create analysis outputs
 
-/*------------------------------------------------------------------------------
-	Set control variables
-------------------------------------------------------------------------------*/
+// Set control variables -------------------------------------------------------
 
-	global star					star	(* .1 ** .05 *** .01) // replace with "nostar" to supress significance stars
-
+	global star					star	(* .1 ** .05 *** .01) 
 	global demographics 		d_lowed d_young d_single d_employed d_highses
 	global interactionvars		pink_highcompliance mixed_highcompliance ///
 								pink_lowcompliance mixed_lowcompliance
@@ -62,9 +54,8 @@
 	global adjustind 			CI_wait_time_min d_against_traffic CO_switch ///
 								RI_spot CI_time_AM CI_time_PM
 
-/*------------------------------------------------------------------------------
-	Plot settings
-------------------------------------------------------------------------------*/
+
+// Plot settings ---------------------------------------------------------------
 
 	set scheme s2color
 	
@@ -128,7 +119,7 @@
 	}
 
 ********************************************************************************
-*						   PART 3: Data preparation     					   *
+*					   PART 3: Run selected code     						   *
 ********************************************************************************
 
 	if `cleaning' 		do "${do}/rider-audits/MASTER_rider_audits_data_prep.do"
@@ -140,5 +131,4 @@
   
 /*******************************************************************************
 	Congratulations, you've made it to the end of the do files!
-	(Actually, there are a lot more that didn't make the final cut)
 *******************************************************************************/
