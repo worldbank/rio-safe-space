@@ -93,6 +93,7 @@
 	* Documentation
 	global	doc					"${github}/documentation"
 	global 	doc_rider			"${doc}/rider-audits"
+	global 	doc_platform		"${doc}/platform-survey"
 	
 	* Outputs
 	global	out_git				"${github}/outputs"

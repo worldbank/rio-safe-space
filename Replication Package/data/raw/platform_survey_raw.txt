@@ -1,0 +1,435 @@
+
+Contains data from C:\Users\wb501238\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified/Pl
+> atform survey/platform_survey_raw.dta
+  obs:         1,078                          
+ vars:           424                          3 Feb 2021 10:08
+------------------------------------------------------------------------------------------
+              storage   display    value
+variable name   type    format     label      variable label
+------------------------------------------------------------------------------------------
+submissiondate  str19   %19s                  SubmissionDate
+starttime       str19   %19s                  
+endtime         str19   %19s                  
+deviceid        str17   %17s                  
+subscriberid    byte    %8.0g                 
+simid           byte    %8.0g                 
+devicephonenum  byte    %8.0g                 
+username        str26   %26s                  
+random_iat      double  %10.0g                
+caseid          byte    %8.0g                 
+enumerator      byte    %8.0g                 
+platform        byte    %8.0g                 
+gender_interv~w byte    %8.0g                 
+enumeratorname  str7    %9s                   
+women_group     byte    %8.0g                 
+response_intro  byte    %8.0g                 
+full_intro      byte    %8.0g                 
+id              long    %8.0g                 
+intro_duration  str20   %20s                  
+pacote          byte    %8.0g                 
+pref            byte    %8.0g                 
+grupo           byte    %8.0g                 
+part            byte    %8.0g                 
+order           byte    %8.0g                 
+age             byte    %8.0g                 
+leavea          byte    %8.0g                 leaveA
+askb            byte    %8.0g                 askB
+education       byte    %8.0g                 
+leaveb          byte    %8.0g                 leaveB
+askc            byte    %8.0g                 askC
+employment      byte    %8.0g                 
+leavec_         byte    %8.0g                 leaveC_
+askd_           byte    %8.0g                 askD_
+line            byte    %8.0g                 
+leaved          byte    %8.0g                 leaveD
+aske            byte    %8.0g                 askE
+station         int     %8.0g                 
+leavee          byte    %8.0g                 leaveE
+askf            byte    %8.0g                 askF
+ride            byte    %8.0g                 
+leavef          byte    %8.0g                 leaveF
+askg            byte    %8.0g                 askG
+smartphone      byte    %8.0g                 
+leaveg          byte    %8.0g                 leaveG
+askh            byte    %8.0g                 askH
+demographics_~n str20   %20s                  
+askiat          byte    %8.0g                 askIAT
+iat_intro       byte    %8.0g                 IAT_intro
+leaveiat        byte    %8.0g                 
+iat_duration    str20   %20s                  IAT_duration
+usual_car       byte    %8.0g                 
+leavewb         byte    %8.0g                 leavewB
+askwc           byte    %8.0g                 askwC
+leavewc         byte    %8.0g                 leavewC
+askwd           byte    %8.0g                 askwD
+set1_q8_15      byte    %8.0g                 
+leavewd1        byte    %8.0g                 leavewD1
+askwe1          byte    %8.0g                 askwE1
+set1_q8_30      byte    %8.0g                 
+leavewe1        byte    %8.0g                 leavewE1
+askwf1          byte    %8.0g                 askwF1
+set1_q8_65      byte    %8.0g                 
+leavewf1        byte    %8.0g                 leavewF1
+askwg1          byte    %8.0g                 askwG1
+set2_q8_15      byte    %8.0g                 
+leavewd2        byte    %8.0g                 leavewD2
+askwe2          byte    %8.0g                 askwE2
+set2_q8_65      byte    %8.0g                 
+leavewe2        byte    %8.0g                 leavewE2
+askwf2          byte    %8.0g                 askwF2
+set2_q8_30      byte    %8.0g                 
+leavewf2        byte    %8.0g                 leavewF2
+askwg2          byte    %8.0g                 askwG2
+set3_q8_30      byte    %8.0g                 
+leavewd3        byte    %8.0g                 leavewD3
+askwe3          byte    %8.0g                 askwE3
+set3_q8_15      byte    %8.0g                 
+leavewe3        byte    %8.0g                 leavewE3
+askwf3          byte    %8.0g                 askwF3
+set3_q8_65      byte    %8.0g                 
+leavewf3        byte    %8.0g                 leavewF3
+askwg3          byte    %8.0g                 askwG3
+set4_q8_30      byte    %8.0g                 
+leavewd4        byte    %8.0g                 leavewD4
+askwe4          byte    %8.0g                 askwE4
+set4_q8_65      byte    %8.0g                 
+leavewe4        byte    %8.0g                 leavewE4
+askwf4          byte    %8.0g                 askwF4
+set4_q8_15      byte    %8.0g                 
+leavewf4        byte    %8.0g                 leavewF4
+askwg4          byte    %8.0g                 askwG4
+set5_q8_65      byte    %8.0g                 
+leavewd5        byte    %8.0g                 leavewD5
+askwe5          byte    %8.0g                 askwE5
+set5_q8_15      byte    %8.0g                 
+leavewe5        byte    %8.0g                 leavewE5
+askwf5          byte    %8.0g                 askwF5
+set5_q8_30      byte    %8.0g                 
+leavewf5        byte    %8.0g                 leavewF5
+askwg5          byte    %8.0g                 askwG5
+set6_q8_65      byte    %8.0g                 
+leavewd6        byte    %8.0g                 leavewD6
+askwe6          byte    %8.0g                 askwE6
+set6_q8_30      byte    %8.0g                 
+leavewe6        byte    %8.0g                 leavewE6
+askwf6          byte    %8.0g                 askwF6
+set6_q8_15      byte    %8.0g                 
+leavewf6        byte    %8.0g                 leavewF6
+askwg6          byte    %8.0g                 askwG6
+done1           byte    %8.0g                 
+done2           byte    %8.0g                 
+done3           byte    %8.0g                 
+done4           byte    %8.0g                 
+done5           byte    %8.0g                 
+done6           byte    %8.0g                 
+stopped         byte    %8.0g                 
+men_usual_car   byte    %8.0g                 
+leavemc         byte    %8.0g                 leavemC
+askmd           byte    %8.0g                 askmD
+stopped_caruse  byte    %8.0g                 
+caruse_duration str20   %20s                  
+reputation_self byte    %8.0g                 
+leavera         byte    %8.0g                 leaverA
+askrb           byte    %8.0g                 askrB
+reputation_men  byte    %8.0g                 
+leaverb         byte    %8.0g                 leaverB
+askrc           byte    %8.0g                 askrC
+reputation_wo~n byte    %8.0g                 
+leaverc         byte    %8.0g                 leaverC
+askrd           byte    %8.0g                 askrD
+reputation_ch~e byte    %8.0g                 
+leaverd         byte    %8.0g                 leaverD
+askre           byte    %8.0g                 askrE
+reputation_ch~k byte    %8.0g                 
+leavere         byte    %8.0g                 leaverE
+askopinion      byte    %8.0g                 
+reputation_du~n str20   %20s                  
+ride_preference byte    %8.0g                 
+ride_preferen~n byte    %8.0g                 
+ride_preferen~a byte    %8.0g                 
+leaveopa        byte    %8.0g                 leaveopA
+askopb          byte    %8.0g                 askopB
+gvmt_priority   byte    %8.0g                 
+leaveopb        byte    %8.0g                 leaveopB
+stoppart1       byte    %8.0g                 
+opinion_durat~n str20   %20s                  
+comments_mix~_1 byte    %8.0g                 
+leaverka        byte    %8.0g                 leaverkA
+askrkb          byte    %8.0g                 askrkB
+grope_mixed_1   byte    %8.0g                 
+leaverkb_       byte    %8.0g                 leaverkB_
+askrkc_         byte    %8.0g                 askrkC_
+comments_pink_1 byte    %8.0g                 
+leaverkc_       byte    %8.0g                 leaverkC_
+askrkd_         byte    %8.0g                 askrkD_
+grope_pink_1    byte    %8.0g                 
+leaverkd_       byte    %8.0g                 leaverkD_
+askrke_         byte    %8.0g                 askrkE_
+comments_pink_2 byte    %8.0g                 
+leaverka2       byte    %8.0g                 leaverkA2
+askrkb2         byte    %8.0g                 askrkB2
+grope_pink_2    byte    %8.0g                 
+leaverkb2       byte    %8.0g                 leaverkB2
+askrkc2         byte    %8.0g                 askrkC2
+comments_mix~_2 byte    %8.0g                 
+leaverkc2       byte    %8.0g                 leaverkC2
+askrkd2         byte    %8.0g                 askrkD2
+grope_mixed_2   byte    %8.0g                 
+leaverkd2       byte    %8.0g                 leaverkD2
+askrke2         byte    %8.0g                 askrkE2
+askrka          byte    %8.0g                 
+harassment_pl~m byte    %8.0g                 
+leaverkb        byte    %8.0g                 
+askrkc          byte    %8.0g                 
+riskplaces      byte    %8.0g                 
+riskplaces_men  byte    %8.0g                 
+riskplaces_me.. byte    %8.0g                 
+leaverkc        byte    %8.0g                 
+askrkd          byte    %8.0g                 
+traveloptions   byte    %8.0g                 
+traveloptions~n byte    %8.0g                 
+tr~n_nosupervia byte    %8.0g                 
+leaverkd        byte    %8.0g                 
+askrke          byte    %8.0g                 
+intervene_pin~e byte    %8.0g                 
+leaverkg        byte    %8.0g                 
+askrkh          byte    %8.0g                 
+intervene_mix~e byte    %8.0g                 
+leaverkh        byte    %8.0g                 
+askrki          byte    %8.0g                 
+fault           byte    %8.0g                 
+leaverki        byte    %8.0g                 
+stoppart2       byte    %8.0g                 
+risk_duration   str20   %20s                  
+askcr           byte    %8.0g                 
+crime           byte    %8.0g                 
+leavecra        byte    %8.0g                 leavecrA
+askfinal        byte    %8.0g                 
+left            byte    %8.0g                 
+phone_yesno     byte    %8.0g                 
+phone_yesno_r~d byte    %8.0g                 
+phone_number    long    %12.0g                
+whyleave_closed byte    %8.0g                 whyLeave_closed
+whyleave_open   str74   %74s                  whyLeave_open
+general_notes   strL    %9s                   
+instanceid      str41   %41s                  instanceID
+formdef_version long    %12.0g                
+key             str41   %41s                  KEY
+duration        int     %8.0g                 
+random_order    double  %10.0g                
+gender_interv~t byte    %8.0g                 
+id_check        int     %8.0g                 
+order_data      byte    %8.0g                 
+comments_m~1_g1 byte    %8.0g                 comments_mixed_1_G1
+grope_mixed_1~1 byte    %8.0g                 grope_mixed_1_G1
+comments_p~1_g1 byte    %8.0g                 comments_pink_1_G1
+grope_pink_1_g1 byte    %8.0g                 grope_pink_1_G1
+comments_p~2_g1 byte    %8.0g                 comments_pink_2_G1
+grope_pink_2_g1 byte    %8.0g                 grope_pink_2_G1
+comments_m~2_g1 byte    %8.0g                 comments_mixed_2_G1
+grope_mixed_2~1 byte    %8.0g                 grope_mixed_2_G1
+harassment_pl~1 byte    %8.0g                 harassment_platform_G1
+riskplaces_g1   byte    %8.0g                 riskplaces_G1
+ri~1_nosupervia byte    %8.0g                 riskplaces_men_G1_nosupervia
+riskplaces_me~1 byte    %8.0g                 riskplaces_men_G1
+travelopti~s_g1 byte    %8.0g                 traveloptions_G1
+tr~1_nosupervia byte    %8.0g                 traveloptions_men_G1_nosupervia
+travelopti~n_g1 byte    %8.0g                 traveloptions_men_G1
+int~k_people_g1 byte    %8.0g                 intervene_pink_people_G1
+int~d_people_g1 byte    %8.0g                 intervene_mixed_people_G1
+fault_g1        byte    %8.0g                 fault_G1
+reputation_se~1 byte    %8.0g                 reputation_self_G1
+reputation_me~1 byte    %8.0g                 reputation_men_G1
+reputation_wo~1 byte    %8.0g                 reputation_women_G1
+reputation~e_g1 byte    %8.0g                 reputation_change_G1
+reputation~k_g1 byte    %8.0g                 reputation_change_pink_G1
+ride_prefe~e_g1 byte    %8.0g                 ride_preference_G1
+rid~1_nosupervi byte    %8.0g                 ride_preference_men_G1_nosupervia
+ride_prefe~n_g1 byte    %8.0g                 ride_preference_men_G1
+gvmt_priority~1 byte    %8.0g                 gvmt_priority_G1
+reputation_se~2 byte    %8.0g                 reputation_self_G2
+reputation_me~2 byte    %8.0g                 reputation_men_G2
+reputation_wo~2 byte    %8.0g                 reputation_women_G2
+reputation~e_g2 byte    %8.0g                 reputation_change_G2
+reputation~k_g2 byte    %8.0g                 reputation_change_pink_G2
+ride_prefe~e_g2 byte    %8.0g                 ride_preference_G2
+rid~2_nosupervi byte    %8.0g                 ride_preference_men_G2_nosupervia
+ride_prefe~n_g2 byte    %8.0g                 ride_preference_men_G2
+gvmt_priority~2 byte    %8.0g                 gvmt_priority_G2
+comments_m~1_g2 byte    %8.0g                 comments_mixed_1_G2
+grope_mixed_1~2 byte    %8.0g                 grope_mixed_1_G2
+comments_p~1_g2 byte    %8.0g                 comments_pink_1_G2
+grope_pink_1_g2 byte    %8.0g                 grope_pink_1_G2
+comments_p~2_g2 byte    %8.0g                 comments_pink_2_G2
+grope_pink_2_g2 byte    %8.0g                 grope_pink_2_G2
+comments_m~2_g2 byte    %8.0g                 comments_mixed_2_G2
+grope_mixed_2~2 byte    %8.0g                 grope_mixed_2_G2
+harassment_pl~2 byte    %8.0g                 harassment_platform_G2
+riskplaces_g2   byte    %8.0g                 riskplaces_G2
+ri~2_nosupervia byte    %8.0g                 riskplaces_men_G2_nosupervia
+riskplaces_me~2 byte    %8.0g                 riskplaces_men_G2
+travelopti~s_g2 byte    %8.0g                 traveloptions_G2
+tr~2_nosupervia byte    %8.0g                 traveloptions_men_G2_nosupervia
+travelopti~n_g2 byte    %8.0g                 traveloptions_men_G2
+int~k_people_g2 byte    %8.0g                 intervene_pink_people_G2
+int~d_people_g2 byte    %8.0g                 intervene_mixed_people_G2
+fault_g2        byte    %8.0g                 fault_G2
+comments_m~1_g3 byte    %8.0g                 comments_mixed_1_G3
+grope_mixed_1~3 byte    %8.0g                 grope_mixed_1_G3
+comments_p~1_g3 byte    %8.0g                 comments_pink_1_G3
+grope_pink_1_g3 byte    %8.0g                 grope_pink_1_G3
+comments_p~2_g3 byte    %8.0g                 comments_pink_2_G3
+grope_pink_2_g3 byte    %8.0g                 grope_pink_2_G3
+comments_m~2_g3 byte    %8.0g                 comments_mixed_2_G3
+grope_mixed_2~3 byte    %8.0g                 grope_mixed_2_G3
+harassment_pl~3 byte    %8.0g                 harassment_platform_G3
+riskplaces_g3   byte    %8.0g                 riskplaces_G3
+ri~3_nosupervia byte    %8.0g                 riskplaces_men_G3_nosupervia
+riskplaces_me~3 byte    %8.0g                 riskplaces_men_G3
+travelopti~s_g3 byte    %8.0g                 traveloptions_G3
+tr~3_nosupervia byte    %8.0g                 traveloptions_men_G3_nosupervia
+travelopti~n_g3 byte    %8.0g                 traveloptions_men_G3
+int~k_people_g3 byte    %8.0g                 intervene_pink_people_G3
+int~d_people_g3 byte    %8.0g                 intervene_mixed_people_G3
+fault_g3        byte    %8.0g                 fault_G3
+reputation_se~3 byte    %8.0g                 reputation_self_G3
+reputation_me~3 byte    %8.0g                 reputation_men_G3
+reputation_wo~3 byte    %8.0g                 reputation_women_G3
+reputation~e_g3 byte    %8.0g                 reputation_change_G3
+reputation~k_g3 byte    %8.0g                 reputation_change_pink_G3
+ride_prefe~e_g3 byte    %8.0g                 ride_preference_G3
+rid~3_nosupervi byte    %8.0g                 ride_preference_men_G3_nosupervia
+ride_prefe~n_g3 byte    %8.0g                 ride_preference_men_G3
+gvmt_priority~3 byte    %8.0g                 gvmt_priority_G3
+reputation_se~4 byte    %8.0g                 reputation_self_G4
+reputation_me~4 byte    %8.0g                 reputation_men_G4
+reputation_wo~4 byte    %8.0g                 reputation_women_G4
+reputation~e_g4 byte    %8.0g                 reputation_change_G4
+reputation~k_g4 byte    %8.0g                 reputation_change_pink_G4
+ride_prefe~e_g4 byte    %8.0g                 ride_preference_G4
+rid~4_nosupervi byte    %8.0g                 ride_preference_men_G4_nosupervia
+ride_prefe~n_g4 byte    %8.0g                 ride_preference_men_G4
+gvmt_priority~4 byte    %8.0g                 gvmt_priority_G4
+comments_m~1_g4 byte    %8.0g                 comments_mixed_1_G4
+grope_mixed_1~4 byte    %8.0g                 grope_mixed_1_G4
+comments_p~1_g4 byte    %8.0g                 comments_pink_1_G4
+grope_pink_1_g4 byte    %8.0g                 grope_pink_1_G4
+comments_p~2_g4 byte    %8.0g                 comments_pink_2_G4
+grope_pink_2_g4 byte    %8.0g                 grope_pink_2_G4
+comments_m~2_g4 byte    %8.0g                 comments_mixed_2_G4
+grope_mixed_2~4 byte    %8.0g                 grope_mixed_2_G4
+harassment_pl~4 byte    %8.0g                 harassment_platform_G4
+riskplaces_g4   byte    %8.0g                 riskplaces_G4
+ri~4_nosupervia byte    %8.0g                 riskplaces_men_G4_nosupervia
+riskplaces_me~4 byte    %8.0g                 riskplaces_men_G4
+travelopti~s_g4 byte    %8.0g                 traveloptions_G4
+tr~4_nosupervia byte    %8.0g                 traveloptions_men_G4_nosupervia
+travelopti~n_g4 byte    %8.0g                 traveloptions_men_G4
+int~k_people_g4 byte    %8.0g                 intervene_pink_people_G4
+int~d_people_g4 byte    %8.0g                 intervene_mixed_people_G4
+fault_g4        byte    %8.0g                 fault_G4
+set1_q9_1       byte    %8.0g                 
+set1_q9_2       byte    %8.0g                 
+set1_q9_3       byte    %8.0g                 
+set2_q9_1       byte    %8.0g                 
+set2_q9_2       byte    %8.0g                 
+set2_q9_3       byte    %8.0g                 
+set3_q9_1       byte    %8.0g                 
+set3_q9_2       byte    %8.0g                 
+set3_q9_3       byte    %8.0g                 
+set4_q9_1       byte    %8.0g                 
+set4_q9_2       byte    %8.0g                 
+set4_q9_3       byte    %8.0g                 
+set5_q9_1       byte    %8.0g                 
+set5_q9_2       byte    %8.0g                 
+set5_q9_3       byte    %8.0g                 
+set6_q9_1       byte    %8.0g                 
+set6_q9_2       byte    %8.0g                 
+set6_q9_3       byte    %8.0g                 
+pref1_q10       byte    %8.0g                 
+pref2_q9        byte    %8.0g                 
+set1_q10_1      byte    %8.0g                 
+set1_q10_2      byte    %8.0g                 
+set1_q10_3      byte    %8.0g                 
+set2_q10_1      byte    %8.0g                 
+set2_q10_2      byte    %8.0g                 
+set2_q10_3      byte    %8.0g                 
+set3_q10_1      byte    %8.0g                 
+set3_q10_2      byte    %8.0g                 
+set3_q10_3      byte    %8.0g                 
+set4_q10_1      byte    %8.0g                 
+set4_q10_2      byte    %8.0g                 
+set4_q10_3      byte    %8.0g                 
+set5_q10_1      byte    %8.0g                 
+set5_q10_2      byte    %8.0g                 
+set5_q10_3      byte    %8.0g                 
+set6_q10_1      byte    %8.0g                 
+set6_q10_2      byte    %8.0g                 
+set6_q10_3      byte    %8.0g                 
+harassment_wa~1 byte    %8.0g                 harassment_way_G1
+inter~k_self_g1 byte    %8.0g                 intervene_pink_self_G1
+inter~d_self_g1 byte    %8.0g                 intervene_mixed_self_G1
+harassment_wa~2 byte    %8.0g                 harassment_way_G2
+inter~k_self_g2 byte    %8.0g                 intervene_pink_self_G2
+inter~d_self_g2 byte    %8.0g                 intervene_mixed_self_G2
+harassment_wa~3 byte    %8.0g                 harassment_way_G3
+inter~k_self_g3 byte    %8.0g                 intervene_pink_self_G3
+inter~d_self_g3 byte    %8.0g                 intervene_mixed_self_G3
+harassment_wa~4 byte    %8.0g                 harassment_way_G4
+inter~k_self_g4 byte    %8.0g                 intervene_pink_self_G4
+inter~d_self_g4 byte    %8.0g                 intervene_mixed_self_G4
+done1_pref1     byte    %8.0g                 
+done2_pref1     byte    %8.0g                 
+done3_pref1     byte    %8.0g                 
+done4_pref1     byte    %8.0g                 
+done5_pref1     byte    %8.0g                 
+done6_pref1     byte    %8.0g                 
+stopped_pref1   byte    %8.0g                 
+leavec          byte    %8.0g                 
+askd            byte    %8.0g                 
+leaved1         byte    %8.0g                 
+aske1           byte    %8.0g                 
+leavee1         byte    %8.0g                 
+askf1           byte    %8.0g                 
+leavef1         byte    %8.0g                 
+askg1           byte    %8.0g                 
+leaved2         byte    %8.0g                 
+aske2           byte    %8.0g                 
+leavee2         byte    %8.0g                 
+askf2           byte    %8.0g                 
+leavef2         byte    %8.0g                 
+askg2           byte    %8.0g                 
+leaved3         byte    %8.0g                 
+aske3           byte    %8.0g                 
+leavee3         byte    %8.0g                 
+askf3           byte    %8.0g                 
+leavef3         byte    %8.0g                 
+askg3           byte    %8.0g                 
+leaved4         byte    %8.0g                 
+aske4           byte    %8.0g                 
+leavee4         byte    %8.0g                 
+askf4           byte    %8.0g                 
+leavef4         byte    %8.0g                 
+askg4           byte    %8.0g                 
+leaved5         byte    %8.0g                 
+aske5           byte    %8.0g                 
+leavee5         byte    %8.0g                 
+askf5           byte    %8.0g                 
+leavef5         byte    %8.0g                 
+askg5           byte    %8.0g                 
+leaved6         byte    %8.0g                 
+aske6           byte    %8.0g                 
+leavee6         byte    %8.0g                 
+askf6           byte    %8.0g                 
+leavef6         byte    %8.0g                 
+askg6           byte    %8.0g                 
+done1_pref2     byte    %8.0g                 
+done2_pref2     byte    %8.0g                 
+done3_pref2     byte    %8.0g                 
+done4_pref2     byte    %8.0g                 
+done5_pref2     byte    %8.0g                 
+done6_pref2     byte    %8.0g                 
+pref2_stopped   byte    %8.0g                 
+flag_day1       byte    %9.0g                 
+------------------------------------------------------------------------------------------
+Sorted by: id

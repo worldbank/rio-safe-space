@@ -6,3 +6,4 @@ Replication Package/dofiles/ado/encode stations.do
 *.shp
 *.shx
 *.csv
+Replication Package/documentation/platform-survey/duplicate-reports/Daily/**
