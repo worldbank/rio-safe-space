@@ -17,7 +17,7 @@ This folder contains the supplemental material and robustness checks appendices 
 - [Platform survey & IAT survey protocols](https://github.com/worldbank/rio-safe-space/tree/master/Online%20Appendices/Supplemental%20Material/Platform%20survey%20%26%20IAT/Survey%20protocols)
 
 #### Survey Instruments
-- [Platform Survey Instruments](https://github.com/worldbank/rio-safe-space/tree/master/Online%20Appendices/Supplemental%20Material/Platform%20survey%20%26%20IAT/Survey%20instruments/Platform%20suvey%20questionnaire)
+- [Platform Survey Instruments](https://github.com/worldbank/rio-safe-space/tree/master/Online%20Appendices/Supplemental%20Material/Platform%20survey%20%26%20IAT/Survey%20instruments/Platform%20survey%20questionnaire)
 - [IAT Instruments](https://github.com/worldbank/rio-safe-space/blob/master/Online%20Appendices/Supplemental%20Material/Platform%20survey%20%26%20IAT/Survey%20instruments/IAT%20Instrument.md)
 
 ## 
