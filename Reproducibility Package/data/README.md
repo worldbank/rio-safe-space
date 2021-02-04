@@ -19,16 +19,13 @@ In this folder, you will find *metadata* on the raw, intermediate and analysis d
 | Rider audits <br> Second wave | compliance_pilot_deidentified.dta | task (`obs_uuid`) | rider (`user_uuid`) <br> ride (`session_id`) |
 | Platform observations <br> second wave | compliance_pilot_mapping.dta |   task (`obs_uuid`) | station (`station_bin`) <br> time (`time_bin`) |
 
-#### Master datasets
-
-| Name | Level | ID var | List of vars |
-|------|-------|--------|--------------|
-| rider-master.dta | Rider | `user_uuid` | `in_baseline` `in_pilot` |
-| stations-master.dta | Station | `station` | `station` `line` `station_bin` |
-
 ### Platform survey
 
 #### List of data sets
+
+The main unit of observation in the datasets is the survey respondent, which is identified by the variable id. The raw data is imported as 7 different datasets from two different sources. The first source is the platform survey, which was collected through an ODK platform. These are downloaded in CSV format and imported into a single Stata dataset with one row per respondent.
+
+The implicit association tests were collected through an online platform specializing in IATs. It outputs two datasets for each IAT instrument: one dataset at respondent level, containing the time and score for each block plus the overall time and score; and one dataset that lists the respondent ID, the block, the response time for each stimulus, and whether the respondent made the correct association for each stimulus. Both datasets are exported from the IAT platform in txt format, and need to be parsed in the statistical software.
 
 | Data source | Dataset name | Unit of observation (ID var) | Parent unit (parent ID) |
 |-------------|--------------|------------------------------|-------------------------|
