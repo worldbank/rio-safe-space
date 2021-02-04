@@ -42,7 +42,7 @@ The code to reproduce the results included in the working paper. To recreate the
 List of analysis codes and outputs
 -------------------------------
 
-The provided code reproduces all numbers provided in text in the paper and all tables and figures in the paper, with the exception of Figure A1. Reproducing figure A1 requires access to identified data on riders home location (bolded dataset below.
+The provided code reproduces all numbers provided in text in the paper and all tables and figures in the paper, with the exception of Figure A1. Reproducing figure A1 requires access to identified data on riders home location (bolded dataset below).
 
 All analysis code is stored in `dofiles/analysis/paper`. All outputs are saved to `outputs`. All the code can be run from the `Master.do` script, but the code to recreate each exhibit can also be run independently, as long as the folder globals and custom programs are set using the master.
 
