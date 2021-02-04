@@ -140,7 +140,7 @@ CI_loadfact                                                Load factor at check-
                  range:  [0,.96]                      units:  .01
          unique values:  96                       missing .:  0/49,395
 
-                  mean:   .215259
+                  mean:    .21526
               std. dev:   .187081
 
            percentiles:        10%       25%       50%       75%       90%
