@@ -9,5 +9,5 @@
 | Rider audits <br> Second wave | compliance_pilot_deidentified.dta | task (`obs_uuid`) | rider (`user_uuid`) <br> ride (`session_id`) |
 | Platform observations <br> second wave | compliance_pilot_mapping.dta |   task (`obs_uuid`) | station (`station_bin`) <br> time (`time_bin`) |
 | Platform survey | platform_survey_raw_deidentified.dta | respondent (`id`) | |
-| Implicit association test | iat_career_alldata.txt <br> iat_security_alldata.txt <br> iat_reputation_alldata.txt | stimulus | respondent (`id`) <br> block | 
-| Implicit association test | iat_career_scoresonly.txt <br> iat_security_scoresonly.txt <br> iat_reputation_scoresonly.txt | respondent (`id`) | |
+| Implicit association test | icareer_stimuli.dta <br> security_stimuli.dta <br> reputation_stimuli.dta | stimulus | respondent (`id`) <br> block | 
+| Implicit association test | career_score.dta <br> security_score.dta <br> reputation_score.dta | respondent (`id`) | |
