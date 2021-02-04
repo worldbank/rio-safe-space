@@ -8,7 +8,7 @@ What are the costs to women of harassment on public transit? We randomize the pr
 ## Repository Content
 - [Most recent version of full paper](https://github.com/worldbank/rio-safe-space/blob/master/Presentations%20and%20Dissemination/WP-Safe_Space_Harassment_Stigma.pdf)
 - [Online appendix: Robustness Checks & Supplemental Material](https://github.com/worldbank/rio-safe-space/tree/master/Online%20Appendices)
-- [Replication Package](https://github.com/worldbank/rio-safe-space/tree/master/Replication%20Package)
+- [Reproducibility Package](https://github.com/worldbank/rio-safe-space/tree/master/Reproducibility%20Package)
 
 ## 
 <div class = "row">
