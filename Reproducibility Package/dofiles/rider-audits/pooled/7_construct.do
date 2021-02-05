@@ -1,24 +1,23 @@
 /*******************************************************************************
 * 			Demand for "Safe Spaces": Avoiding Harassment and Stigma		   *
-*	 				Identify stations covered by each ride			 		   *
+*	 					Construct analysis variables			 			   *
 ********************************************************************************
-
-	* REQUIRES:  	${dt_final}/pooled_rider_audit_rides.dta
-					${dt_final}/pooled_rider_audit_exit.dta
-					${dt_raw}/baseline_raw_deidentified.dta
-					${doc_rider}/pooled/codebooks/label-constructed-data.xlsx
-	* CREATES:		${dt_final}/pooled_rider_audit_constructed_full.dta
-					${dt_final}/pooled_rider_audit_constructed.dta
-
-	* WRITEN BY:   	Luiza Andrade, Kate Vyborny, Astrid Zwager
 	
-	* OVERVIEW:		Load and merge data
-					Fix users who received mixed assignments
-					Construct new variables
-					Recoding variables
-					Keep only variables used for analysis
-					Save full data set
-					Save paper sample	
+	REQUIRES:  	${dt_final}/pooled_rider_audit_rides.dta
+				${dt_final}/pooled_rider_audit_exit.dta
+				${doc_rider}/pooled/codebooks/label-constructed-data.xlsx
+	
+	CREATES:	${dt_final}/pooled_rider_audit_constructed_full.dta
+				${dt_final}/pooled_rider_audit_constructed.dta
+					
+	WRITEN BY:  Luiza Andrade, Kate Vyborny, Astrid Zwager
+	
+	OVERVIEW:	1 Load and merge data
+				2 Construct new variables
+				3 Recode values
+				4 Keep only variables used for analysis
+				5 Save full data set
+				6 Save paper sample	
 	
 *******************************************************************************
 	Load and merge data
