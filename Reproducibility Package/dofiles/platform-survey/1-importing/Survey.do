@@ -205,11 +205,9 @@
 	* --------------
 	* All the IDs should be different in this case
 	merge 1:1 id using `day1', assert(1 2) nogen
-	
-********************************************************************************
-*							PART 4: Save data
-********************************************************************************
-	
+
+	* Small corrections
+	* -----------------
 	* Corrections based on enumerators notes when respondents refused to answer
 	* and random option selected
 	replace reputation_change = .r 			if inlist(id, 2353, 6355) 	// 6355 is from day 1, has different question numbers
@@ -217,7 +215,11 @@
 	replace intervene_pink_people = .r 		if inlist(id, 2478, 6182)
 	replace intervene_mixed_people = .r 	if inlist(id, 2478, 6182)
 	replace crime = .						if id == 6069 				// not sure if refused, note only says "should be missing" 
-	
+
+********************************************************************************
+*							PART 4: Save data
+********************************************************************************
+			
 	* Identified version
 	isid id, sort
 	compress
@@ -233,4 +235,4 @@
 	save 			 "${dt_raw}/platform_survey_raw_deidentified.dta", replace
 	iemetasave using "${dt_raw}/platform_survey_raw_deidentified.txt", replace
 		
-************************************************************************* End of do-file
+***************************************************************** End of do-file
