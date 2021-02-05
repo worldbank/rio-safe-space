@@ -31,7 +31,7 @@
 	local  mainresults		0 // Re-create analysis outputs
 
 // Set control variables -------------------------------------------------------
-
+{
 	global star					star	(* .1 ** .05 *** .01) 
 	global demographics 		d_lowed d_young d_single d_employed d_highses
 	global interactionvars		pink_highcompliance mixed_highcompliance ///
@@ -53,10 +53,10 @@
 	* Other adjustment margins (Table A7)
 	global adjustind 			CI_wait_time_min d_against_traffic CO_switch ///
 								RI_spot CI_time_AM CI_time_PM
-
+}
 
 // Plot settings ---------------------------------------------------------------
-
+{
 	set scheme s2color
 	
 	global grlabsize 		4
@@ -73,10 +73,14 @@
 							xlab(, noticks)
 	global lab_womencar		Reserved space
 	global lab_mixedcar		Public space
-
+}
 /*******************************************************************************
 					PART 1:  Prepare folder paths
 *******************************************************************************/
+
+	* Confidential folders
+	global  encrypt				"${onedrive}/data/raw-identified"
+	global  encode				"${onedrive}/dofiles/ado"
 
 	* Do files
 	global	do					"${github}/dofiles"
@@ -103,7 +107,7 @@
 /*******************************************************************************
 					PART 2:  Load necessary packages
 ********************************************************************************/
-
+{
 	* Load custom commands
 	local ados : dir "${do}/ado" files "*.ado"
 
@@ -118,7 +122,7 @@
             if _rc == 111	ssc install `package'
 		}
 	}
-
+}
 ********************************************************************************
 *					   PART 3: Run selected code     						   *
 ********************************************************************************
