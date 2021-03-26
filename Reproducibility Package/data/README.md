@@ -27,7 +27,7 @@ The implicit association tests were collected through an online platform special
 | Data source | Dataset name | Unit of observation (ID var) | Parent unit (parent ID) |
 |-------------|--------------|------------------------------|-------------------------|
 | Platform survey | platform_survey_raw_deidentified.dta | respondent (`id`) | |
-| Implicit association test | icareer_stimuli.dta <br> security_stimuli.dta <br> reputation_stimuli.dta | stimulus | respondent (`id`) <br> block | 
+| Implicit association test | career_stimuli.dta <br> security_stimuli.dta <br> reputation_stimuli.dta | stimulus | respondent (`id`) <br> block | 
 | Implicit association test | career_score.dta <br> security_score.dta <br> reputation_score.dta | respondent (`id`) | |
 
 ##
