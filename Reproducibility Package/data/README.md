@@ -30,6 +30,10 @@ The implicit association tests were collected through an online platform special
 | Implicit association test | career_stimuli.dta <br> security_stimuli.dta <br> reputation_stimuli.dta | stimulus | respondent (`id`) <br> block | 
 | Implicit association test | career_score.dta <br> security_score.dta <br> reputation_score.dta | respondent (`id`) | |
 
+## Data flowchart
+
+![Data flow chart](https://user-images.githubusercontent.com/15911801/114495791-b834fe80-9bec-11eb-8d92-6ca6c2bfc79c.png)
+
 ##
 <div class = "row">
   <div class = "column" style = "width:30%">
