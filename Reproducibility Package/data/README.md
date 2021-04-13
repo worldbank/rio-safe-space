@@ -3,7 +3,7 @@
 In this folder, you will find *metadata* on the raw, intermediate and analysis datasets used in the paper. The data files used are available in the [Microdata Catalogue, under the survey ID number BRA_2015-2016_DSS_v01_M](https://microdatalib.worldbank.org/index.php/catalog/11600). 
 # Project data map
 
-## Data Map
+## Data Linkage Table
 
 ### Rides data
 
@@ -29,6 +29,10 @@ The implicit association tests were collected through an online platform special
 | Platform survey | platform_survey_raw_deidentified.dta | respondent (`id`) | |
 | Implicit association test | career_stimuli.dta <br> security_stimuli.dta <br> reputation_stimuli.dta | stimulus | respondent (`id`) <br> block | 
 | Implicit association test | career_score.dta <br> security_score.dta <br> reputation_score.dta | respondent (`id`) | |
+
+## Data flow chart
+
+![Data flow chart](https://user-images.githubusercontent.com/15911801/114495791-b834fe80-9bec-11eb-8d92-6ca6c2bfc79c.png)
 
 ##
 <div class = "row">
