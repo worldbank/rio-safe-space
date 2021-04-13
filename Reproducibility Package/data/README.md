@@ -15,7 +15,7 @@ In this folder, you will find *metadata* on the raw, intermediate and analysis d
 | Rider audits <br> Second wave | compliance_pilot_deidentified.dta | task (`obs_uuid`) | rider (`user_uuid`) <br> ride (`session_id`) |
 | Platform observations <br> second wave | compliance_pilot_mapping.dta |   task (`obs_uuid`) | station (`station_bin`) <br> time (`time_bin`) |
 
-### Data Flow Chart
+### Data Flowchart
 
 ![image](https://user-images.githubusercontent.com/15252541/114556050-4ed9dd80-9c36-11eb-80c6-7af660b435bc.png)
 
@@ -33,7 +33,7 @@ The implicit association tests were collected through an online platform special
 | Implicit association test | career_stimuli.dta <br> security_stimuli.dta <br> reputation_stimuli.dta | stimulus | respondent (`id`) <br> block | 
 | Implicit association test | career_score.dta <br> security_score.dta <br> reputation_score.dta | respondent (`id`) | |
 
-### Data Flow Chart
+### Data Flowchart
 
 ![Data flow chart](https://user-images.githubusercontent.com/15911801/114495791-b834fe80-9bec-11eb-8d92-6ca6c2bfc79c.png)
 
