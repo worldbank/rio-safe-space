@@ -3,7 +3,7 @@
 In this folder, you will find *metadata* on the raw, intermediate and analysis datasets used in the paper. The data files used are available in the [Microdata Catalogue, under the survey ID number BRA_2015-2016_DSS_v01_M](https://microdatalib.worldbank.org/index.php/catalog/11600). 
 # Project data map
 
-## Data Map
+## Data Linkage Table
 
 ### Rides data
 
