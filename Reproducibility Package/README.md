@@ -30,7 +30,6 @@ Computational requirements
 Instructions to Replicators
 ---------------------------
 
-The code to reproduce the results included in the working paper. To recreate the outputs, follow the steps below
 1. Click on the green button `Clone or download` shown above the list of files in this folder to download a local copy of this repository
 1. Open the downloaded folder and navigate to `rio-safe-space/Reproducibility Package`.
 1. The data used for this paper is available in the [Microdata Catalogue, under the survey ID number BRA_2015-2016_DSS_v01_M](https://microdatalib.worldbank.org/index.php/catalog/11600). Copy this data to the `data` folder.
