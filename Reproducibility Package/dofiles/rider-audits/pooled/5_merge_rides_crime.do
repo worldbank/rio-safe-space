@@ -17,7 +17,32 @@
 				part of this file
 	
 ********************************************************************************
-	Merge to user home station (encrypted information)
+	Impute user home station
+*******************************************************************************/
+
+	*Impute home station based on their modal AM check-in and PM check-out station for the home station crime variables.
+	use	"${dt_int}/pooled_rider_audit_rides_congestion.dta", clear
+	
+	gen 	home_station_imp = CI_station if RI_time_bin <= 6
+	replace home_station_imp = CO_station if RI_time_bin > 6
+	
+	gen 	count = 1
+	collapse (sum) count, by(user_uuid stage home_station_imp)
+	bys user_uuid stage: egen max_rides = max(count)
+	
+	keep if max_rides == count
+	drop if max_rides == 1
+	duplicates tag user_uuid stage, gen(dup)
+	drop if dup > 0
+	isid user_uuid stage
+	
+	keep user_uuid stage home_station_imp
+	
+	tempfile home_station_imp
+	save 	`home_station_imp'
+	
+/*******************************************************************************
+	Merge crime data to user home station (encrypted information)
 *******************************************************************************/
 
 	if ${encrypted} {
@@ -73,6 +98,11 @@
 	
 		* BL + pilot
 		append using `pilot'
+	
+		merge m:1 user_uuid stage using `home_station_imp', nogen // master only: no unique mode to impute station, using only: no demographic survey
+		replace user_home_station = home_station_imp if missing(user_home_station)
+		
+		drop home_station_imp
 		
 		* Merge to crime data
 		merge m:1 user_home_station using `homestation', keep(1 3)
@@ -97,7 +127,7 @@
 *******************************************************************************/ 
 
 	use	"${dt_int}/pooled_rider_audit_rides_congestion.dta", clear
-	
+
 	* Merge
 	merge m:1 CI_station using "${dt_int}/crime_rates_bystation.dta", keep(1 3) // stations that did not match are not in this dataset
 	
