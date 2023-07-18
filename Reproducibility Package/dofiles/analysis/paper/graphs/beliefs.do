@@ -47,7 +47,7 @@
 		graphregion(color(white)) bgcolor(white) ///
 		ylab(,glcolor(${col_box}) noticks) ///
 		ytitle(Percent of respondents) ///
-		bar(1, color(${col_2})) 
+		bar(1, color(${col_womencar})) 
 		
 		
 	graph export "${out_graphs}/beliefs.png", replace width(5000)

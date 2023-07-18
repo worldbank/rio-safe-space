@@ -177,7 +177,7 @@
 					ciopt(color(gs10 gs10) recast(rcap)) ///
 					ytitle("", size(${grlabsize})) ///
 					title(By gender, box bexpand bcolor(gs15) size(${grlabsize})) ///
-					color(${col_1}) ///
+					color(${col_mixedcar}) ///
 					name(high) 
 					
 	gr combine all high, graphregion(color(white)) cols(2) ycommon title("Difference in D-scores") subtitle("(Provocation - Safety)")

@@ -66,7 +66,7 @@
 	marginsplot, ///
 			recast(bar) ///
 			plotopts(color(${col_aux_light}) barwidth(0.5)) ///
-			ciopts(recast(rcap) color(${col_1})) ///
+			ciopts(recast(rcap) color(${col_mixedcar})) ///
 			title("") ///
 			${plot_options} ///
 			ylabel(, noticks labsize(${grlabsize}) labcolor(white) glcolor(gs15)) ///
@@ -91,7 +91,7 @@
 	marginsplot, ///
 			recast(bar) ///
 			plotopts(color(${col_aux_light}) barwidth(0.5)) ///
-			ciopts(recast(rcap) color(${col_2})) ///
+			ciopts(recast(rcap) color(${col_womencar})) ///
 			title("") ///
 			${plot_options} ///
 			ylabel(, noticks labsize(${grlabsize}) labcolor(white) glcolor(gs15)) ///

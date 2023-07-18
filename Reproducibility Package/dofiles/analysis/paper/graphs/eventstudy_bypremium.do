@@ -50,15 +50,15 @@
 ********************************************************************************/
 	
 	tw	(scatteri 0 0 0 10, recast(connected) msymbol(none) lcolor(black)) ///
-		(scatteri `cons20' 10 `cons20' 20, recast(connected) msymbol(none) lcolor(${col_1})) ///
-		(scatteri `ul20' 10 `ul20' 20, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_1})) ///
-		(scatteri `ll20' 10 `ll20' 20, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_1})) ///
+		(scatteri `cons20' 10 `cons20' 20, recast(connected) msymbol(none) lcolor(${col_mixedcar})) ///
+		(scatteri `ul20' 10 `ul20' 20, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_mixedcar})) ///
+		(scatteri `ll20' 10 `ll20' 20, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_mixedcar})) ///
 		(scatteri `cons10' 30 `cons10' 40, recast(connected) msymbol(none) lcolor(${col_aux_light})) ///
 		(scatteri `ul10' 30 `ul10' 40, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_aux_light})) ///
 		(scatteri `ll10' 30 `ll10' 40, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_aux_light})) ///
-		(scatteri `cons5' 20 `cons5' 30, recast(connected) msymbol(none) lcolor(${col_2})) ///
-		(scatteri `ul5' 20 `ul5' 30, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_2})) ///
-		(scatteri `ll5' 20 `ll5' 30, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_2})) ///
+		(scatteri `cons5' 20 `cons5' 30, recast(connected) msymbol(none) lcolor(${col_womencar})) ///
+		(scatteri `ul5' 20 `ul5' 30, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_womencar})) ///
+		(scatteri `ll5' 20 `ll5' 30, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_womencar})) ///
 		(rspike ul ll ride, msize(tiny) color(${col_aux_bold})) ///
 		(scatter b ride, msize(tiny) color(${col_aux_bold})) ///
 		, ///

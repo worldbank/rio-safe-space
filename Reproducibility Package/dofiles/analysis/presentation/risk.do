@@ -22,10 +22,10 @@
 	Run regressions and create plot
 *******************************************************************************/
 
-	local	gropecolor		${col_2}
+	local	gropecolor		${col_womencar}
 	local 	gropetitle		Physical harassment
 	local 	gropeytitle		Percent of reserved space rides
-	local	commentscolor	${col_1}
+	local	commentscolor	${col_mixedcar}
 	local 	commentstitle	Verbal harassment
 	local 	commentsscale	noline
 	local 	commentsytitle	`" "" "'

@@ -38,7 +38,7 @@
 	kdensity MA_compliance_diff ///
 		, ///
 		${plot_options} ///
-		lcolor	(${col_1}) ///
+		lcolor	(${col_mixedcar}) ///
 		note	("") ///
 		title	("") ///
 		xline	(0, lcolor(${col_aux_light})) ///

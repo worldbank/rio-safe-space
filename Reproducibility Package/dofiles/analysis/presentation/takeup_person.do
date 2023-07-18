@@ -40,7 +40,7 @@
 	marginsplot, ///
 		recast(bar) ///
 		plotopts(color(${col_aux_light}) barwidth(0.5)) ///
-		ciopts(recast(rcap) color(${col_1})) ///
+		ciopts(recast(rcap) color(${col_mixedcar})) ///
 		xtitle(Opportunity cost (USD)) ///
 		ytitle(%) ///
 		title("") ///

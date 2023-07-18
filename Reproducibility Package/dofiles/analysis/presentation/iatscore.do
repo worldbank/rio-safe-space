@@ -15,8 +15,8 @@
 
 *	replace scoresecurity = -1 * scoresecurity
 	
-	twoway 	(kdensity scorereputation,  color(${col_1})) ///
-			(kdensity scoresecurity,  	color(${col_2})), ///
+	twoway 	(kdensity scorereputation,  color(${col_mixedcar})) ///
+			(kdensity scoresecurity,  	color(${col_womencar})), ///
 			xline(0, lpattern(dash)) xtitle("IAT D-score") ///
 			legend(order(2 "Safety IAT" 1 "Advances IAT") size(4) region(lcolor(white))) ///
 			ytitle("Density", size(4)) ///

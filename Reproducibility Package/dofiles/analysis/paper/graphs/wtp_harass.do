@@ -99,9 +99,9 @@
 	PART 5: Create graph
 ********************************************************************************/
 
-	twoway		(bar  wtpb 				mendiff, color(${col_2})) ///
+	twoway		(bar  wtpb 				mendiff, color(${col_womencar})) ///
 				(rcap wtpll wtpul 		mendiff, color(${col_aux_light})) ///
-				(bar  harassb 			mendiff, color(${col_1})) ///
+				(bar  harassb 			mendiff, color(${col_mixedcar})) ///
 				(rcap harassll harassul mendiff, color(${col_aux_light})) ///
 				, ///
 					xtitle("Quintiles of difference in share of riders who are male" "(public - reserved space)") ///

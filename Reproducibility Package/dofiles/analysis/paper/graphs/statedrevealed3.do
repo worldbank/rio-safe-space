@@ -108,8 +108,8 @@
        PART 4: Make graph 
 ********************************************************************************/
 
-	twoway 	(bar b order if revealed == 0, color(${col_2})) ///
-			(bar b order if revealed == 1, color(${col_1})) ///
+	twoway 	(bar b order if revealed == 0, color(${col_womencar})) ///
+			(bar b order if revealed == 1, color(${col_mixedcar})) ///
 			(rcap ll ul order, lcolor(${col_aux_light})) ///
 			,	///
 			${plot_options} ///

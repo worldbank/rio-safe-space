@@ -28,8 +28,8 @@
 						Women only: safety vs advances
 *******************************************************************************/
 
-	twoway 	(kdensity scorereputation	if d_woman == 1, color(${col_1})) ///
-			(kdensity scoresecurity 	if d_woman == 1, color(${col_2})), ///
+	twoway 	(kdensity scorereputation	if d_woman == 1, color(${col_mixedcar})) ///
+			(kdensity scoresecurity 	if d_woman == 1, color(${col_womencar})), ///
 			xtitle("D-Score") ///
 			ytitle("Density") ///
 			xline(0, lcolor(${col_aux_bold})) ///
@@ -42,8 +42,8 @@
 						Men only: safety vs advances
 *******************************************************************************/
 
-	twoway 	(kdensity scorereputation 	if d_woman == 0, lpattern(dash) color(${col_1})) ///
-			(kdensity scoresecurity 	if d_woman == 0, lpattern(dash) color(${col_2})), ///
+	twoway 	(kdensity scorereputation 	if d_woman == 0, lpattern(dash) color(${col_mixedcar})) ///
+			(kdensity scoresecurity 	if d_woman == 0, lpattern(dash) color(${col_womencar})), ///
 			xtitle("D-Score") ///
 			ytitle("Density") ///
 			xline(0, lcolor(${col_aux_bold})) ///
@@ -56,8 +56,8 @@
 						Advances: men vs women
 *******************************************************************************/
 
-	twoway 	(kdensity scorereputation if d_woman == 1, color(${col_1})) ///
-			(kdensity scorereputation if d_woman == 0, lpattern(dash) color(${col_1})), ///
+	twoway 	(kdensity scorereputation if d_woman == 1, color(${col_mixedcar})) ///
+			(kdensity scorereputation if d_woman == 0, lpattern(dash) color(${col_mixedcar})), ///
 			xline(0, lcolor(${col_aux_bold})) ///
 			xtitle("D-Score") ///
 			ytitle("Density") ///
@@ -72,8 +72,8 @@
 *******************************************************************************/
 
 
-	twoway 	(kdensity scoresecurity if d_woman == 1,  color(${col_2})) ///
-			(kdensity scoresecurity if d_woman == 0, lpattern(dash) color(${col_2})), ///
+	twoway 	(kdensity scoresecurity if d_woman == 1,  color(${col_womencar})) ///
+			(kdensity scoresecurity if d_woman == 0, lpattern(dash) color(${col_womencar})), ///
 			xline(0, lcolor(${col_aux_bold})) ///
 			legend(order(2 "Male" 1 "Female") region(lcolor(white))) ///
 			xtitle("D-Score") ///

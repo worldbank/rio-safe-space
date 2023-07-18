@@ -18,8 +18,8 @@
 *******************************************************************************/
 
 	* Create it
-	twoway 	(lpoly d_women_car load_factor, 		color(${col_1})) ///
-			(lpoly MA_men_present_pink load_factor, color(${col_2})), ///
+	twoway 	(lpoly d_women_car load_factor, 		color(${col_mixedcar})) ///
+			(lpoly MA_men_present_pink load_factor, color(${col_womencar})), ///
 			xline(.5, lcolor(${col_aux_bold}) lpattern(dot)) ///
 			text(48 .62 "High crowding") ///
 			xtitle("Load factor" "(share of maximum allowable capacity)") ///

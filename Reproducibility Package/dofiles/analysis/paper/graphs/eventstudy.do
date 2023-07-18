@@ -51,10 +51,10 @@
 
 ------------------------------------------------------------------------------*/
 
-		tw  (scatteri 0 0 0 99, recast(connected) msymbol(none) lcolor(${col_1})) ///
-			(scatteri `postcons' 100 `postcons' 221, recast(connected) msymbol(none) lcolor(${col_2})) ///
-			(scatteri `postul' 100 `postul' 221, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_2})) ///
-			(scatteri `postll' 100 `postll' 221, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_2})) ///
+		tw  (scatteri 0 0 0 99, recast(connected) msymbol(none) lcolor(${col_mixedcar})) ///
+			(scatteri `postcons' 100 `postcons' 221, recast(connected) msymbol(none) lcolor(${col_womencar})) ///
+			(scatteri `postul' 100 `postul' 221, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_womencar})) ///
+			(scatteri `postll' 100 `postll' 221, recast(connected) lpattern(dash) msymbol(none) lcolor(${col_womencar})) ///
 			(rspike ul ll ride, msize(tiny) color(${col_aux_bold})) ///
 			(scatter b ride, msize(tiny) color(${col_aux_bold})) ///
 			, ///

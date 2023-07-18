@@ -55,7 +55,7 @@
 					ciopt(color(gs10 gs10) recast(rcap)) ///
 					ytitle("", size(${grlabsize})) ///
 					title(Few men, box bexpand bcolor(gs15) size(${grlabsize})) ///
-					color(${col_1}) ///
+					color(${col_mixedcar}) ///
 					name(high) 
 		
 		xtreg 	`harVar' d_women_car d_highcongestion ///
@@ -75,7 +75,7 @@
 					ciopt(color(gs10 gs10) recast(rcap)) ///
 					ytitle("", size(${grlabsize})) ///
 					title(Many men, box bexpand bcolor(gs15) size(${grlabsize})) ///
-					color(${col_2}) ///
+					color(${col_womencar}) ///
 					name(low)
 					
 		gr combine all low high, graphregion(color(white)) cols(3) ycommon
