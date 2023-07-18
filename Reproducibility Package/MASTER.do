@@ -17,10 +17,8 @@
 
 //	Set folder paths -----------------------------------------------------------
 
-	if inlist(c(username), "wb501238", "WB501238") {
-		global github		"C:\Users\wb501238\Documents\GitHub\rio-safe-space\Reproducibility Package"
-		global encrypt		"C:\Users\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified"
-	}
+	global github		"C:\Users\luizaandrade\Documents\GitHub\rio-safe-space\Reproducibility Package"
+	global encrypt		"C:\Users\OneDrive - WBG\RJ - Vagao Rosa\data\raw-identified"
 	
 // Select sections to run ------------------------------------------------------
 

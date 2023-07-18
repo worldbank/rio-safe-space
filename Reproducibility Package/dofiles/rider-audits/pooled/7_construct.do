@@ -112,7 +112,7 @@
 	* Any take up at positive OC?
 	gen    takeup510 = inlist(premium, 5, 10) & CI_women_car == 1 & !missing(premium)
 	bysort user_uuid: 	egen any510takeup 		= max(takeup510)
-	
+
 	/*--------------------------
 	 Opportunity cost variables
 	---------------------------*/	
@@ -413,6 +413,8 @@
 	gen 	datetime = clock(RI_started, "YMD hms")
 	format 	datetime %tcNN/DD/CCYY_HH:MM:SS
 	replace datetime = datetime + 3600000 if session == "455a6c80_session_64a3d8dde7ebd4d" // break tie due to imprecision of clock function
+	
+	gen 	date = dofc(datetime)
  
 	bys 	user_uuid			  : egen ride 	    = rank(datetime)
 	bys 	user_uuid stage phase : egen phase_ride = rank(datetime)
@@ -424,7 +426,7 @@
 	gen d_post = event_ride > 99 if ride >= 99	// 0 = last 0 OC ride
 	
 		
-	drop phase_ride event RI_started datetime
+	drop event RI_started
 	
 	
 /*------------------------------------------------------------------------------
@@ -519,9 +521,9 @@
 	
 	label data "Rider audits | ID variable: 'session'"
 		
-	iecodebook export 	using	"${doc_rider}/pooled/codebooks/rider-audits-constructed.xlsx", replace 
+	iecodebook export 	using	"${doc_rider}/pooled/codebooks/pooled_rider_audit_constructed.xlsx", replace 
 	
-	save 				"${dt_final}/rider-audits-constructed.dta", replace
-	iemetasave using 	"${dt_final}/rider-audits-constructed.txt", replace
+	save 				"${dt_final}/pooled_rider_audit_constructed.dta", replace
+	iemetasave using 	"${dt_final}/pooled_rider_audit_constructed.txt", replace
 
 ***************************************************************** End of do-file
